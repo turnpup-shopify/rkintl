@@ -2168,7 +2168,7 @@
         "settings": {
           "header_layout": "horizontal",
           "logo": "shopify:\/\/shop_images\/new_logo.jpg",
-          "logo_max_width": 300,
+          "logo_max_width": 400,
           "main_linklist": "main-menu",
           "mega_menu": false,
           "scroll_lock": "header",
