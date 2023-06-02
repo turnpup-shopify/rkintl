@@ -231,7 +231,7 @@
         "block_text_alignment": "center",
         "section_text_color": "#000000",
         "overall_background_image_url": "",
-        "section_background_color": "#30292a"
+        "section_background_color": "#000000"
       }
     },
     "db07122b-07d8-4a1f-96fd-9bea781868b1": {
@@ -431,7 +431,7 @@
         "block_text_alignment": "center",
         "section_text_color": "#000000",
         "overall_background_image_url": "",
-        "section_background_color": "#30292a"
+        "section_background_color": "#000000"
       }
     },
     "a164d5b0-aca1-4b2d-8fd7-1b6159414fd1": {
@@ -528,7 +528,7 @@
         "block_text_alignment": "center",
         "section_text_color": "#000000",
         "overall_background_image_url": "",
-        "section_background_color": "#fafafa"
+        "section_background_color": "#ffffff"
       }
     }
   },
