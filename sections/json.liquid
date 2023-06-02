@@ -1,0 +1,59 @@
+{% schema %}
+  {
+    "name": "json",
+    "class": "json",
+    "settings": [      
+      
+    ],
+    "presets": [
+      {
+        "name": "json",
+        "category": "Advanced layout"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="page_a_container" style="margin-bottom: {{ section.settings.margin_bottom_of_page }};">
+{% for o in page.metafields.custom.showrooms.value.objects %}
+    <p class="state"> {{ o.state }} </p>    
+      {% for s in o.showrooms %}
+        {% assign remainder = forloop.index | modulo: 3 %}
+        {%  if remainder == 1 %}<div class="start_flex">{% endif %}
+        {% if s.location_name != blank %} 
+          <div class="showroom_third--single">          
+            <p class="showroom_name" aria-expanded="false" aria-controls="showroom_third__content" {% comment %}js-accordion-header{% endcomment %}>
+              <span class="page-accordion__title">{{ s.location_name }}</span>
+            </p>
+            <p class="address">
+              {{ s.address }}
+            </p>            
+            {% if s.hero_button %}
+              {%
+                render "hapny-button",
+                threeD:  s.hero_button,
+                button_link: s.website_url,
+                button_label:  s.website,
+                bottom_background_color: "#3C64B1",
+                middle_background_color: "#EA5E33",
+                top_background_color: "#F6B700",
+                id: "split_3d_button"
+              %}            
+            {% else %}
+                <a class="website" href="{{ s.website_url }}" target="_blank">
+                  {{ s.website }}
+                </a>
+            {% endif %}            
+            {% if s.directions_url != "" %}
+              <a class="directions" href="{{ s.directions_url }}" target="_blank" >
+                Get Directions
+              </a>
+            {% endif %}
+        </div>
+        {%  if remainder == 0 or forloop.last %}</div>{% endif %}
+        {% endif %}
+      {% endfor %}
+{% endfor %}
+  </div>
+</div>
+  
