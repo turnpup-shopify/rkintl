@@ -58,7 +58,7 @@
       ],
       "settings": {
         "products_per_page_range": 48,
-        "image_placement": "default",
+        "image_placement": "hidden",
         "enable_filtering_2": true,
         "enable_sorting_2": true,
         "collapse_on_larger_devices_2": false,
