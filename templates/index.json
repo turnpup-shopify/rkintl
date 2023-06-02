@@ -57,7 +57,7 @@
             "text_line_height": "1.3",
             "text_font_weight": "600",
             "subtitle_margin_top": "8px",
-            "description": "description",
+            "description": "",
             "description_font_size": "30px",
             "description_font_size_mobile": "14px",
             "description_font_family": "'Helvetica Neue'",
@@ -89,8 +89,9 @@
         "template--19222453059858__013469a4-d579-4e2a-bcfa-52478250d6a1-16856726535eca58a7-1": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/img2.svg",
             "image_border_radius": "0px",
-            "title": "Column",
+            "title": "",
             "title_font_size": "22px",
             "title_font_size_mobile": "14px",
             "title_font_family": "'Helvetica Neue'",
@@ -98,7 +99,7 @@
             "title_line_height": "1.0",
             "title_font_weight": "600",
             "title_margin_top": "8px",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "",
             "text_font_size": "30px",
             "text_font_size_mobile": "16px",
             "text_font_family": "'Helvetica Neue'",
@@ -106,7 +107,7 @@
             "text_line_height": "1.3",
             "text_font_weight": "600",
             "subtitle_margin_top": "8px",
-            "description": "description",
+            "description": "",
             "description_font_size": "30px",
             "description_font_size_mobile": "14px",
             "description_font_family": "'Helvetica Neue'",
@@ -138,8 +139,9 @@
         "f7bacb16-da6c-4a70-a5f7-1fabc3c4a0e8": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/img3.svg",
             "image_border_radius": "0px",
-            "title": "Column",
+            "title": "",
             "title_font_size": "22px",
             "title_font_size_mobile": "14px",
             "title_font_family": "'Helvetica Neue'",
@@ -147,7 +149,7 @@
             "title_line_height": "1.0",
             "title_font_weight": "600",
             "title_margin_top": "8px",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "",
             "text_font_size": "30px",
             "text_font_size_mobile": "16px",
             "text_font_family": "'Helvetica Neue'",
@@ -155,7 +157,7 @@
             "text_line_height": "1.3",
             "text_font_weight": "600",
             "subtitle_margin_top": "8px",
-            "description": "description",
+            "description": "",
             "description_font_size": "30px",
             "description_font_size_mobile": "14px",
             "description_font_family": "'Helvetica Neue'",
@@ -191,17 +193,17 @@
         "f7bacb16-da6c-4a70-a5f7-1fabc3c4a0e8"
       ],
       "settings": {
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 80,
+        "padding_bottom": 80,
         "padding_right": 0,
         "padding_left": 0,
         "max_height_desktop": 80,
         "mobile_max_height_desktop": 90,
         "enabled_border": false,
         "swipe_on_mobile": false,
-        "image_width": "full",
-        "column_alignment": "left",
-        "column_gap": "0px",
+        "image_width": "half",
+        "column_alignment": "center",
+        "column_gap": "10px",
         "button_padding": "10px 20px",
         "hero_button_font_family": "'Helvetica Neue'",
         "hero_button_font_size": "18px",
@@ -227,7 +229,7 @@
         "title_alignment": "left",
         "section_text_color": "#000000",
         "overall_background_image_url": "",
-        "section_background_color": "#ffffff"
+        "section_background_color": "#30292a"
       }
     }
   },
