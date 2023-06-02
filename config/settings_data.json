@@ -1984,7 +1984,7 @@
   "current": {
     "turnpup_button_size": "16px",
     "turnpup_button_padding_height": "14px",
-    "turnpup_border_radius": "3px",
+    "turnpup_border_radius": "0px",
     "turnpup_button_font_weight": "700",
     "color_accent": "rgba(0,0,0,0)",
     "button_background_color": "#f6b700",

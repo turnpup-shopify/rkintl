@@ -1,15 +1,5 @@
 {
   "sections": {
-    "16468859304ad7d649": {
-      "type": "instafeed",
-      "disabled": true,
-      "settings": {
-        "heading_font": "helvetica_n4",
-        "heading_size": 20,
-        "feed_width": 100,
-        "html_area": ""
-      }
-    },
     "8e0d19a5-f8bc-40a9-b831-9fff1ef5c00b": {
       "type": "turnpup_image_only",
       "settings": {
@@ -45,7 +35,6 @@
     }
   },
   "order": [
-    "16468859304ad7d649",
     "8e0d19a5-f8bc-40a9-b831-9fff1ef5c00b"
   ]
 }
