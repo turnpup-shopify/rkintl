@@ -34,11 +34,11 @@
         "subtitle_font_family": "'Karla'",
         "subtitle_font_color": "#555555",
         "background_color": "#ffffff",
-        "background_opacity": "0.2",
+        "background_opacity": "1",
         "max_width": 90,
         "mobile_max_width": 90,
-        "margintop": 0,
-        "marginbottom": 10,
+        "margintop": 30,
+        "marginbottom": 30,
         "alignment": "center",
         "turnpup_bottom_border_color": "#ffffff",
         "mobile_font_size": "12px"
@@ -49,7 +49,7 @@
       "settings": {
         "title": "ALEXS COLLECTION",
         "text": "<p>COLLECTION MADE FORM ALEXS TOP PICKS IN CABINET HARDWARE<\/p>",
-        "alignment": "center"
+        "alignment": "left"
       }
     },
     "collection-template": {
