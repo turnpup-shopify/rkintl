@@ -1,21 +1,47 @@
 {
   "sections": {
+    "1646886163757bc960": {
+      "type": "turnpup_image_only",
+      "settings": {
+        "turnpup_margin_topbottom_container": "",
+        "image": "shopify:\/\/shop_images\/3191-1502463748-5028-1496030209-banner_2.png",
+        "link": "shopify:\/\/collections\/all",
+        "turnpup_bottom_border_color": "rgba(0,0,0,0)",
+        "turnpup_margin_top": "0vH",
+        "height": "82vH",
+        "mobile_height": "auto",
+        "turnpup_margin_left_right": "11%",
+        "turnpup_mobile_margin_left_right": "10%",
+        "turnpup_text_width": "60%",
+        "label": "",
+        "label_font_family": "'Poppins', Light",
+        "label_font_size": 16,
+        "label_font_weight": 400,
+        "label_color": "#3c64b1",
+        "title": "",
+        "turnpup_title_size": "28px",
+        "turnpup_mobile_title_size": "24px",
+        "turnpup_title_color": "#000000",
+        "text": "",
+        "turnpup_text_size": "18px",
+        "turnpup_text_color": "#000000",
+        "button_label": "VIEW COLLECTION",
+        "turnpup_button_size": "22px",
+        "button_link": "shopify:\/\/collections\/all",
+        "color_text": "#ffffff",
+        "color_accent": "#3c64b1",
+        "turnpup_hover_txt_color": "#ffffff"
+      }
+    },
     "9751f23d-0106-4b11-bbbf-3ed3db380ca6": {
       "type": "image-banner",
+      "disabled": true,
       "blocks": {
         "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-0": {
           "type": "heading",
           "settings": {
             "heading": "SATIN BRASS COLLECTION",
             "heading_size": "h1"
-          }
-        },
-        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-1": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
           }
         },
         "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-2": {
@@ -28,12 +54,20 @@
             "button_link_2": "",
             "button_style_secondary_2": false
           }
+        },
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
         }
       },
       "block_order": [
         "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-0",
-        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-1",
-        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-2"
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-2",
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-1"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/3191-1502463748-5028-1496030209-banner_2.png",
@@ -169,38 +203,6 @@
         "button_link": "",
         "collection": "our-favorites",
         "product_count_range": 4
-      }
-    },
-    "1646886163757bc960": {
-      "type": "turnpup_image_only",
-      "settings": {
-        "turnpup_margin_topbottom_container": "",
-        "link": "",
-        "turnpup_bottom_border_color": "rgba(0,0,0,0)",
-        "turnpup_margin_top": "0vH",
-        "height": "82vH",
-        "mobile_height": "auto",
-        "turnpup_margin_left_right": "11%",
-        "turnpup_mobile_margin_left_right": "10%",
-        "turnpup_text_width": "60%",
-        "label": "",
-        "label_font_family": "'Poppins', Light",
-        "label_font_size": 16,
-        "label_font_weight": 400,
-        "label_color": "#3c64b1",
-        "title": "",
-        "turnpup_title_size": "28px",
-        "turnpup_mobile_title_size": "24px",
-        "turnpup_title_color": "#000000",
-        "text": "",
-        "turnpup_text_size": "18px",
-        "turnpup_text_color": "#000000",
-        "button_label": "",
-        "turnpup_button_size": "22px",
-        "button_link": "shopify:\/\/collections\/all",
-        "color_text": "#ffffff",
-        "color_accent": "#3c64b1",
-        "turnpup_hover_txt_color": "#ffffff"
       }
     },
     "16468862921a40f813": {
@@ -428,10 +430,10 @@
     }
   },
   "order": [
+    "1646886163757bc960",
     "9751f23d-0106-4b11-bbbf-3ed3db380ca6",
     "16468859198d32fb6e",
     "1646885913e7267629",
-    "1646886163757bc960",
     "16468862921a40f813",
     "16468860963843366a",
     "16468859304ad7d649",
