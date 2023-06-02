@@ -6,7 +6,7 @@
         "template--19222452928786__a26d6726-d259-4d44-a9ae-b067c91f3d9d-168574213368d6c9b7-0": {
           "type": "text",
           "settings": {
-            "block_text": "This is the first part.",
+            "block_text": "",
             "block_font_size": "24px",
             "mobile_block_font_size": "24px",
             "block_font_color": "#884400",
@@ -28,7 +28,7 @@
         "template--19222452928786__a26d6726-d259-4d44-a9ae-b067c91f3d9d-168574213368d6c9b7-0"
       ],
       "settings": {
-        "subtitle": "Our Philosophy",
+        "subtitle": "",
         "subtitle_font_size": "11px",
         "subtitle_font_weight": "300",
         "subtitle_font_family": "'Karla'",
