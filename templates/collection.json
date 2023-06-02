@@ -1,55 +1,44 @@
 {
   "sections": {
-    "a26d6726-d259-4d44-a9ae-b067c91f3d9d": {
-      "type": "turnpup-one-long-sentence",
-      "blocks": {
-        "template--19222452928786__a26d6726-d259-4d44-a9ae-b067c91f3d9d-168574213368d6c9b7-0": {
-          "type": "text",
-          "settings": {
-            "block_text": "",
-            "block_font_size": "24px",
-            "mobile_block_font_size": "24px",
-            "block_font_color": "#884400",
-            "font_family_text": "Helvetica",
-            "font_weight_text": "800",
-            "line_height_text": "1.2",
-            "letter_spacing": "3px",
-            "text_width": "100%",
-            "mobile_text_width": "90%",
-            "text_padding_left": "0px",
-            "text_padding_bottom": "0px",
-            "is_own_line": true,
-            "text_has_wavy_animation": true,
-            "wavy_animation_color": "#f6b700"
-          }
-        }
-      },
-      "block_order": [
-        "template--19222452928786__a26d6726-d259-4d44-a9ae-b067c91f3d9d-168574213368d6c9b7-0"
-      ],
+    "1ad69dee-c6be-4a91-899d-bbfb4d242baa": {
+      "type": "turnpup_collection_header_wide",
       "settings": {
-        "subtitle": "",
-        "subtitle_font_size": "11px",
-        "subtitle_font_weight": "300",
-        "subtitle_font_family": "'Karla'",
-        "subtitle_font_color": "#555555",
-        "background_color": "#ffffff",
-        "background_opacity": "1",
-        "max_width": 90,
-        "mobile_max_width": 90,
-        "margintop": 30,
-        "marginbottom": 30,
-        "alignment": "center",
-        "turnpup_bottom_border_color": "#ffffff",
-        "mobile_font_size": "12px"
-      }
-    },
-    "3b9a2f07-6655-4ac2-9dd1-fe0108a2f7ae": {
-      "type": "featured-text",
-      "settings": {
-        "title": "ALEXS COLLECTION",
-        "text": "<p>COLLECTION MADE FORM ALEXS TOP PICKS IN CABINET HARDWARE<\/p>",
-        "alignment": "center"
+        "title": "Custom content",
+        "description": "Custom content",
+        "is_image_on_right": true,
+        "text_alignment": "left",
+        "turnpup_top_container_height": "70vH",
+        "turnpup_mobile_top_container_height": "50vH",
+        "turnpup_title_size": "24px",
+        "turnpup_mobile_title_size": "24px",
+        "turnpup_title_color": "#000000",
+        "turnpup_text_size": "18px",
+        "turnpup_mobile_text_size": "16px",
+        "turnpup_text_color": "#373F41",
+        "turnpup_note_text_size": "18px",
+        "turnpup_mobile_note_text_size": "16px",
+        "turnpup_note_text_color": "#373F41",
+        "turnpup_note_text_weight": "700",
+        "turnpup_margin_left": "10%",
+        "turnpup_margin_right": "10%",
+        "turnpup_margin_top": "10%",
+        "turnpup_margin_bottom": "10%",
+        "turnpup_header_background": "#f2f2f2",
+        "turnpup_text_background": "#f2f2f2",
+        "image": "shopify:\/\/shop_images\/cp_800_p.jpg",
+        "link": "",
+        "full_width": false,
+        "turnpup_half_width": true,
+        "turnpup_image_background_color": "rgba(0,0,0,0)",
+        "turnpup_image_padding": "0px",
+        "button_label": "",
+        "turnpup_button_size": "18px",
+        "button_link": "",
+        "color_text": "#ffffff",
+        "color_accent": "#F4B237",
+        "turnpup_hover_txt_color": "#F4B237",
+        "turnpup_hover_background_color": "#ffffff",
+        "turnpup_bottom_border_color": "#F4B237"
       }
     },
     "collection-template": {
@@ -87,8 +76,7 @@
     }
   },
   "order": [
-    "a26d6726-d259-4d44-a9ae-b067c91f3d9d",
-    "3b9a2f07-6655-4ac2-9dd1-fe0108a2f7ae",
+    "1ad69dee-c6be-4a91-899d-bbfb4d242baa",
     "collection-template"
   ]
 }
