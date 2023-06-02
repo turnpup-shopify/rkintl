@@ -2171,7 +2171,7 @@
           "header_layout": "horizontal",
           "logo": "shopify:\/\/shop_images\/logo_narrow.png",
           "turnpup_hover_logo": "shopify:\/\/shop_images\/logo_narrow.png",
-          "logo_max_width": 320,
+          "logo_max_width": 100,
           "main_linklist": "main-menu",
           "mega_menu": false,
           "scroll_lock": "header",
