@@ -1,52 +1,52 @@
 {
   "sections": {
-    "1646885907ac78a028": {
-      "type": "turnpup-hero-split",
+    "9751f23d-0106-4b11-bbbf-3ed3db380ca6": {
+      "type": "image-banner",
+      "blocks": {
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "SATIN BRASS COLLECTION",
+            "heading_size": "h1"
+          }
+        },
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "VIEW COLLECTION",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-0",
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-1",
+        "template--19222453059858__9751f23d-0106-4b11-bbbf-3ed3db380ca6-168567036077a436d0-2"
+      ],
       "settings": {
-        "overall_width": "100%",
-        "overall_width_text": "82%",
-        "turnpup_bottom_border_color": "rgba(0,0,0,0)",
-        "turnpup_container_margin_top_bottom": "0px",
-        "background_color": "#ffffff",
-        "background_opacity": "0.2",
-        "mobile_background_color": "#ffffff",
-        "section_padding": true,
-        "image": "shopify:\/\/shop_images\/attempt_two_1300.gif",
-        "mobile_image": "shopify:\/\/shop_images\/attempt_two_mobile.gif",
-        "image_padding": "30px",
-        "image_margin": "0px 10% 0px 0px",
-        "image_height": 80,
-        "mobile_image_height": 50,
-        "image_border_color": "rgba(0,0,0,0)",
-        "image_border_width": "8px",
-        "image_border_radius": "20px",
-        "layout": "right",
-        "text_align": "left",
-        "mobile_text_align": "center",
-        "turnpup_container_text_cta_margin_top": "0",
-        "turnpup_container_text_cta_margin_bottom": "0",
-        "turnpup_mobile_container_text_cta_margin_top": "20px",
-        "turnpup_mobile_container_text_cta_margin_bottom": "10px",
-        "text_margin_left": "5%",
-        "title": "Thoughtfully Crafted Decorative Hardware for Your Home",
-        "title_color": "#000000",
-        "label_font_family_header": "'p22-mackinac-pro', serif",
-        "turnpup_title_size": "30px",
-        "header_margin_below": "12px;",
-        "mobile_header_margin_below": "6px;",
-        "text": "<p>Elevate your doors, drawers, furniture, or walls with our solid brass cabinet hardware.<\/p>",
-        "turnpup_mobile_title_size": "26px",
-        "text_color": "#000000",
-        "turnpup_desc_size": "16px",
-        "turnpup_mobile_desc_size": "16px",
-        "text_margin_up_and_down": "30px",
-        "mobile_text_margin_up_and_down": "24px",
-        "button_label": "Show Me the Goods",
-        "button_link": "shopify:\/\/collections\/all",
-        "is_hero_button": true,
-        "bottom_background_color": "#3c64b1",
-        "middle_background_color": "#ea5e33",
-        "top_background_color": "#f6b700"
+        "image": "shopify:\/\/shop_images\/3191-1502463748-5028-1496030209-banner_2.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "top-left",
+        "show_text_box": true,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "16468859198d32fb6e": {
@@ -175,9 +175,7 @@
       "type": "turnpup_image_only",
       "settings": {
         "turnpup_margin_topbottom_container": "",
-        "image": "shopify:\/\/shop_images\/ShopAll_1.jpg",
         "link": "",
-        "mobile_image": "shopify:\/\/shop_images\/CabKnobs.png",
         "turnpup_bottom_border_color": "rgba(0,0,0,0)",
         "turnpup_margin_top": "0vH",
         "height": "82vH",
@@ -218,7 +216,6 @@
         "background_color": "#3c64b1",
         "background_opacity": "1",
         "section_padding": true,
-        "image": "shopify:\/\/shop_images\/halfmoon9.jpg",
         "layout": "left",
         "text_align": "left",
         "mobile_text_align": "center",
@@ -320,8 +317,7 @@
         "mobilemargintop": "30px",
         "marginbottom": "20vH",
         "mobilemarginbottom": "30px",
-        "alignment": "left",
-        "backgroundimage": "shopify:\/\/shop_images\/showrooms_tower_46bc44ab-160f-4f0c-83ff-e8abeebaea9f.jpg"
+        "alignment": "left"
       }
     },
     "16468859304ad7d649": {
@@ -432,7 +428,7 @@
     }
   },
   "order": [
-    "1646885907ac78a028",
+    "9751f23d-0106-4b11-bbbf-3ed3db380ca6",
     "16468859198d32fb6e",
     "1646885913e7267629",
     "1646886163757bc960",
