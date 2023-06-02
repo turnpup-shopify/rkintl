@@ -414,8 +414,6 @@ $gutter: em(30px);
   text-transform: $siteHeaderNavTextTransform;
   font-weight: $siteHeaderNavTextWeight;
   font-family: $navFontStack;
-  //turnpup replace with below --> font-size: em(11px);
-  font-size: em({{settings.turnpup_button_font_size}}px);
   text-decoration: none;
   @include transition(all 0.1s ease-in-out);
   outline: none;
@@ -1266,8 +1264,7 @@ body {
     display: inline-block;
     margin: 8px 0 0;
     padding: 4px 24px;
-    //turnpup replace with below --> font-size: em(12px);
-    font-size: em({{settings.turnpup_button_font_size}}px);
+    font-size: em(12px);
   }
 
    a.turnpup_button_home_top, a.tpmaintop_button_home_top {
@@ -2522,9 +2519,7 @@ body:not(.template-index) main.main-content {
   @include buttonOutline;
   &.large {
     padding: 14px 24px;
-    //turnpup replace with below --> font-size: em(14px);
-    font-size: em({{settings.turnpup_button_font_size}}px);
-    // TURNPUP Button Outline: add the 3 below
+    font-size: em(12px);
     border-radius: 0px;
     color: $turnpupButtonAccentColor;
     border-color: $turnpupButtonAccentColor;
@@ -4694,8 +4689,7 @@ ul.nested-menu {
     display: inline-block;
     margin: 8px 0 0;
     padding: 4px 24px;
-    //turnpup replace with below --> font-size: em(12px);
-    font-size: em({{settings.turnpup_button_font_size}}px);
+    font-size: em(12px);
   }
 
   @include mediaQuery($max, $tablet) {
