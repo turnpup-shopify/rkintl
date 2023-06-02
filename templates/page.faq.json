@@ -171,22 +171,22 @@
         "dfb5f8aa-2215-477b-bd27-8f751cbdc901": {
           "type": "Question",
           "settings": {
-            "question": "I have my own UPS account. Can you use that to ship my order?",
-            "answer": ""
+            "question": "How do I get a shorted product sent out?",
+            "answer": "Claims for shortages must be made within seven (7) business days from receipt of the order. We will send out the appropriate hardware immediately."
           }
         },
         "63b798e7-0a87-4165-953c-38964d85ef87": {
           "type": "Question",
           "settings": {
-            "question": "How is freight calculated?",
-            "answer": ""
+            "question": "How do I get a replacement sent for defective items?",
+            "answer": "Claims for defective items must be made within seven (7) business days from receipt of the order. We will send out the appropriate hardware immediately."
           }
         },
         "ce7f7baf-f911-4493-b511-d627591eb7cb": {
           "type": "Question",
           "settings": {
-            "question": "Do you charge any drop ship fees?",
-            "answer": ""
+            "question": "How do I return a product? How long do I have? Are there restock fees?",
+            "answer": "Returns are allowed up to ninety (90) days from the original date of purchase. All returns are subject to a 30% restock fee, assuming products are returned in \"resalable\"condition. Product unusable will be rejected, and damaged items will have higher restock fees implemented."
           }
         },
         "d78554d8-ec34-415b-bae2-a8f69c5295c9": {
