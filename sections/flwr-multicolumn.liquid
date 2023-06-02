@@ -314,9 +314,6 @@
     column-gap: 0;
     row-gap: 0;
   }
-  .multicolumn-list__item .grid > * {
-    margin-right: 0px;
-  }
   .media>*:not(.zoom):not(.deferred-media__poster-button), .media model-viewer {
     display: block;
     max-width: 100%;
@@ -346,6 +343,7 @@
   .grid--1-col .grid__item {
     max-width: 100%;
     width: 100%;
+    padding-right: 0px;
   }
   .multicolumn-card__info {
     text-align: {{ section.settings.block_text_alignment }};
