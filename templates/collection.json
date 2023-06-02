@@ -25,7 +25,6 @@
         "turnpup_margin_bottom": "10%",
         "turnpup_header_background": "rgba(0,0,0,0)",
         "turnpup_text_background": "#3c64b1",
-        "image": "shopify:\/\/shop_images\/ShopAll_1.jpg",
         "link": "",
         "full_width": false,
         "turnpup_half_width": true,
@@ -49,7 +48,7 @@
           "settings": {
             "title": "Shop by",
             "tag_style": "menu",
-            "tag_grouping": true
+            "tag_grouping": false
           }
         }
       },
@@ -58,12 +57,12 @@
       ],
       "settings": {
         "products_per_page_range": 48,
-        "image_placement": "hidden",
-        "enable_filtering_2": false,
+        "image_placement": "default",
+        "enable_filtering_2": true,
         "enable_sorting_2": false,
         "collapse_on_larger_devices_2": false,
         "sort_enable": true,
-        "sort_featured_enable": false,
+        "sort_featured_enable": true,
         "sort_best_selling_enable": false,
         "sort_alphabetical_enable": false,
         "sort_price_enable": false,
