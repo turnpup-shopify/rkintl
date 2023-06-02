@@ -3,11 +3,50 @@
     "main": {
       "type": "product-template",
       "settings": {
+        "pdp_dscription_font_size": "14px",
+        "tp_bottom_left_title": "Details",
+        "tp_bottom_middle_title": "Dimensions",
+        "tp_bottom_right_title": "Product Care",
+        "tp_horizontal_divider_color": "#ffffff",
+        "tp_bottom_header_color": "#ffffff",
+        "tp_specification_font_size": "12px",
+        "tp_specification_font_color": "#000000",
+        "tp_bottom_header_font_size": "24px",
+        "show_vendors": false,
+        "show_savings": false,
+        "size_guide_page": "",
+        "product_quantity_enable": true,
+        "show_payment_button": true,
+        "product_box_padding": true,
+        "variant_style": "dropdowns",
+        "variant_swatch_images": false,
+        "variant_swatch_shape": "circle",
+        "variant_swatch_soldout": true,
+        "enable_image_slider": true,
+        "show_dots": false,
+        "show_arrows": false,
+        "thumbnails_placement": "below",
+        "mobile_thumbnails_placement": "hide",
+        "enable_thumb_slider": true,
+        "product_featured_zoom_enable": false,
+        "product_featured_lightbox_enable": false,
+        "enable_video_looping": false,
+        "tabs_enable": false,
+        "tabs_auto_headings": "h4",
+        "tabs_title": "Description",
+        "tabs_global_page_1": "",
+        "tabs_global_page_2": "",
+        "tabs_global_page_3": "",
+        "show_product_jump": false,
+        "show_share_buttons": false
       }
     },
     "recommendations": {
       "type": "product-recommendations",
       "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like",
+        "product_recommendations_limit": "4"
       }
     }
   },
