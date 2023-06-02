@@ -1,0 +1,531 @@
+<div class="turnpup-hero-split-row {% unless section.settings.section_padding %}no-border{% endunless %}" data-section-id="{{ section.id }}" data-section-type="featured-row-section">
+  <div class="tp-hero-split-contain-site-width {% unless section.settings.section_padding %}no-padding{% endunless %}">
+    <div class="turnpup-hero-flex-container module">
+      {% capture image_grid_item %}
+        <div class="feature-row__item desktop">
+          {%- assign image = section.settings.image -%}
+          {% if image != blank %}
+            <div class="hero_split_image_wrapper">
+              {% assign image_widths = '295,394,590,1180' %}
+              {% include 'theme-rias' %}
+              <img class="card__image feature-row__image lazyload fade-in"
+                data-src="{{ image_url_pattern }}"
+                data-widths="[{{ image_widths }}]"
+                data-aspectratio="{{ image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ image.alt | escape }}">
+              <noscript>
+                <img class="card__image" src="{{ image | img_url: '590x' }}" alt="{{ image.alt | escape }}">
+              </noscript>
+            </div>
+          {% else %}
+            <script> console.log("error no desktop image provided in shopify cms"); </script>
+          {% endif %}
+        </div>
+        <div class="feature-row__item mobile">
+          {%- assign image = section.settings.mobile_image -%}
+          {% if section.settings.mobile_image != blank %}
+            <div class="hero_split_image_wrapper">
+              {% assign image_widths = '295,394,590,1180' %}
+              {% include 'theme-rias' %}
+              <img class="card__image feature-row__image lazyload fade-in"
+                data-src="{{ image_url_pattern }}"
+                data-widths="[{{ image_widths }}]"
+                data-aspectratio="{{ image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ image.alt | escape }}">
+              <noscript>
+                <img class="card__image" src="{{ image | img_url: '590x' }}" alt="{{ image.alt | escape }}">
+              </noscript>
+            </div>
+          {% else %}
+            <script> console.log("error no mobile image provided in shopify cms"); </script>
+          {% endif %}
+        </div>
+      {% endcapture %}
+
+      {% if section.settings.layout == 'left' %}
+        {{ image_grid_item }}
+      {% endif %}
+
+      <div class="turnpup_text_parent feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+        <div class="turnpup_hero_split_text_container" id="split_3d_button">
+          {% if section.settings.title != blank %}
+            <h3 style="color:{{ section.settings.title_color }}">{{ section.settings.title | escape }}</h3>
+          {% endif %}
+          {% if section.settings.text != blank %}
+            <div class="rte turnpup_hero_split_bottom_spacing">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
+          {%
+            render "hapny-button",
+            threeD: section.settings.is_hero_button,
+            button_link: section.settings.button_link,
+            button_label: section.settings.button_label,
+            bottom_background_color: section.settings.bottom_background_color,
+            middle_background_color: section.settings.middle_background_color,
+            top_background_color: section.settings.top_background_color,
+            id: "split_3d_button"
+          %}
+        </div>
+      </div>
+
+      {% if section.settings.layout == 'right' %}
+        {{ image_grid_item }}
+      {% endif %}
+    </div>
+    
+  </div>
+</div>
+
+<style>
+  .turnpup-hero-split-row {
+    {% assign float_opacity = section.settings.background_opacity | plus: 0 %}
+    background-color: {{ section.settings.background_color | color_modify: 'alpha', float_opacity }}; 
+    {% if section.settings.turnpup_bottom_border_color != "rgba(0,0,0,0)" %}
+        border-bottom: 1px solid {{ section.settings.turnpup_bottom_border_color }};
+    {% else %}
+        border-bottom: 0px;
+    {% endif %}    
+  }
+  .tp-hero-split-contain-site-width {
+    max-width: {{ section.settings.overall_width }};
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .turnpup_text_parent {
+    padding-top: {{section.settings.turnpup_container_text_cta_margin_top}};
+    padding-bottom: {{section.settings.turnpup_container_text_cta_margin_bottom}};      
+  }
+  .turnpup_hero_split_bottom_spacing {
+    margin: 0 0 {{ section.settings.text_margin_up_and_down }} 0;
+  }
+  .turnpup_hero_split_text_container h3 {
+    font-size: {{ section.settings.turnpup_title_size }};
+    color: {{ section.settings.title_color }};
+    font-family: {{ section.settings.label_font_family_header }};
+    margin-bottom: {{section.settings.header_margin_below}};
+  }
+  .turnpup_hero_split_text_container {
+    text-align: {{ section.settings.text_align }};
+    color:{{ section.settings.text_color }};
+    font-family: 'Karla';
+    margin: 0px auto;
+    padding: 0px 0px {{ section.settings.text_margin_up_and_down }} {{ section.settings.text_margin_left }};    
+    max-width: {{ section.settings.overall_width_text }};
+  }
+  .turnpup_hero_split_bottom_spacing p {
+    font-size: {{section.settings.turnpup_desc_size}}; 
+    padding: 0px;   
+    margin: 0px;
+  }
+  .hero_split_image_wrapper {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding: {{ section.settings.image_padding }};
+    /*turnpup*/
+    margin: {{ section.settings.image_margin }};
+  }
+  .hero_split_image_wrapper .feature-row__image {
+    
+  }
+  .hero_split_image_wrapper .card__image {
+    display: block;
+    width: 100%;
+    height: {{section.settings.image_height}}vH;
+    object-fit: cover;
+    position: relative;
+    border-radius: {{ section.settings.image_border_radius }};
+    border: {{ section.settings.image_border_width }} solid {{ section.settings.image_border_color }};
+  }
+  .feature-row__item.mobile {
+    display:  none;
+  }
+  .feature-row__item.desktop {
+    display: block;
+  }
+  
+  
+  @media only screen and (max-width: 700px) {
+    .turnpup-hero-split {
+      background-color: {{ section.settings.mobile_background_color }}; 
+    }
+    .turnpup-hero-split-row {
+      background-color: {{ section.settings.mobile_background_color }}; 
+    }
+    .tp-hero-split-contain-site-width { 
+      margin: 0 auto; 
+      max-width: 90%;
+      padding: 60px 0px 40px; 
+    }
+    .turnpup_text_parent {
+      padding-top: {{section.settings.turnpup_mobile_container_text_cta_margin_top}};
+      padding-bottom: {{section.settings.turnpup_mobile_container_text_cta_margin_bottom}};  
+    }
+    .turnpup_hero_split_text_container {
+      text-align: {{ section.settings.mobile_text_align }};
+      margin: 0 auto;
+      padding: 0%;
+      max-width: 100%;
+    }
+    .turnpup_hero_split_text_container h3 {
+      font-size: {{ section.settings.turnpup_mobile_title_size }};
+      margin-bottom: {{section.settings.mobile_header_margin_below}};
+    }    
+    .turnpup_hero_split_bottom_spacing {
+      margin: 0 0 0px 0;
+      padding: 0px 0px {{ section.settings.mobile_text_margin_up_and_down }} 0px;
+      font-size: {{section.settings.turnpup_mobile_desc_size}};
+    }
+    .turnpup_hero_split_bottom_spacing p {
+      color:{{ section.settings.text_color }};
+      font-family: 'Karla';
+      font-size: 16px;
+      margin: 0px;
+    }
+    .hero_split_image_wrapper .card__image {
+      height: {{section.settings.mobile_image_height}}vH; 
+    }
+    .hero_split_image_wrapper {
+      margin: 0px;
+      padding: 0px;
+    }
+    .feature-row__item.mobile {
+      display: block;
+    }
+    .feature-row__item.desktop {
+      display: none;
+    }
+
+  }
+  
+</style>
+{% schema %}
+{
+  "name": "Turnpup Hero Split",
+  "class": "turnpup-hero-split",
+  "settings": [ 
+    {
+      "type": "text",
+      "id": "overall_width",
+      "label": "Overall Width",
+      "default": "100%"
+    },   
+    {
+      "type": "text",
+      "id": "overall_width_text",
+      "label": "Overall Width for Text",
+      "default": "80%"
+    },
+    {
+      "type": "color",
+      "id": "turnpup_bottom_border_color",
+      "label": "Bottom Border Color",
+      "default": "#F4B237"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_container_margin_top_bottom",
+      "label": "Container Margin Top Bottom",
+      "default": "60px"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "background_opacity",
+      "label": "Background Opacity",
+      "default": "0.2"
+    },
+    {
+      "type": "color",
+      "id": "mobile_background_color",
+      "label": "Mobile Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_padding",
+      "label": "Show spacing around section",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Image",
+      "info": "Settings for the image."
+    }, 
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }, 
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },    
+    {
+      "type": "text",
+      "id": "image_padding",
+      "label": "Image Padding",
+      "default": "0px"
+    },
+    {
+      "type": "text",
+      "id": "image_margin",
+      "label": "Image Margin",
+      "default": "0px 3% 0px 0px"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "label": "Image Height",
+      "default": 90
+    },
+    {
+      "type": "range",
+      "id": "mobile_image_height",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "label": "Mobile Image Height",
+      "default": 90
+    },
+    {
+      "type": "color",
+      "id": "image_border_color",
+      "label": "Image Border Color",
+      "default": "#28499c"
+    },
+    {
+      "type": "text",
+      "id": "image_border_width",
+      "label": "Image Border Width",
+      "default": "10px"
+    },
+    {
+      "type": "text",
+      "id": "image_border_radius",
+      "label": "Image Border Radius",
+      "default": "0px"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Image on left"
+        },
+        {
+          "value": "right",
+          "label": "Image on right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text align",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_align",
+      "label": "Mobile Text align",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "turnpup_container_text_cta_margin_top",
+      "label": "Text/CTA Container Margin Top",
+      "default": "60px"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_container_text_cta_margin_bottom",
+      "label": "Text/CTA Container Margin Bottom ",
+      "default": "60px"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_mobile_container_text_cta_margin_top",
+      "label": "Mobile: Text/CTA Container Margin Top",
+      "default": "60px"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_mobile_container_text_cta_margin_bottom",
+      "label": "Mobile: Text/CTA Container Margin Bottom ",
+      "default": "60px"
+    },
+    {
+      "type": "text",
+      "id": "text_margin_left",
+      "label": "Margin Left for Text Container",
+      "default": "50px;"
+    },   
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "label_font_family_header",
+      "label": "Font Family Header",
+      "default": "'Poppins', Light"
+    }, 
+ 	{
+      "type": "text",
+      "id": "turnpup_title_size",
+      "label": "Heading Font Size (e.g. 40px)",
+      "default": "22px"
+    },
+    {
+      "type": "text",
+      "id": "header_margin_below",
+      "label": "Vertical Margin Below Header",
+      "default": "12px;"
+    },
+    {
+      "type": "text",
+      "id": "mobile_header_margin_below",
+      "label": "Mobile: Vertical Margin Below Header",
+      "default": "10px;"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+	{
+      "type": "text",
+      "id": "turnpup_mobile_title_size",
+      "label": "Mobile: Heading Font Size (e.g. 24px)",
+      "default": "24px"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+	{
+      "type": "text",
+      "id": "turnpup_desc_size",
+      "label": "Description Font Size (e.g. 40px)",
+      "default": "18px"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_mobile_desc_size",
+      "label": "Mobile Description Font Size (e.g. 40px)",
+      "default": "12px"
+    },
+    {
+      "type": "text",
+      "id": "text_margin_up_and_down",
+      "label": "Vertical Below Description",
+      "default": "50px;"
+    },
+    {
+      "type": "text",
+      "id": "mobile_text_margin_up_and_down",
+      "label": "Mobile: Below Description",
+      "default": "50px;"
+    },
+    {
+      "type": "header",
+      "content": "Button",
+      "info": "."
+    },  
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_hero_button",
+      "label": "3D Hero Button?"
+    },    
+    {
+      "type": "color",
+      "id": "bottom_background_color",
+      "label": "Bottom Button Background Color",
+       "default": "#28499c" 
+    },    
+    {
+      "type": "color",
+      "id": "middle_background_color",
+      "label": "Middle Button Background Color",
+       "default": "#ea5e33" 
+    },
+    {
+      "type": "color",
+      "id": "top_background_color",
+      "label": "Top Button Background Color",
+       "default": "#f4b237" 
+    }
+  ],
+  "presets": [
+    {
+      "name": "Turnpup Hero Split",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

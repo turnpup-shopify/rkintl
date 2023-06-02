@@ -1,0 +1,82 @@
+{
+  "sections": {
+    "1653275212349707f8": {
+      "type": "custom-image-grid",
+      "blocks": {
+        "7e4ad50c-7012-4899-9105-cc4e5ecd3f55": {
+          "type": "carousel_one",
+          "settings": {
+            "grid_name": "GET INSPIRED WITH HAPNY",
+            "grid_image_1": "shopify:\/\/shop_images\/attempt_two_mobile.gif",
+            "grid_image_2": "shopify:\/\/shop_images\/DSCF7990.jpg",
+            "grid_image_3": "shopify:\/\/shop_images\/smiley_alex_home.png",
+            "grid_image_4": "shopify:\/\/shop_images\/halfmoon9_1180x_c75f7be0-86e7-43ac-93ca-9f59e32eddba.jpg",
+            "grid_image_5": "shopify:\/\/shop_images\/Clarity_BSB_Green_Cabinet_2000.jpg",
+            "grid_image_6": "shopify:\/\/shop_images\/DIAMOND_KNOB_WN_whitecabinet.jpg",
+            "grid_image_7": "shopify:\/\/shop_images\/BSB_KNOB_red_cabinet.jpg",
+            "grid_image_8": "shopify:\/\/shop_images\/DSCF4874_copy.jpg",
+            "grid_image_9": "shopify:\/\/shop_images\/tbar_gold_door.jpg",
+            "grid_image_10": "shopify:\/\/shop_images\/knob_nicole_bathroom.png",
+            "grid_image_11": "shopify:\/\/shop_images\/halfmoon_all_kitchen.jpg",
+            "grid_image_12": "shopify:\/\/shop_images\/diamond_knob_bathroom.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "7e4ad50c-7012-4899-9105-cc4e5ecd3f55"
+      ],
+      "settings": {
+        "image_grid_header": "GET INSPIRED WITH HAPNY",
+        "header_font_family": "'p22-mackinac-pro', serif;",
+        "header_font_size": "24px",
+        "header_font_weight": "600",
+        "header_font_color": "#000000",
+        "image_grid_subheader": "Explore the various kitchens, bathrooms, and bedrooms our cabinet hardware is featured in.",
+        "subheader_font_family": "'p22-mackinac-pro', serif;",
+        "subheader_font_size": "24px",
+        "subheader_font_weight": "400",
+        "subheader_font_color": "#000000",
+        "header_alignment": "center"
+      }
+    },
+    "main": {
+      "type": "custom-playground",
+      "disabled": true,
+      "blocks": {
+        "82955569-5d66-4ae9-b2e7-7203e49dda2f": {
+          "type": "carousel_one",
+          "settings": {
+            "grid_name": "bathrooms",
+            "image_grid_1": "shopify:\/\/shop_images\/knob.png",
+            "image_grid_2": "shopify:\/\/shop_images\/diag.gif",
+            "image_grid_3": "shopify:\/\/shop_images\/tools.jpg",
+            "image_grid_4": "shopify:\/\/shop_images\/DSCF3473.jpg"
+          }
+        },
+        "7d6dd43f-b687-4bfd-9d07-fa963ef808ce": {
+          "type": "carousel_one",
+          "settings": {
+            "grid_name": "kitchens",
+            "image_grid_1": "shopify:\/\/shop_images\/Hapny-Collections-final.gif",
+            "image_grid_2": "shopify:\/\/shop_images\/mobile.jpg",
+            "image_grid_3": "shopify:\/\/shop_images\/DSCF4874.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "82955569-5d66-4ae9-b2e7-7203e49dda2f",
+        "7d6dd43f-b687-4bfd-9d07-fa963ef808ce"
+      ],
+      "settings": {
+        "prop_65_header": "The Playground",
+        "prop_65_text": "A place where we test new things and do thing we like, because why not?!",
+        "header_font_size": "29px",
+        "header_font_weight": "600"
+      }
+    }
+  },
+  "order": [
+    "1653275212349707f8",
+    "main"
+  ]
+}

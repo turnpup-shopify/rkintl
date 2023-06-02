@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "1640295135c29b4529": {
+      "type": "about-us-top",
+      "settings": {
+        "padding_top": "40px",
+        "subtitle_text": "",
+        "subtitle_size": "16px",
+        "subtitle_weight": "400",
+        "subtitle_family": "'Karla'",
+        "subtitle_color": "#000000",
+        "title_first_letter_color": "#3c64b1",
+        "title_size": "30px",
+        "title_weight": "400",
+        "title_family": "'p22-mackinac-pro'",
+        "title_color": "#000000",
+        "description_text": "Hapny is a love letter to the cities I've lived in and the details that made my apartments feel like home",
+        "description_size": "16px",
+        "description_weight": "400",
+        "description_family": "'Karla'",
+        "description_color": "#000000"
+      }
+    },
+    "164029545269244c47": {
+      "type": "about-us-bottom",
+      "settings": {
+        "background_color": "#3c64b1",
+        "max_width": "75%",
+        "pargraph_color": "#ffffff",
+        "pargraph_padding_left": "40px",
+        "pargraph_text_0": "Hi, I'm Priya.",
+        "pargraph_text_1": "My dad started his own cabinet hardware company in the 80s, so I grew up with an unusual appreciation for the pieces of metal that help you open your doors and drawers.",
+        "pargraph_text_2": "What I didn't appreciate was the shopping experience. Buying hardware today is tedious, thanks to the overwhelming number of underwhelming designs, inconsistencies across finishes and materials, and overall lack of curation and guidance.",
+        "pargraph_text_3": "I created Hapny to change that. I’ve designed a more thoughtful end-to-end experience with an intentional product collection that lives at the sweet spot of durability, affordability, and beauty.",
+        "pargraph_text_4": "I want to help you turn your home - temporary, rented, or owned - into something you admire and that makes you smile, starting with the tiniest details.",
+        "signature": "shopify:\/\/shop_images\/signature_8c491d47-0f09-4c4a-be54-7a873bc29f6a.png",
+        "founder_image_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0449\/1667\/0615\/files\/Founder-Edit.jpg?v=1653173465",
+        "screwdriver_family": "'p22-mackinac-pro'"
+      }
+    }
+  },
+  "order": [
+    "1640295135c29b4529",
+    "164029545269244c47"
+  ]
+}

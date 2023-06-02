@@ -1,0 +1,108 @@
+<!-- /snippets/search-nav-item.liquid -->
+{% comment %}
+
+This was added from turnpup for the purpose of adding an inline-search capability. 
+This is injected into the header-util file under .right-wrapper. 
+This is not part of the overall nav so it has no height. 
+
+{% endcomment %}
+
+<div class="inlineSearchWrapper">
+<a href="#" id="searchIcon" style="display:flex;">
+  <span class="icon-fallback-text">
+    {%- assign search_icon = 'icon-ui-search' %}
+    <span class="icon icon-search" aria-hidden="true">{% include search_icon %}</span>
+  </span>
+</a>
+  
+  
+  
+<!--
+<form action="/search" method="get" class="input-group search-nav-item" role="search">
+  <div class="input-wrapper">
+    <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="input-group-field" aria-label="{{ 'general.search.placeholder' | t }}">
+  </div>
+</form>
+-->
+  
+<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+<predictive-search>
+  <form class="input-group search-nav-item" action="{{ routes.search_url }}" method="get" role="search">
+    <div class="input-wrapper">
+      <!-- <label for="Search">Search</label> -->
+      <input
+        id="Search"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.placeholder' | t }}" 
+        class="input-group-field" 
+        aria-label="{{ 'general.search.placeholder' | t }}"
+        {%- if settings.predictive_search_enabled -%}
+          role="combobox"
+          aria-expanded="false"
+          aria-owns="predictive-search-results-list"
+          aria-controls="predictive-search-results-list"
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+          autocorrect="off"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        {%- endif -%}
+      >
+      <input name="options[prefix]" type="hidden" value="last">
+
+      <div id="predictive-search" tabindex="-1"></div>
+      {%- if settings.predictive_search_enabled -%}
+        <div id="predictive-search" tabindex="-1"></div>
+      {%- endif -%}
+    </div>
+  </form>
+</predictive-search>  
+  
+  
+</div>
+
+
+
+
+{% comment %}
+
+This old code was used to include a close button.
+
+<!-- <div class="button-wrapper">
+  <span class="input-group-btn">
+    <button type="button" class="btn inlineSearchCloseButton icon-fallback-text">
+      <span class="icon icon-close" aria-hidden="true" style="width:20px;">{% include 'icon-ui-close' %}</span>
+      <span class="fallback-text">{{ 'layout.drawers.close_menu' | t }}</span>
+    </button>
+  </span>
+</div> -->
+
+{% endcomment %}
+
+
+<style>
+  .search-nav-item {
+    display: none;
+    justify-content: center;
+    flex-direction: row;    
+    margin: 13px 0px 0px -2px;
+  }
+  
+  #searchIcon path {
+  	stroke-width: 1; 
+    stroke: black;
+    fill: black;
+  }
+
+  .search-nav-item input {
+    height: 24px;
+    border-radius: 6px; 
+    font-size: 11px;
+    border: none;
+    width: 146px;
+  }
+ 
+</style>

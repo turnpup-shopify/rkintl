@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "main": {
+      "type": "showroom-product-template",
+      "settings": {
+        "pdp_dscription_font_size": "14px",
+        "tp_horizontal_divider_color": "#f6b700",
+        "tp_bottom_header_color": "#000000",
+        "tp_specification_font_size": "14px",
+        "tp_specification_font_color": "#333333",
+        "tp_bottom_header_font_size": "20px",
+        "show_vendors": false,
+        "show_savings": false,
+        "size_guide_page": "",
+        "product_quantity_enable": false,
+        "show_payment_button": false,
+        "buy_online_button_copy": "",
+        "find_a_showroom_button_copy": "Where To Buy",
+        "product_box_padding": false,
+        "variant_style": "swatches",
+        "variant_swatch_images": true,
+        "variant_swatch_shape": "circle",
+        "variant_swatch_soldout": true,
+        "enable_image_slider": true,
+        "show_dots": true,
+        "show_arrows": true,
+        "thumbnails_placement": "side--left",
+        "mobile_thumbnails_placement": "hide",
+        "enable_thumb_slider": true,
+        "product_featured_zoom_enable": true,
+        "product_featured_lightbox_enable": true,
+        "enable_video_looping": false,
+        "tabs_enable": false,
+        "tabs_auto_headings": "h2",
+        "tabs_title": "Product information",
+        "tabs_global_page_1": "",
+        "tabs_global_page_2": "",
+        "tabs_global_page_3": "",
+        "show_product_jump": false,
+        "show_share_buttons": false,
+        "product_inventory_enable": true,
+        "bottom_left_section_title": "Details",
+        "bottom_middle_section_title": "Dimensions",
+        "bottom_right_section_title": "Product Care"
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": false,
+        "product_recommendations_heading": "You may also like",
+        "product_recommendations_limit": "4"
+      }
+    },
+    "pdp-products-in-collection": {
+      "type": "pdp-products-in-collection",
+      "settings": {
+        "top_border_color": "#f4b237",
+        "margin": "0px auto 20px",
+        "title": "Shop The Collection",
+        "header_font_size": "22px",
+        "center_heading": true,
+        "button_label": "",
+        "button_link": "",
+        "collection": "",
+        "product_count_range": 4
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations",
+    "pdp-products-in-collection"
+  ]
+}

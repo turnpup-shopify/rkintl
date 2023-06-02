@@ -1,0 +1,101 @@
+<section class="page page-top" style="border: none;">
+  <div class="page_a_container">
+    <header class="content-util">
+    {% include 'breadcrumb' %} 
+    </header>
+  </div>
+</section>
+
+<div class="page_a_container">    
+  <section class="page">  
+      <div class="prop_65_header" style="padding: 0px 20px;">
+        <p class="page_a_section_title">{{ section.settings.prop_65_header }}</p>
+        <p class="page_a_section_description"> {{ section.settings.prop_65_text }}  </p>
+      </div>   
+  </section> 
+</div>
+
+{% schema %}
+  { 
+    "name": "prop65",
+    "class": "prop65-section",
+    "settings": [
+      { 
+        "type": "text",
+        "id": "prop_65_header",
+        "label": "Prop 65 Warning Header",
+        "default": "Prop 65 Warning"
+      }, 
+      {
+        "type": "text",
+        "id": "prop_65_text",
+        "label": "Prop 65 Warning Text"
+      },
+      {
+        "type": "text",
+        "id": "header_font_size",
+        "label": "Header Font Size",
+        "default": "20px"
+      },
+      { 
+        "type": "text",
+        "id": "header_font_weight",
+        "label": "Header Font Weight (e.g. 100-800)",
+        "default": "500"
+      },
+      {
+        "type": "color",
+        "id": "header_font_color",
+        "label": "Header Font Color",
+        "default": "#000000"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+  .page_a_section_title {
+    font-weight: {{ section.settings.header_font_weight }};
+	font-size: {{ section.settings.header_font_size }};
+    color: {{ section.settings.header_font_color }};
+  }
+  .tp_column {
+   	text-align: center;
+    margin: 0 auto;
+  }
+  .tp_column p {
+    font-size: 24px;
+    font-family: 'Poppins';
+    font-weight: 400;
+    margin: 0px;
+  }
+  .tp_row {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;  
+    width: 100%;
+  }
+  .tp_column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .prop_65_header {  
+      margin-top: 60px;      
+      flex: none;
+      display: block;                     
+    }
+    .tp_row {   
+      margin-top: 0px;      
+      flex: none;
+      display: block;                     
+    }
+    .tp_column {
+      flex: none;
+      display: block; 
+    }
+  }
+</style>

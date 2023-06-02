@@ -1,0 +1,164 @@
+{% schema %}
+  {
+    "name": "What You Need",
+    "class": "page-top-section",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#939393"
+      },
+      {
+        "type": "color",
+        "id": "header_color",
+        "label": "Header Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "header_font_family",
+        "label": "Header Font Family",
+        "default": "'p22-mackinac-pro', serif"
+      },
+      {
+        "type": "text",
+        "id": "header_font_size",
+        "label": "Header Font Size",
+        "default": "22px"
+      },
+      {
+        "type": "text",
+        "id": "header_font_weight",
+        "label": "Header Font Weight",
+        "default": "500"
+      },
+      {
+        "type": "color",
+        "id": "thing_you_need_color",
+        "label": "Thing You Need Font Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "thing_you_need_font_family",
+        "label": "Header Font Family",
+        "default": "'karla'"
+      },
+      {
+        "type": "text",
+        "id": "thing_you_need_font_size",
+        "label": "Header Font Size",
+        "default": "16px"
+      },
+      {
+        "type": "text",
+        "id": "thing_you_need_font_weight",
+        "label": "Header Font Weight",
+        "default": "400"
+      },
+      {
+        "type": "text",
+        "id": "top_padding_container",
+        "label": "Top Bottom Container Padding",
+        "default": "50px 0 40px"
+      },
+      {
+        "type": "text",
+        "id": "width",
+        "label": "Width",
+        "default": "400px"
+      },
+      {
+        "type": "text",
+        "id": "image_width",
+        "label": "Image Width",
+        "default": "140px"
+      } 
+    ],
+    "presets": [
+      {
+        "name": "What You Need",
+        "category": "Manual Page"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="what_you_need">
+  <div class="what_you_need_copy_container">
+    <h4> What you need: </h4>
+    <div class="things_container">
+      <div class="thing_you_need_container">
+        <img class="thing_you_need_image" 
+          {% if page.metafields.manual-page.first-thing-you-need-image %}   
+            src="{{ page.metafields.manual-page.first-thing-you-need-image }}"
+          {% endif %} 
+        >         
+        <p class="thing_you_need">
+          {% if page.metafields.manual-page.first-thing-you-need %}
+            {{ page.metafields.manual-page.first-thing-you-need }}
+          {% endif %}
+        </p>
+      </div>
+      <div class="thing_you_need_container">
+        <img class="thing_you_need_image" 
+          {% if page.metafields.manual-page.second-thing-you-need-image %}   
+            src="{{ page.metafields.manual-page.second-thing-you-need-image }}"
+          {% endif %} 
+        >         
+        <p class="thing_you_need">
+          {% if page.metafields.manual-page.second-thing-you-need %}
+            {{ page.metafields.manual-page.second-thing-you-need }}
+          {% endif %}
+        </p>
+      </div>
+      <div class="thing_you_need_container">
+        <img class="thing_you_need_image" 
+          {% if page.metafields.manual-page.third-thing-you-need-image %}   
+            src="{{ page.metafields.manual-page.third-thing-you-need-image }}"
+          {% endif %} 
+        >         
+        <p class="thing_you_need">
+          {% if page.metafields.manual-page.third-thing-you-need %}
+            {{ page.metafields.manual-page.third-thing-you-need }}
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style> 
+  .what_you_need {
+    background-color: {{ section.settings.background_color }};
+  }  
+  .what_you_need_copy_container {
+    width: {{ section.settings.width }};
+    margin: 0 auto;
+    padding: {{ section.settings.top_padding_container }};
+  }
+  .things_container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .thing_you_need {
+    color: {{ section.settings.thing_you_need_color }};
+    font-size: {{ section.settings.thing_you_need_font_size }};
+    font-weight: {{ section.settings.thing_you_need_font_weight }}; 
+    font-family: {{ section.settings.thing_you_need_font_family }}; 
+    text-align: center;
+  }
+  .thing_you_need_image {
+   width: 140px; 
+  }
+  .what_you_need_copy_container h4 {
+    color: {{ section.settings.header_color }};
+    font-size: {{ section.settings.header_font_size }};
+    font-weight: {{ section.settings.header_font_weight }};
+    font-family: {{ section.settings.header_font_family }};
+    margin-bottom: 20px;
+  }  
+</style>
+

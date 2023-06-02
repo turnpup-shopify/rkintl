@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "16449834957cd2b47d": {
+      "type": "slider",
+      "settings": {
+        "background_color": "#939393",
+        "wave_bottom_color": "#ffffff",
+        "spacing_top": "90px",
+        "spacing_bottom": "50px",
+        "mobile_spacing_top": "20px",
+        "mobile_spacing_bottom": "50px",
+        "header_font_size": "20px",
+        "header_font_color": "#000000",
+        "header_font_weight": "500",
+        "page_description_font_color": "#000000",
+        "padding_between_descriptions": "#000000",
+        "description_two_color": "#000000"
+      }
+    }
+  },
+  "order": [
+    "16449834957cd2b47d"
+  ]
+}

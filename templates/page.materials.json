@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "1641264427e1493256": {
+      "type": "page-top",
+      "settings": {
+        "background_color": "#3c64b1",
+        "wave_bottom_color": "#ffffff",
+        "spacing_top": "90px",
+        "spacing_bottom": "50px",
+        "mobile_spacing_top": "20px",
+        "mobile_spacing_bottom": "50px",
+        "header_font_size": "30px",
+        "header_font_color": "#ffffff",
+        "header_font_weight": "600",
+        "page_description_font_color": "#ffffff",
+        "padding_between_descriptions": "0px",
+        "description_two_color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "materials",
+      "settings": {
+        "header_font_size": "30px",
+        "header_font_weight": "700",
+        "header_font_color": "#f6b700",
+        "first_header_text": "Catalog",
+        "image_catalogue": "shopify:\/\/shop_images\/cover_v1_8ca951e2-c910-463a-9f95-e76df96d8567.png",
+        "link_catalogue": "https:\/\/cdn.shopify.com\/s\/files\/1\/0449\/1667\/0615\/files\/Hapny_2022_Product_Catalog.pdf?v=1660758222",
+        "label_catalogue": "Download Product Catalog",
+        "second_header_text": "Price List",
+        "image_pricelist": "shopify:\/\/shop_images\/Hapny_Price_List_11.30.jpg",
+        "link_pricelist": "https:\/\/cdn.shopify.com\/s\/files\/1\/0449\/1667\/0615\/files\/Hapny_05.22_Price_List.pdf?v=1653058497",
+        "label_pricelist": "Download Price List",
+        "materials_link_color": "#3c64b1",
+        "materials_link_font_size": 13
+      }
+    }
+  },
+  "order": [
+    "1641264427e1493256",
+    "main"
+  ]
+}

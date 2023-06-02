@@ -1,0 +1,233 @@
+{% schema %}
+    { 
+      "name": "custom-playground",
+      "class": "custom-playground",
+      "settings": [
+        { 
+          "type": "text",
+          "id": "prop_65_header",
+          "label": "Prop 65 Warning Header",
+          "default": "Prop 65 Warning"
+        }, 
+        {
+          "type": "text",
+          "id": "prop_65_text",
+          "label": "Prop 65 Warning Text"
+        },
+        {
+          "type": "text",
+          "id": "header_font_size",
+          "label": "Header Font Size",
+          "default": "20px"
+        },
+        { 
+          "type": "text",
+          "id": "header_font_weight",
+          "label": "Header Font Weight (e.g. 100-800)",
+          "default": "500"
+        }
+      ],
+      "blocks": [
+      {
+        "name": "CAROUSEL ONE",
+        "type": "carousel_one",
+        "settings": [          
+            {
+                "type": "text",
+                "id": "grid_name",
+                "label": "Grid Name"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_grid_1",
+                "label": "Image 1"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_grid_2",
+                "label": "Image 2"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_grid_3",
+                "label": "Image 3"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_grid_4",
+                "label": "Image 4"
+            }
+        ]
+      }],
+      "presets": [{
+        "name": "Playground",
+        "category": "Text"
+      }]
+    }
+  {% endschema %}
+  
+  <div class="page_a_container">    
+    <section class="playground-page">  
+        <div class="playground_header_module">
+          <p class="playground_header_title">{{ section.settings.prop_65_header }}</p>
+          {% if section.settings.prop_65_text != blank %} <p class="playground_header_description"> {{ section.settings.prop_65_text }}  </p> {% endif %}
+        </div>   
+    </section> 
+  </div>
+
+<div class="theplayground">
+    <div style="display: flex; justify-content: center; padding: 20px 0px;">
+        <button class="blob" id="blob-one" style="color: white;">SEE VIDEO NOW</button>
+    </div>
+
+    <div id="video-block" style="display: flex; justify-content: center; margin: 20px 0px; column-gap: 30px; flex-wrap: wrap;">
+        <video width="auto" height="750px" autoplay="" controls="" muted="" loop="" preload="metadata" class="ugc">
+            <source src="https://cdn.shopify.com/s/files/1/0449/1667/0615/files/dancing_diamond.mp4?v=1650775118" type="video/mp4">
+        </video>
+        <video width="auto" height="750px" autoplay="" controls="" muted="" loop="" preload="metadata" class="ugc">
+            <source src="https://cdn.shopify.com/s/files/1/0449/1667/0615/files/twinkle_3.mp4?v=1651237139" type="video/mp4">
+        </video>
+        <video width="auto" height="750px" autoplay="" controls="" muted="" loop="" preload="metadata" class="ugc">
+            <source src="https://cdn.shopify.com/s/files/1/0449/1667/0615/files/attempt_two_mobile.mp4?v=1650855948" type="video/mp4">
+        </video>
+    </div>
+</div>
+
+<div class="theplayground" style="padding-top: 2rem;">
+    <div class="homes_choices" style="display: flex; justify-content: center; column-gap: 30px;">
+        <button data-tag="bathrooms" style="color: var(--hapny-yellow);">Bathrooms</button>
+        <button data-tag="kitchens" style="color: var(--hapny-blue);">Kitchens</button>
+        <button data-tag="dressers" style="color: var(--hapny-red);">Dressers</button>        
+    </div>
+    <div class="grid_title" id="replace"> 
+    </div>
+    <div>
+        {% for block in section.blocks %}
+            <div class="gallery_row" id="{{ block.settings.grid_name }}">
+                <img src="{{ block.settings.image_grid_1 | img_url: 'large' }}">
+                <img src="{{ block.settings.image_grid_2 | img_url: 'large' }}">
+                <img src="{{ block.settings.image_grid_3 | img_url: 'large' }}">
+                <img src="{{ block.settings.image_grid_4 | img_url: 'large' }}">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+  
+  <style>
+    .grid_title {
+        font-family: p22-mackinac-pro, serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: black;
+        margin-left: 2rem;
+      }
+    .gallery_row.sho {
+        display: flex;
+    }
+    .gallery_row {
+        display: none;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .gallery_row img {
+        max-width: 100%;
+        height: 100%;
+        width: 23%;
+        border: 0;
+        object-fit: fill;
+    }
+    .homes_choices button {
+        font-size: 14px;
+        padding: 10px 15px;
+        letter-spacing: .02em;
+        border: 1px solid #000;
+        border-radius: 40px;
+        text-transform: UPPERCASE;
+        text-decoration: none;
+        background-color: white;
+        transform: scale(1);
+        margin: 0 0 1rem;
+    }
+    .homes_choices button:hover {        
+        transform: scale(1.1);
+        transition: transform 0.2s linear;
+    }
+    .playground_header_module {
+        text-align: left;    
+        padding: 2rem 0;  
+        color: #3C64B1;  
+    }
+    .playground_header_title {
+      font-weight: {{ section.settings.header_font_weight }};
+      font-size: {{ section.settings.header_font_size }};
+      margin: 0;
+    }
+    .playground_header_description {
+        font-weight: 300;
+        font-size: 1rem;
+        margin: 0;
+    }
+    .theplayground {
+        width: 100%;
+        height: 65vH;
+        background-image: url('https://cdn.shopify.com/s/files/1/0449/1667/0615/files/tryythis.jpg?v=1650775798');
+        background-size:     cover;                      /* <------ */
+        background-repeat:   no-repeat;
+        background-position: center center;  
+    }
+    #video-block {
+        max-height: 0px;
+        overflow: hidden;
+    }      
+    #video-block.sho {
+        max-height: 215px;
+        transition: max-height 0.4s linear;
+    }
+    .ugc {
+        margin: 0;
+        max-height: 215px;
+        padding: 5px;
+        background: #3C64B1;
+        border: 1px solid transparent;
+        border-radius: 40px;
+        max-width: 100%;
+        animation: morph 4s linear infinite; 
+    }
+    .blob {
+        cursor: url('https://cdn.shopify.com/s/files/1/0449/1667/0615/files/hapny_cursor.png?v=1650855396'), auto;
+    }
+    @keyframes morph {
+        0%, 100% {
+            border-radius: 
+                42% 56% 72% 28% / 42% 42% 56% 48%;
+        }
+        33% {
+            border-radius: 
+                72% 28% 48% 48% / 28% 28% 72% 72%;
+        }
+        66% {
+            border-radius: 
+            100% 56% 56% 100% / 100% 100% 56% 56%;
+        }
+    }
+  </style>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelector("#blob-one").addEventListener("click", () => {
+            document.querySelector("#video-block").classList.add("sho");
+        })
+        document.querySelectorAll('.homes_choices button').forEach(function(el) {
+            el.addEventListener("click", () => {
+                console.log("clicked button" + el);
+                let result = el.getAttribute("data-tag");
+                console.log(result);
+                document.querySelector("#replace").innerHTML = result;
+                document.querySelectorAll(".gallery_row").forEach((ello) => {
+                    console.log(ello.classList)
+                    ello.classList.remove("sho"); 
+                });
+                document.querySelector("#"+result).classList.add("sho");
+            })
+        })
+    });
+</script>

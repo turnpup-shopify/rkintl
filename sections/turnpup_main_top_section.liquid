@@ -1,0 +1,459 @@
+<div class="tpmaintop_home_top module">
+  <div class="tpmaintop_home_top_wrapper">
+    {% if section.settings.link != blank %}
+      <a href="{{ section.settings.link }}" class="slide__item-image">
+    {% else %}
+      <div class="slide__item-image">
+    {% endif %}
+    <div class="slide__item-image-contain desktop">
+      {% if section.settings.image != blank %}
+        {% assign image = section.settings.image %}
+        {% assign image_widths = '400,600,800,900,1000,1200,1500,1800,2000,2400' %}
+        {% include 'theme-rias' %}
+        <img class="slide__image slide__image-desktop lazyload"
+          src="{{ image | img_url: '2400x' }}"   
+          data-src="{{ image_url_pattern }}"
+          data-widths="[{{ image_widths }}]"
+          data-aspectratio="{{ image.aspect_ratio }}"
+          data-sizes="auto"
+          alt="{{ image.alt | escape }}">
+        {% if forloop.first %}
+        <noscript>
+          <img src="{{ image | img_url: '5000x' }}" alt="{{ image.alt | escape }}">
+        </noscript>
+        {% endif %} 
+        {% assign height = image.height | plus: 0 %}
+        {% assign width = image.width | plus: 0 %}
+        {% assign padding_ratio = height | times: 100 | divided_by: width %}
+      {% else %}
+        {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        {% assign padding_ratio = 40 %}
+      {% endif %}
+    </div>
+    <div class="slide__item-image-contain mobile">
+      {% if section.settings.mobile_image != blank %}
+        {% assign image = section.settings.mobile_image %}
+        {% assign image_widths = '400,600,800,1000,1200' %}
+        {% include 'theme-rias' %}
+        <img class="slide__image slide__image-mobile lazyload"
+          src="{{ image | img_url: '2400x' }}"   
+          data-src="{{ image_url_pattern }}"
+          data-widths="[{{ image_widths }}]"
+          data-aspectratio="{{ image.aspect_ratio }}"
+          data-sizes="auto"
+          alt="{{ image.alt | escape }}">
+        {% if forloop.first %}
+        <noscript>
+          <img src="{{ image | img_url: '5000x' }}" alt="{{ image.alt | escape }}">
+        </noscript>
+        {% endif %}
+        {% assign height = image.height | plus: 0 %}
+        {% assign width = image.width | plus: 0 %}
+        {% assign padding_ratio = height | times: 100 | divided_by: width %}
+      {% else %}
+        {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        {% assign padding_ratio = 40 %}
+      {% endif %}
+    </div>
+  </div>
+  </a>
+    <div class="tpmaintop_just_image_text_wrapper">
+      <div>
+        {% if section.settings.label != blank %}
+        <p class="tpmaintop_image_only_label"> {{ section.settings.label }} </p> 
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <div class="content-contain">
+            <h2 class="tpmaintop_home_top_title">{{ section.settings.title | escape }}</h2>
+          </div>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <div class="rte content-contain" id="tpmaintop_text" {% if section.settings.turnpup_text_size != blank %}style="font-family:{{ section.settings.label_font_family }};font-size:{{section.settings.turnpup_text_size}};color:{{section.settings.turnpup_text_color}}"{% endif %}>
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+        {% if section.settings.button_link != blank and section.settings.button_label != blank %}
+          <a style="position:relative" href="{{ section.settings.button_link }}" class="tpmaintop_button_home_top">{{ section.settings.button_label | escape }}</a>
+<!--           <div class="sketch_circle" style="position:relative; top: -90px; z-index: 1;width: 241px;height: 97px;">
+            <svg viewBox="0 0 235 133" fill="none" stroke="#f9bfac" stroke-miterlimit="10" stroke-width="3px" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M184.35 24.79a201.56 201.56 0 00-105.64 7.34C56.83 39.88 36.25 52 23.87 69.48c-4.26 6-7.55 13.11-5.84 20 2.61 10.55 15.59 16.45 27.61 19.19 44.07 10 91.12-3.36 130.25-23.61 16.53-8.55 46.62-24 40.81-41.16-4.28-12.67-39.81-11.52-56.16-8.43"></path>
+            </svg>          
+          </div> -->
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  </div>
+<style>
+  .tpmaintop_image_only_label {
+    color: {{ section.settings.label_color }};
+    font-size: {{ section.settings.label_font_size }}px;
+    font-family: {{ section.settings.label_font_family }};
+    font-weight: {{ section.settings.label_font_weight }};
+  }
+  .slide__image {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+  } 
+  .tpmaintop_home_top {
+    border-bottom: 1px solid {{section.settings.turnpup_bottom_border_color}};
+/*     overflow-x: hidden; */
+  }
+  .tpmaintop_home_top_wrapper {
+	position: relative;
+/*     margin-top:{{section.settings.turnpup_margin_top}}; */
+    height: {{section.settings.height}};
+  } 
+  .tpmaintop_just_image_text_wrapper {
+    position: absolute;
+    transform: translateY(-{{ section.settings.turnpupmaintop_margin_topbottom_container }});
+    top: calc( {{ section.settings.turnpupmaintop_margin_topbottom_container }} - {{ section.settings.turnpup_margin_top }} / 2);
+    padding: 0px {{ section.settings.turnpup_margin_left_right }};
+    z-index: 809;
+    width: {{section.settings.turnpup_text_width}};;
+  }
+  .tpmaintop-content-wrapper {
+   	vertical-align: middle;
+    height: auto;
+  }
+  .slide__item-image {
+	height: 100%;
+    width: 100%;
+  }
+  .slide__item-image-contain.desktop {
+	height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  a.tpmaintop_button_home_top {
+    color: {{ section.settings.color_text }};
+    text-align: center;
+    font-size: {{ section.settings.turnpup_button_size }};
+    padding: {{ section.settings.turnpup_button_padding_height }}  {{ section.settings.turnpup_button_padding_width }};
+    font-family: {{ section.settings.label_font_family }};
+    font-weight: {{ section.settings.turnpup_button_font_weight }};
+    border-radius: {{ section.settings.turnpup_border_radius }};
+    border-color: {{ section.settings.color_accent }};
+    border-width: {{ section.settings.turnpup_border_width }};
+    background-color: {{ section.settings.button_background_color }};
+  }
+  a.tpmaintop_button_home_top:hover,
+  a.tmaintop_button_home_top:focus {
+    color: {{ section.settings.turnpup_hover_txt_color }};
+    border-color: {{ section.settings.hover_color_accent }}; 
+    background-color: {{ section.settings.button_hover_background_color }};
+  }
+  .tpmaintop_home_top_title {
+    font-size: {{ section.settings.turnpup_title_size }};
+    font-family: {{ section.settings.label_font_family_header }};
+    color:{{section.settings.turnpup_title_color}};
+    margin-bottom: 0.5em;
+  }
+  @media only screen and (max-width: 700px) {
+     .tpmaintop_home_top_wrapper {
+        position: relative;
+        height: {{section.settings.height}};
+        margin-top: 0px;
+      } 
+    
+    .tpmaintop-just-image-text-wrapper {
+      display: block;
+      padding: 0px {{ section.settings.turnpup_mobile_margin_left_right }};
+      margin-top: 20px;
+      width: 90%
+    }
+    .content-contain.tpmaintop_home_top_title {
+      font-size: {{ section.settings.turnpup_mobile_title_size }};
+    }
+    .tpmaintop_home_top {
+      height: 100%;      
+    }    
+    .tpmaintop_just_image_text_wrapper {
+      top: calc( {{ section.settings.tp_main_top_margin_topbottom_container }} + {{ section.settings.turnpup_margin_top }} / 2);
+      width: {{ section.settings.turnpup_mobile_text_width }};
+    }
+    .slide__item-image-contain.desktop {
+      height: 0%;
+      display: none;
+      margin-top: 0px;
+    } 
+    .slide__item-image-contain.mobile {
+      height: 100%;
+      width: 100%;
+      margin: 0 auto
+    } 
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "TP:main top section",
+  "class": "section_tp_main_top_section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "General",
+      "info": "."
+    },
+    {
+      "type": "text",
+      "id": "turnpupmaintop_margin_topbottom_container",
+      "label": "Text margin top of container",
+      "default": "50%"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Image link"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "color",
+      "id": "turnpup_bottom_border_color",
+      "label": "Bottom Border Color",
+      "default": "#F4B237"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_margin_top",
+      "label": "Margin Top",
+      "default": "0px"
+    },
+    {
+      "type": "text",
+      "id": "height",
+      "label": "Height of Section",
+      "default": "80vH"
+    }, 
+    {
+      "type": "text",
+      "id": "mobile_height",
+      "label": "Mobile: Height of Section",
+      "default": "50vH"
+    }, 
+    {
+      "type": "header",
+      "content": "Top Label",
+      "info": "."
+    }, 
+    {
+      "type": "text",
+      "id": "turnpup_margin_left_right",
+      "label": "Text margin left/right",
+      "default": "10%"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_mobile_margin_left_right",
+      "label": "Mobile: Text margin left/right",
+      "default": "10%"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_text_width",
+      "label": "Text Container Width",
+      "default": "400px"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_mobile_text_width",
+      "label": "Mobile: Text Container Width",
+      "default": "400px"
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Top Label (turnpup_image_only)",
+      "default": "Cabinet Hardware"
+    }, 
+    {
+      "type": "text",
+      "id": "label_font_family_header",
+      "label": "Font Family Header",
+      "default": "'Poppins', Light"
+    }, 
+    {
+      "type": "text",
+      "id": "label_font_family",
+      "label": "Font Family Description",
+      "default": "'Poppins', Light"
+    }, 
+    {
+      "type": "range",
+      "id": "label_font_weight",
+      "min": 100,
+      "max": 900,
+      "step": 100,
+      "label": "Font Weight",
+      "default": 400
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Color",
+      "default": "#3C64B1"
+    }, 
+    {
+      "type": "header",
+      "content": "Hero Header",
+      "info": "."
+    }, 
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Custom content"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_title_size",
+      "label": "Heading Font Size (e.g. 40px)",
+      "default": "22px"
+    },
+	{
+      "type": "text",
+      "id": "turnpup_mobile_title_size",
+      "label": "Mobile: Heading Font Size (e.g. 24px)",
+      "default": "24px"
+    },
+    {
+      "type": "color",
+      "id": "turnpup_title_color",
+      "label": "Title Color",
+      "default": "#3C64B1"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+    },
+	{
+      "type": "text",
+      "id": "turnpup_text_size",
+      "label": "Text Font Size (e.g. 18px)",
+      "default": "18px"
+    },
+    {
+      "type": "color",
+      "id": "turnpup_text_color",
+      "label": "Text Color",
+      "default": "#373F41"
+    },
+      {
+      "type": "header",
+      "content": "Button",
+      "info": "."
+      }, 
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "text",
+        "id": "turnpup_button_size",
+        "label": "Button Font Size",
+        "default": "16px"
+      },
+      {
+        "type": "text",
+        "id": "turnpup_button_padding_height",
+        "label": "Button Padding Size",
+        "default": "14px"
+      },
+      {
+        "type": "text",
+        "id": "turnpup_button_padding_width",
+        "label": "Button Padding Size",
+        "default": "18px"
+      },
+      {
+        "type": "text",
+        "id": "turnpup_border_radius",
+        "label": "Button Border Radius",
+        "default": "3px"
+      },
+      {
+        "type": "text",
+        "id": "turnpup_border_width",
+        "label": "Button Border Width",
+        "default": "0px"
+      },
+      {
+        "type": "text",
+        "id": "turnpup_button_width",
+        "label": "Button Width",
+        "default": "100%" 
+      },
+      {
+        "type": "text",
+        "id": "turnpup_button_font_weight",
+        "label": "Button Font Weight",
+        "default": "700" 
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "button_background_color",
+        "label": "Background",
+        "default": "#F6B700"
+      },
+      {
+        "type": "color",
+        "id": "button_hover_background_color",
+        "label": "Hover Background",
+        "default": "#F2DA94"
+      },
+      {
+        "type": "color",
+        "id": "hover_color_accent",
+        "label": "Hover Accent",
+        "default": "rgba(0,0,0,0)"
+      },
+      {
+        "type": "color",
+        "id": "turnpup_hover_txt_color",
+        "label": "Hover Text Color",
+        "default": "#FFFFFF"
+      }
+  ],
+  "presets": [
+    {
+      "name": "TP:main top section",
+      "category": "Advanced Layout"
+    }
+  ]
+}
+{% endschema %}

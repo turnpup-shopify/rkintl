@@ -1,0 +1,185 @@
+{% schema %}
+  {
+    "name": "materials",
+    "class": "materials-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "header_font_size",
+        "label": "Header Font Size",
+        "default": "20px"
+      },
+      {
+        "type": "text",
+        "id": "header_font_weight",
+        "label": "Header Font Weight (e.g. 100-800)",
+        "default": "500"
+      },
+      {
+        "type": "color",
+        "id": "header_font_color",
+        "label": "Header Font Color",
+        "default": "#000000"
+      },
+      {
+        "type": "text",
+        "id": "first_header_text",
+        "label": "First Header Text",
+        "default": "Catalog"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_catalogue",
+        "label": "Catalogue image"
+      },
+      {
+        "type": "url",
+        "id": "link_catalogue",
+        "label": "Link Catalogue",
+        "default": "/"
+      },
+      {
+        "type": "text",
+        "id": "label_catalogue",
+        "label": "Label for Catalog Download",
+        "default": "Download Catalog Here"
+      },
+      {
+        "type": "text",
+        "id": "second_header_text",
+        "label": "Second Header Text",
+        "default": "Price List"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_pricelist",
+        "label": "Price List image"
+      },
+      {
+        "type": "url",
+        "id": "link_pricelist",
+        "label": "Link Price List",
+        "default": "/"
+      },
+      {
+        "type": "text",
+        "id": "label_pricelist",
+        "label": "Label for Pricelist Download",
+        "default": "Download Pricelist Here"
+      },
+      {
+        "type": "header",
+        "content": "Link Styling"
+      },
+      {
+        "type": "color",
+        "id": "materials_link_color",
+        "label": "Link Color",
+        "default": "#002D72"
+      }, 
+      {
+        "type": "range",
+        "id": "materials_link_font_size",
+        "min": 8,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size",
+        "default": 16 
+      }
+    ]
+  } 
+{% endschema %}
+
+<div class="page_a_container">
+  <section class="page">
+      <div class="tp_row">
+        <div class="tp_column">
+          <div class="catalogue"> 
+            <p class="page_a_subsection_title"> {{section.settings.first_header_text}} </p>
+            <a href="{{ section.settings.link_catalogue }}" target="_blank">
+              <img src="{{ section.settings.image_catalogue | img_url: '1000x' }}">
+            </a>
+          </div>
+          <a class="material_links" target="_blank" href="{{ section.settings.link_catalogue }}">
+            {{ section.settings.label_catalogue }}
+          </a>
+        </div>
+        <div class="tp_column">
+          <div class="pricelist">                    
+            <p class="page_a_subsection_title"> {{section.settings.second_header_text}} </p>
+            <a href="{{ section.settings.link_pricelist }}" target="_blank">
+              <img src="{{ section.settings.image_pricelist  | img_url: '1000x' }}">
+            </a>
+          </div>
+          <a class="material_links" target="_blank" href="{{ section.settings.link_pricelist }}">
+            {{ section.settings.label_pricelist }}
+          </a>
+        </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .material_links {
+    font-size: {{ section.settings.materials_link_font_size  | append:'px' }};
+    color: {{ section.settings.materials_link_color }};
+    text-decoration: none;
+  }
+  .pricelist img, .catalogue img {
+	border: 1px solid black;
+	width: 300px; 
+  } 
+  .pricelist img {
+	text-align: left; 
+  }
+  .tp_column {
+   	text-align: center;
+    margin: 0 auto;
+    padding: 0px 10px;
+  }
+  .page_a_subsection_title {
+    font-weight: {{ section.settings.header_font_weight }};
+	font-size: {{ section.settings.header_font_size }};
+    color: {{ section.settings.header_font_color }};
+    font-family: 'p22-mackinac-pro', serif;
+  }
+  .tp_row {
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    width: 100%;
+  }
+  .tp_column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+  .page-header {
+	display: none;                   
+  }
+  @media only screen and (max-width: 700px) {
+    .tp_wrapper {
+      width: 90%; 
+      margin: 0 auto;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .tp_row {      
+      flex: none;
+      display: block;                     
+    }
+    .tp_column {
+      flex: none;
+      display: block; 
+    }
+    .tp_column:first-of-type { 
+      margin-bottom: 20px;                      
+    }
+  }
+</style>
+
+{% javascript %}
+{% endjavascript %}
+

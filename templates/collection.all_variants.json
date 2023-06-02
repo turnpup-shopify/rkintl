@@ -1,0 +1,83 @@
+{
+    "sections": {
+      "main": {
+        "type": "turnpup_collection_header_wide",
+        "settings": {
+          "title": "All Products",
+          "description": "Shop our selection of cabinet hardware and appliance pulls across a variety of finishes, shapes, and sizes for all your space and furniture refresh needs.",
+          "is_image_on_right": true,
+          "text_alignment": "left",
+          "turnpup_top_container_height": "80vH",
+          "turnpup_mobile_top_container_height": "65H",
+          "turnpup_title_size": "30px",
+          "turnpup_mobile_title_size": "26px",
+          "turnpup_title_color": "#ffffff",
+          "turnpup_text_size": "16px",
+          "turnpup_mobile_text_size": "16px",
+          "turnpup_text_color": "#ffffff",
+          "turnpup_note_text_size": "16px",
+          "turnpup_mobile_note_text_size": "16px",
+          "turnpup_note_text_color": "#f6b700",
+          "turnpup_note_text_weight": "700",
+          "turnpup_margin_left": "10%",
+          "turnpup_margin_right": "10%",
+          "turnpup_margin_top": "16%",
+          "turnpup_margin_bottom": "10%",
+          "turnpup_header_background": "rgba(0,0,0,0)",
+          "turnpup_text_background": "#3c64b1",
+          "image": "shopify:\/\/shop_images\/ShopAll_1.jpg",
+          "link": "",
+          "full_width": false,
+          "turnpup_half_width": true,
+          "turnpup_image_background_color": "#ffffff",
+          "turnpup_image_padding": "0px",
+          "button_label": "",
+          "turnpup_button_size": "16x",
+          "button_link": "",
+          "color_text": "#ffffff",
+          "color_accent": "#f6b700",
+          "turnpup_hover_txt_color": "#f6b700",
+          "turnpup_hover_background_color": "#ffffff",
+          "turnpup_bottom_border_color": "rgba(0,0,0,0)"
+        }
+      },
+      "collection-list-variants": {
+        "type": "collection-list-variants",
+        "blocks": {
+          "15a08298-6797-46b8-928a-425ffac59982": {
+            "type": "tags",
+            "settings": {
+              "title": "Shop by",
+              "tag_style": "menu",
+              "tag_grouping": true
+            }
+          }
+        },
+        "block_order": [
+          "15a08298-6797-46b8-928a-425ffac59982"
+        ],
+        "settings": {
+          "products_per_page_range": 48,
+          "image_placement": "hidden",
+          "enable_filtering_2": false,
+          "enable_sorting_2": false,
+          "collapse_on_larger_devices_2": false,
+          "sort_enable": false,
+          "sort_featured_enable": false,
+          "sort_best_selling_enable": false,
+          "sort_alphabetical_enable": false,
+          "sort_price_enable": false,
+          "sort_date_enable": false,
+          "button_border_color": "#f6b700",
+          "button_border_width": "2px",
+          "layout_enable": false,
+          "turnpup_margin_leftright": "5%"
+        }
+      }
+    },
+    "order": [
+      "main",
+      "collection-list-variants"
+    ]
+  }
+  

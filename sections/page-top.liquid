@@ -1,0 +1,174 @@
+{% schema %}
+  {
+    "name": "Page Top Section",
+    "class": "page-top-section",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#939393"
+      },
+      {
+        "type": "color",
+        "id": "wave_bottom_color",
+        "label": "Wave Bottom Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "spacing_top",
+        "label": "Spacing Top",
+        "default": "90px"
+      },
+      {
+        "type": "text",
+        "id": "spacing_bottom",
+        "label": "Spacing Bottom",
+        "default": "50px"
+      },
+      {
+        "type": "text",
+        "id": "mobile_spacing_top",
+        "label": "Mobile: Spacing Top",
+        "default": "20px"
+      },
+      {
+        "type": "text",
+        "id": "mobile_spacing_bottom",
+        "label": "Mobile: Spacing Bottom",
+        "default": "50px"
+      },
+      {
+        "type": "text",
+        "id": "header_font_size",
+        "label": "Header Font Size",
+        "default": "20px"
+      },
+      {
+        "type": "color",
+        "id": "header_font_color",
+        "label": "Header Font Color",
+        "default": "#000000"
+      },
+      {
+        "type": "text",
+        "id": "header_font_weight",
+        "label": "Header Font Weight (e.g. 100-800)",
+        "default": "500"
+      },
+      {
+        "type": "color",
+        "id": "page_description_font_color",
+        "label": "Page Description Font Color",
+        "default": "#000000"
+      },
+      {
+        "type": "text",
+        "id": "padding_between_descriptions",
+        "label": "Padding Between Descriptions",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "description_two_color",
+        "label": "Description Two Color",
+        "default": "#000000"
+      }      
+    ],
+    "presets": [
+      {
+        "name": "Page Top",
+        "category": "Advanced layout"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="page page-top" style="border: none;">
+</section>
+<div class="page_a_container">
+  <p class="page_a_section_title">
+    {% if page.metafields.page.header %}
+      {{ page.metafields.page.header }}
+    {% endif %}
+  </p>
+  <p class="page_a_section_description">
+    {% if page.metafields.page.description_one %}
+      {{ page.metafields.page.description_one }}
+    {% endif %}
+  </p>
+  <p class="page_a_section_description" style="color:{{section.settings.description_two_color}}">
+    {% if page.metafields.page.description_two %}
+      {{ page.metafields.page.description_two }}
+    {% endif %}
+  </p>
+</div>
+
+<div>
+  {% include 'wave-divider.svg' %}
+</div>
+    
+<style>  
+  .page.page-top {
+    background-color: {{section.settings.background_color}};
+  }
+  
+  .shopify-section.page-top-section {
+    background-color: {{section.settings.background_color}};
+  }
+  
+  .wave-divider path {
+    fill: {{ section.settings.wave_bottom_color }};
+  }
+  
+  .page-top-section .page_a_container {
+    margin-top: -40px;
+    padding-top: {{ section.settings.spacing_top }};
+    margin-bottom: {{section.settings.spacing_bottom}};
+    background-color: {{section.settings.background_color}};
+  }
+  
+  .page-top-section  .page_a_container .page_a_section_description {
+    margin-bottom: {{section.settings.padding_between_descriptions}};
+  }
+  
+  body {
+   background-color:#FFF;
+  }
+  
+  
+  .page-header,
+  .content-util {
+   display:none;
+  }
+  
+  .page_a_section_title {
+    font-weight: {{ section.settings.header_font_weight }};
+	font-size: {{ section.settings.header_font_size }};
+    color: {{ section.settings.header_font_color }};
+  }
+  
+  .page_a_section_description {
+    color: {{ section.settings.page_description_font_color }};
+  }
+
+
+
+  @media only screen and (max-width: 700px) {
+    .page-top-section  .page_a_container {
+      padding-top: {{ section.settings.mobile_spacing_top }};
+      margin-bottom: {{ section.settings.mobile_spacing_bottom }};
+    }
+    .page_a_section_title, .page_a_section_description {
+      text-align: left;
+    }
+    .start_flex {
+      display: block;
+    }
+  }
+
+</style>
+
+{% javascript %}
+{% endjavascript %}

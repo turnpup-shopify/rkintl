@@ -1,0 +1,332 @@
+<div class="featured-row {% unless section.settings.section_padding %}no-border{% endunless %}" data-section-id="{{ section.id }}" data-section-type="featured-row-section">
+  <div class="contain-site-width {% unless section.settings.section_padding %}no-padding{% endunless %}" style="max-width: 90%;">
+    <div class="wrapper" style="margin: {{section.settings.turnpup_container_margin_top_bottom}} 0px">
+
+      <div class="feature-row module">
+        {% capture image_grid_item %}
+          <div class="feature-row__item feature-row__image">
+            {%- assign image = section.settings.image -%}
+            {% if image != blank %}
+              <div class="card__image-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%">
+                {% assign image_widths = '295,394,590,1180' %}
+                {% include 'theme-rias' %}
+                <img class="card__image feature-row__image lazyload fade-in" style="border-radius:20px"
+                  data-src="{{ image_url_pattern }}"
+                  data-widths="[{{ image_widths }}]"
+                  data-aspectratio="{{ image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ image.alt | escape }}">
+                <noscript>
+                  <img class="card__image" src="{{ image | img_url: '590x' }}" alt="{{ image.alt | escape }}">
+                </noscript>
+              </div>
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </div>
+        {% endcapture %}
+
+        {% if section.settings.layout == 'left' %}
+          {{ image_grid_item }}
+        {% endif %}
+
+        <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+          <div class="row_split_left_margin">
+            {% if section.settings.title != blank %}
+              <h3  style="color:{{ section.settings.title_color }}">{{ section.settings.title | escape }}</h3>
+            {% endif %}
+            {% if section.settings.text != blank %}
+              <div class="rte row_split_bottom_spacing">
+                <span style="color:{{ section.settings.text_color }}">{{ section.settings.text }}</span>
+              </div>
+            {% endif %}
+            {% if section.settings.title2 != blank %}
+              <h3  style="color:{{ section.settings.title2_color }}">{{ section.settings.title2 | escape }}</h3>
+            {% endif %}
+            {% if section.settings.text2 != blank %}
+              <div class="rte row_split_bottom_spacing">
+                <span style="color:{{ section.settings.text2_color }}">{{ section.settings.text2 }}</span>
+              </div>
+            {% endif %}
+            {% if section.settings.title3 != blank %}
+              <h3  style="color:{{ section.settings.title3_color }}">{{ section.settings.title3 | escape }}</h3>
+            {% endif %}
+            {% if section.settings.text3 != blank %}
+              <div class="rte">
+                <span style="color:{{ section.settings.text3_color }}">{{ section.settings.text3 }}</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        {% if section.settings.layout == 'right' %}
+          {{ image_grid_item }}
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .featured-row {
+    {% assign float_opacity = section.settings.background_opacity | plus: 0 %}
+    background-color: {{ section.settings.background_color | color_modify: 'alpha', float_opacity }}; 
+    border-bottom: 1px solid {{ section.settings.turnpup_bottom_border_color }};
+  }
+  .feature-row__text {
+    text-align: {{ section.settings.text_align }}; 
+  }
+  .feature-row__text .row_split_left_margin h3 {
+    font-size: {{ section.settings.turnpup_header_font_size }};
+  }
+  .feature-row__text .row_split_left_margin .rte {
+    font-size: {{ section.settings.turnpup_description_font_size }};
+  }
+  .row_split_left_margin {
+    margin-left: {{ section.settings.text_margin_left }};
+    max-width: {{ section.settings.turnpup_text_container_width }};
+  }
+  .row_split_bottom_spacing {
+    margin: 0 0 {{ section.settings.text_margin_up_and_down }} 0;
+  }
+  @media only screen and (max-width: 700px) {
+    .feature-row__text {
+      text-align: {{ section.settings.mobile_text_align }}; 
+    }
+    .feature-row__text .row_split_left_margin h3 {
+      font-size: {{ section.settings.turnpup_mobile_header_font_size }};
+    }
+    .feature-row__text .row_split_left_margin .rte {
+      font-size: {{ section.settings.turnpup_mobile_description_font_size }};
+    }
+    .row_split_left_margin {
+      margin-left: 0;
+      margin-top: calc({{ section.settings.text_margin_up_and_down }} - .9375em);
+      max-width: 100%;
+    }
+    .row_split_bottom_spacing {
+      margin: 0 0 30px 0;
+    }
+  }
+  
+</style>
+{% schema %}
+{
+  "name": "Homepage ftr row split",
+  "class": "feature-row-split",
+  "settings": [ 
+    {
+      "type": "color",
+      "id": "turnpup_bottom_border_color",
+      "label": "Bottom Border Color",
+      "default": "#F4B237"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_text_container_width",
+      "label": "Text Container Width",
+      "default": "90%"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_header_font_size",
+      "label": "Header Font Size",
+      "default": "32px"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_description_font_size",
+      "label": "Description Font Size",
+      "default": "18px"
+    },
+	{
+      "type": "text",
+      "id": "turnpup_mobile_header_font_size",
+      "label": "Mobile: Header Font Size",
+      "default": "32px"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_mobile_description_font_size",
+      "label": "Mobile: Description Font Size",
+      "default": "12px"
+    },
+    {
+      "type": "text",
+      "id": "turnpup_container_margin_top_bottom",
+      "label": "Container Margin Top Bottom",
+      "default": "60px"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "background_opacity",
+      "label": "Background Opacity",
+      "default": "0.2"
+    },
+    {
+      "type": "checkbox",
+      "id": "section_padding",
+      "label": "Show spacing around section",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Image on left"
+        },
+        {
+          "value": "right",
+          "label": "Image on right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text align",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "mobile_text_align",
+      "label": "Mobile Text align",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text_margin_left",
+      "label": "Margin Left for Text Container",
+      "default": "50px;"
+    },
+    {
+      "type": "text",
+      "id": "text_margin_up_and_down",
+      "label": "Vertical spacing between text",
+      "default": "50px;"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "title2",
+      "label": "Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "color",
+      "id": "title2_color",
+      "label": "Heading 2 Color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "text2",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text2_color",
+      "label": "Text 2 Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "title3",
+      "label": "Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "color",
+      "id": "title3_color",
+      "label": "Heading 3 Color",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "text3",
+      "label": "Text",
+      "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text3_color",
+      "label": "Text 3 Color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Hapny Split Module",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,50 @@
+{% unless text_placement %}
+  {%- assign text_placement = 'below' -%}
+{% endunless %}
+{% unless zoom %}
+  {%- assign zoom = false -%}
+{% endunless %}
+{% unless full_width %}
+  {%- assign full_width = false -%}
+{% endunless %}
+
+<div class="box">
+  {% if block.settings.image != blank %}
+    <div class="turnpup_gallery_block_image" style="width:100%;">
+      {% if block.settings.image != blank %}
+        {% assign image = block.settings.image %}
+        {% assign image_widths = '400,600,800,900,1000,1200,1500,1800,2000,2400' %}
+        {% include 'theme-rias' %}
+        <img class="slide__image slide__image-desktop lazyload turnpup_slide_image"
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-src="{{ image_url_pattern }}"
+          data-widths="[{{ image_widths }}]"
+          data-aspectratio="{{ image.aspect_ratio }}"
+          data-sizes="auto"
+          alt="{{ image.alt | escape }}">
+        {% if forloop.first %}
+        <noscript>
+          <img src="{{ image | img_url: '900x' }}" alt="{{ image.alt | escape }}">
+        </noscript>
+        {% endif %}
+        {% assign height = image.height | plus: 0 %}
+        {% assign width = image.width | plus: 0 %}
+        {% assign padding_ratio = height | times: 100 | divided_by: width %}
+      {% else %}
+        {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        {% assign padding_ratio = 40 %}
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if block.settings.title != blank %}
+      <h3 class="turnpup_title">
+        {{ block.settings.title | escape }}
+      </h3>
+  {% endif %}
+  {% if block.settings.description != blank %}
+      <p class="turnpup_description">
+        {{ block.settings.description | escape }}
+      </p>
+  {% endif %}
+</div>

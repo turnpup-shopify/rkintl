@@ -1,0 +1,128 @@
+{% schema %}
+  {
+    "name": "Manual Bottom Section",
+    "class": "manual-bottom-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle (small text)",
+        "default": "Next"
+      },
+      {
+        "type": "text",
+        "id": "subtitle_font_size",
+        "label": "Subtitle Font Size",
+        "default": "20px"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#939393"
+      },
+      {
+        "type": "color",
+        "id": "header_color",
+        "label": "Header Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "header_font_family",
+        "label": "Header Font Family",
+        "default": "'p22-mackinac-pro', serif"
+      },
+      {
+        "type": "text",
+        "id": "title_font_size",
+        "label": "Title Font Size",
+        "default": "30px"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Thing You Need Font Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "top_padding_container",
+        "label": "Top Bottom Container Padding",
+        "default": "50px 0 40px"
+      },
+      {
+        "type": "text",
+        "id": "width",
+        "label": "Width",
+        "default": "400px"
+      }     
+    ],
+    "presets": [
+      {
+        "name": "Manual Bottom",
+        "category": "Advanced layout"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="manual_bottom_next">
+  <div class="manual_bottom_copy_container">
+    <p class="manual_bottom_subheader">
+        {{ section.settings.subtitle }}
+    </p>
+    <div class="manual_bottom_link_container">
+      <a class="manual_bottom_header" 
+        {% if page.metafields.manual-page.bottom-header-url %}
+          href="{{ page.metafields.manual-page.bottom-header-url }}"
+        {% endif %}
+       >
+        {% if page.metafields.manual-page.bottom-header %}
+          {{ page.metafields.manual-page.bottom-header }}
+        {% endif %}
+      </a>
+    </div>
+  </div>
+</section>
+    
+<style>  
+  .manual_bottom_next {
+    background-color: {{section.settings.background_color}};
+  }
+  
+  .manual_bottom_copy_container {
+    width: {{ section.settings.width }};
+    margin: 0 auto;
+    padding: {{ section.settings.top_padding_container }};
+  }
+  
+  p.manual_bottom_subheader {
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.subtitle_font_size }};
+    font-weight: 300;
+    font-family: 'Karla';
+    text-align: center;
+  }
+  
+  .manual_bottom_link_container {
+    display: inline-block;
+    text-align: center;
+    width: 100%
+  }
+  
+  a.manual_bottom_header {
+    color: {{section.settings.text_color}};
+    font-size: {{ section.settings.title_font_size }};
+    font-weight: 700;
+    font-family: 'p22-mackinac-pro', serif;
+  }  
+
+  @media only screen and (max-width: 700px) {
+
+  }
+
+</style>
+
+{% javascript %}
+{% endjavascript %}

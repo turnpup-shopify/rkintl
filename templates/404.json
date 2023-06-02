@@ -1,8 +1,11 @@
 {
   "sections": {
     "main": {
-      "type": "main-404",
+      "type": "404",
       "settings": {
+        "header": "404 Page Not Found",
+        "description": "The page you requested does not exist. Click here to continue shopping.",
+        "image": "shopify:\/\/shop_images\/hapny_upside_down.gif"
       }
     }
   },

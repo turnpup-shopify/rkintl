@@ -1,0 +1,71 @@
+{
+  "sections": {
+    "1640295135c29b4529": {
+      "type": "page-top",
+      "settings": {
+        "background_color": "#ffffff",
+        "wave_bottom_color": "#28499c",
+        "spacing_top": "90px",
+        "spacing_bottom": "50px",
+        "mobile_spacing_top": "20px",
+        "mobile_spacing_bottom": "50px",
+        "header_font_size": "30px",
+        "header_font_color": "#000000",
+        "header_font_weight": "600",
+        "page_description_font_color": "#000000",
+        "padding_between_descriptions": "#000000",
+        "description_two_color": "#000000"
+      }
+    },
+    "164029545269244c47": {
+      "type": "manual-section",
+      "blocks": {
+        "f7009a3f-597d-4e32-912d-dd1730435c97": {
+          "type": "spacer",
+          "settings": {
+            "header": "01",
+            "description": "Choose your type of product",
+            "link_copy": "read more",
+            "link_url": "https:\/\/hapnyhome.com\/pages\/pick-your-product",
+            "background_color": "#28499c",
+            "text_color": "#ffffff"
+          }
+        },
+        "5822c612-08a0-4dbc-b05c-074c8259dc97": {
+          "type": "spacer",
+          "settings": {
+            "header": "02",
+            "description": "Determine Your Cabinet Specifications",
+            "link_copy": "read more",
+            "link_url": "https:\/\/hapnyhome.com\/pages\/manual-breakout-page-2",
+            "background_color": "#f6b700",
+            "text_color": "#ffffff"
+          }
+        },
+        "b0883fc5-5f9e-40c2-881c-e43d15ec26eb": {
+          "type": "spacer",
+          "settings": {
+            "header": "03",
+            "description": "Installation Instructions",
+            "link_copy": "read more",
+            "link_url": "https:\/\/hapnyhome.com\/pages\/manual-breakout-page-3",
+            "background_color": "#ea5e33",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "f7009a3f-597d-4e32-912d-dd1730435c97",
+        "5822c612-08a0-4dbc-b05c-074c8259dc97",
+        "b0883fc5-5f9e-40c2-881c-e43d15ec26eb"
+      ],
+      "settings": {
+        "Something": "something"
+      }
+    }
+  },
+  "order": [
+    "1640295135c29b4529",
+    "164029545269244c47"
+  ]
+}

@@ -1,0 +1,92 @@
+{% schema %}
+  {
+    "name": "Manual Page Directions",
+    "class": "manual-page-directions",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#939393"
+      },
+      {
+        "type": "color",
+        "id": "header_color",
+        "label": "Header Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "header_font_family",
+        "label": "Header Font Family",
+        "default": "hi"
+      },
+      {
+        "type": "color",
+        "id": "tbd_color",
+        "label": "Thing You Need Font Color",
+        "default": "#ffffff"
+      },
+      {
+        "type": "text",
+        "id": "top_padding_container",
+        "label": "Top Bottom Container Padding",
+        "default": "50px 0 40px"
+      },
+      {
+        "type": "text",
+        "id": "width",
+        "label": "Width",
+        "default": "40px auto"
+      }        
+    ],
+    "presets": [
+      {
+        "name": "Manual Page Directions",
+        "category": "Manual Page"
+      }
+    ]
+  }
+{% endschema %}
+
+<section class="directions">
+  <div class="directions_copy_container">
+    <h4> 
+      {% if page.metafields.manual-page.how-to-header %}
+        {{ page.metafields.manual-page.how-to-header }} 
+      {% endif %}
+    </h4>
+    <div class="directions_container">
+      <p class="tbd">
+        {% if page.content %}
+          {% assign paragraphs = page.content | newline_to_br | split: '<br>' %}
+          {% for paragraph in paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<style> 
+  .directions {
+    background-color: {{ section.settings.background_color }};
+  }  
+  .directions_copy_container {
+    width: {{ section.settings.width }};
+    margin: 0 auto;
+    padding: {{ section.settings.top_padding_container }};
+  }
+  .tbd {
+    color: {{ section.settings.tbd_color }};
+  }
+  br {
+    display: block;
+    margin: 12px 0;
+    content: "";
+  }
+  .directions_copy_container h4 {
+    color: {{ section.settings.header_color }};
+  }  
+</style>
+

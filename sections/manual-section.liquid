@@ -1,0 +1,119 @@
+{% schema %}
+  {
+    "name": "Manual Section",
+    "class": "manual-page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "Something",
+        "label": "something",
+        "default": "something"
+      }
+    ],
+	"blocks": [
+      {
+        "name": "manual-section",
+        "type": "spacer",
+        "settings": [
+          {
+            "type": "header",
+            "content": "How it works",
+            "info": "This block should be placed to start a new row of showroooms."
+          },
+          {
+            "type": "text",
+            "id": "header",
+            "label": "Heading",
+            "default": "Section Title"
+          },
+          {
+            "type": "text",
+            "id": "description",
+            "label": "Description",
+            "default": "This is the section description."
+          },
+          {
+            "type": "text",
+            "id": "link_copy",
+            "label": "Link Copy",
+            "default": "Link Text."
+          },
+          {
+            "type": "text",
+            "id": "link_url",
+            "label": "Link URL",
+            "default": "https://hapnyhome.com/pages/linked-manual-section"
+          },
+          {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#28499c"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#FFFFFF"
+          }
+        ]
+      }      
+    ]
+  }
+{% endschema %}
+<div class="manual-page-container">
+  {% for block in section.blocks %}
+    <div id="block-{{ block.id }}" class="manual-section-container"> 
+      <div class="manual-section-copy-container">
+        <p> {{ block.settings.header }} </p>
+        <h4>  {{ block.settings.description }} </h4>
+        <div class="manual-section-button"><a href="{{ block.settings.link_url }}"> {{ block.settings.link_copy }} </a></div>
+      </div>
+    </div>
+    <style>
+      #block-{{ block.id }} {
+        background-color: {{ block.settings.background_color }};
+      }
+      #block-{{ block.id }} .manual-section-copy-container > * {
+        color: {{ block.settings.text_color }};
+      }
+      #block-{{ block.id }} .manual-section-copy-container a {
+        color: {{ block.settings.text_color }};
+      }
+    </style>
+  {% endfor %}
+</div>
+<style>
+  .manual-section-container {
+    display: flex;
+    align-items: center;
+    justify-content: middle;
+  }
+  .manual-section-copy-container {
+    width: 80%; 
+    margin: 60px auto;
+  }
+  .manual-section-copy-container > * {
+    text-align: center;
+  }
+  .manual-section-copy-container h4 {
+    font-family: 'p22-mackinac-pro', serif;
+    font-weight: 600;
+    font-size: 22px;
+  }
+  .manual-section-copy-container p {
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 22px;
+  }
+  .manual-section-button a {
+    width: 400;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 16px;
+  }
+</style>
+{% javascript %}
+{% endjavascript %}

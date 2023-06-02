@@ -1,0 +1,636 @@
+{% schema %}
+  {
+    "name": "guide",
+    "class": "guide-section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_top_title",
+            "label": "Section Title",
+            "default": "Are you starting from scratch or swapping out existing hardware?"
+        },
+        {
+            "type": "text",
+            "id": "section_top_left_filter",
+            "label": "Section Left Filter Title",
+            "default": "DRILLING NEW"
+        },
+        {
+            "type": "text",
+            "id": "section_top_right_filter",
+            "label": "Section Right Filter Title",
+            "default": "SWAPPING OUT"
+        },
+        {
+            "type": "color",
+            "id": "section_top_background_color",
+            "label": "Section Top Background Color",
+            "default": "#D1E1FF"
+        },
+        {
+            "type": "color",
+            "id": "section_top_title_color",
+            "label": "Section Top Title Color",
+            "default": "#000000"
+        },
+        {
+            "type": "color",
+            "id": "section_top_filter_color",
+            "label": "Section Top Filter Color",
+            "default": "#000000"
+        },
+        {
+            "type": "range",
+            "id": "max_width",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "%",
+            "label": "Max-Width of Module",
+            "default": 90
+        },
+        {
+            "type": "range",
+            "id": "max_width_of_title",
+            "min": 0,
+            "max": 100,
+            "step": 2,
+            "unit": "%",
+            "label": "Max-Width of Title",
+            "default": 80
+          }
+    ],
+	"blocks": [
+      {
+        "name": "CAROUSEL ONE",
+        "type": "carousel_one",
+        "settings": [          
+            {
+                "type": "text",
+                "id": "carousel_title",
+                "label": "Carousel Title",
+                "default": "SMART QUESTIONS"
+            },
+            {
+                "type": "checkbox",
+                "id": "is_hidden",
+                "label": "Is Carousel Hidden",
+                "default": false
+            },
+            {
+                "type": "image_picker",
+                "id": "image_one",
+                "label": "Carousel Image One"
+            },
+            {
+                "type": "url",
+                "id": "url_one_link",
+                "label": "Carousel Image One Link"
+            },
+            {
+                "type": "text",
+                "id": "one_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "one_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_two",
+                "label": "Carousel Image Two"
+            },
+            {
+                "type": "url",
+                "id": "url_two_link",
+                "label": "Carousel Image Two Link"
+            },
+            {
+                "type": "text",
+                "id": "two_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "two_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_three",
+                "label": "Carousel Image Three"            
+            },
+            {
+                "type": "url",
+                "id": "url_three_link",
+                "label": "Carousel Image Three Link"
+            },
+            {
+                "type": "text",
+                "id": "three_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "three_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_four",
+                "label": "Carousel Image Four"
+            },
+            {
+                "type": "url",
+                "id": "url_four_link",
+                "label": "Carousel Image Four Link"
+            },
+            {
+                "type": "text",
+                "id": "four_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "four_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_five",
+                "label": "Carousel Image Five"
+            },
+            {
+                "type": "url",
+                "id": "url_five_link",
+                "label": "Carousel Image Five Link"
+            },
+            {
+                "type": "text",
+                "id": "five_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "five_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_six",
+                "label": "Carousel Image Six"
+            },
+            {
+                "type": "url",
+                "id": "url_six_link",
+                "label": "Carousel Image Six Link"
+            },
+            {
+                "type": "text",
+                "id": "six_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "six_subtitle",
+                "label": "Carousel Image Subtitle"
+            }
+        ]		
+      }, 
+      {
+		"name": "CAROUSEL TWO",
+        "type": "carousel_two",
+        "settings": [          
+            {
+                "type": "text",
+                "id": "carousel_title",
+                "label": "Carousel Title",
+                "default": "SMART QUESTIONS"
+            },
+            {
+                "type": "checkbox",
+                "id": "is_hidden",
+                "label": "Is Carousel Hidden",
+                "default": false
+            },
+            {
+                "type": "image_picker",
+                "id": "image_one",
+                "label": "Carousel Image One"
+            },
+            {
+                "type": "text",
+                "id": "url_one_link",
+                "label": "Carousel Image One Link"
+            },
+            {
+                "type": "text",
+                "id": "one_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "one_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_two",
+                "label": "Carousel Image Two"
+            },
+            {
+                "type": "text",
+                "id": "url_two_link",
+                "label": "Carousel Image Two Link"
+            },
+            {
+                "type": "text",
+                "id": "two_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "two_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_three",
+                "label": "Carousel Image Three"            
+            },
+            {
+                "type": "text",
+                "id": "url_three_link",
+                "label": "Carousel Image Three Link"
+            },
+            {
+                "type": "text",
+                "id": "three_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "three_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_four",
+                "label": "Carousel Image Four"
+            },
+            {
+                "type": "text",
+                "id": "url_four_link",
+                "label": "Carousel Image Four Link"
+            },
+            {
+                "type": "text",
+                "id": "four_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "four_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_five",
+                "label": "Carousel Image Five"
+            },
+            {
+                "type": "url",
+                "id": "url_five_link",
+                "label": "Carousel Image Five Link"
+            },
+            {
+                "type": "text",
+                "id": "five_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "five_subtitle",
+                "label": "Carousel Image Subtitle"
+            },
+            {
+                "type": "image_picker",
+                "id": "image_six",
+                "label": "Carousel Image Six"
+            },
+            {
+                "type": "url",
+                "id": "url_six_link",
+                "label": "Carousel Image Six Link"
+            },
+            {
+                "type": "text",
+                "id": "six_title",
+                "label": "Carousel Image Title"
+            },
+            {
+                "type": "text",
+                "id": "six_subtitle",
+                "label": "Carousel Image Subtitle"
+            }
+        ]	
+      }
+    ]
+  }
+{% endschema %}
+{% assign default_link = "https://hapnyhome.com" %}
+<div class="flwr_custom_outer_container">
+    <div class="flwr_custom_top_container">
+        <p class="flwr_custom_section_title">{{ section.settings.section_top_title }}</p>
+        <div class="flwr_filters">
+            <p class="flwr_filters_link selected" data-order="left"> {{ section.settings.section_top_left_filter }}</p>
+            <p class="flwr_filters_link" data-order="right"> {{ section.settings.section_top_right_filter}}</p>
+        </div>        
+    </div>
+    <div style="background-color: #3C64B1; border-top: 1px solid #3C64B1;">
+        <div class="flwr_custom_bottom_container">
+            <div class="flwr_gutter">
+                {% for block in section.blocks %}
+                    {% if block.type == "carousel_one" and block.settings.is_hidden == false %}
+                    <div class="flwr_carousel" id="carousel-1-left">
+                    {% elsif block.type == "carousel_one" and block.settings.is_hidden == true %}
+                    <div class="flwr_carousel hidden" id="carousel-1-right">
+                    {% elsif block.settings.is_hidden == false %}
+                    <div class="flwr_carousel" id="carousel-2-left">
+                    {% elsif block.settings.is_hidden %}
+                    <div class="flwr_carousel hidden" id="carousel-2-right">
+                    {% endif %}
+                        <p class="flwr_carousel_title"> {{ block.settings.carousel_title }} </p>
+                        <div class="flwr_image_carousel">
+                            {% if block.settings.one_title != "" %}
+                                <a href="{{ block.settings.url_one_link }}">
+                                    <div>
+                                        {% if block.settings.image_one %}<img src="{{ block.settings.image_one | image_url }}">{% endif %}
+                                        <p class="flwr_carousel_image_title">{{ block.settings.one_title }}</p>
+                                        <p class="flwr_carousel_image_subtitle">{{ block.settings.one_subtitle }}</p>
+                                        {% if block.settings.url_one_link %} <button class="guide_button"> Learn More </button> {% endif %}       
+                                    </div>
+                                </a>
+                            {% endif %}
+                            {% if block.settings.two_title != "" %}
+                                <a href="{{ block.settings.url_two_link }}">
+                                    <div>
+                                        {% if block.settings.image_two %}<img src="{{ block.settings.image_two | image_url }}">{% endif %}
+                                        <p class="flwr_carousel_image_title">{{ block.settings.two_title }}</p>
+                                        <p class="flwr_carousel_image_subtitle">{{ block.settings.two_subtitle }}</p>
+                                        {% if block.settings.url_two_link %} <button class="guide_button"> Learn More </button> {% endif %}    
+                                    </div>
+                                </a>
+                            {% endif %}
+                            {% if block.settings.three_title != "" %}
+                                <a href="{{ block.settings.url_three_link }}">
+                                    <div>
+                                        {% if block.settings.image_three %}<img src="{{ block.settings.image_three | image_url }}">{% endif %}
+                                        <p class="flwr_carousel_image_title">{{ block.settings.three_title }}</p>
+                                        <p class="flwr_carousel_image_subtitle">{{ block.settings.three_subtitle }}</p>
+                                        {% if block.settings.url_three_link %} <button class="guide_button"> Learn More </button> {% endif %}   
+                                    </div>
+                                </a>
+                            {% endif %}
+                            {% if block.settings.four_title != "" %}
+                                <a href="{{ block.settings.url_four_link }}">
+                                    <div>
+                                        {% if block.settings.image_four %}<img src="{{ block.settings.image_four | image_url }}">{% endif %}
+                                        <p class="flwr_carousel_image_title">{{ block.settings.four_title }}</p>
+                                        <p class="flwr_carousel_image_subtitle">{{ block.settings.four_subtitle }}</p>
+                                        {% if block.settings.url_four_link %} <button class="guide_button"> Learn More </button> {% endif %}    
+                                    </div>
+                                </a>
+                            {% endif %}
+                            {% if block.settings.five_title != "" %}
+                                <a href="{{ block.settings.url_five_link }}">
+                                    <div>
+                                        {% if block.settings.image_five %}<img src="{{ block.settings.image_five | image_url }}">{% endif %}
+                                        <p class="flwr_carousel_image_title">{{ block.settings.five_title }}</p>
+                                        <p class="flwr_carousel_image_subtitle">{{ block.settings.five_subtitle }}</p>
+                                        {% if block.settings.url_five_link %} <button class="guide_button"> Learn More </button> {% endif %}    
+                                    </div>
+                                </a>
+                            {% endif %}
+                            {% if block.settings.six_title != "" %}
+                              <a href="{{ block.settings.url_six_link }}">
+                                  <div>
+                                      {% if block.settings.image_six %}<img src="{{ block.settings.image_six | image_url }}">{% endif %}
+                                      <p class="flwr_carousel_image_title">{{ block.settings.six_title }}</p>
+                                      <p class="flwr_carousel_image_subtitle">{{ block.settings.six_subtitle }}</p>
+                                        {% if block.settings.url_six_link %} <button class="guide_button"> Learn More </button> {% endif %}    
+                                  </div>
+                              </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        let flwr_filters_link = document.querySelectorAll(".flwr_filters_link");
+        if (flwr_filters_link.length > 0) {
+            flwr_filters_link.forEach((el) => {
+                el.addEventListener("click", flwrToggle);
+            })            
+        }
+        function flwrToggle() {
+            if (!this.classList.contains("selected")) {
+                if (this.dataset.order === "left") {
+                    document.querySelectorAll(".flwr_filters_link").forEach((el)=>{
+                        if (el.dataset.order==="right") {
+                            el.classList.remove("selected");
+                        } 
+                    })
+                    this.classList.add("selected");
+                    document.querySelector("#carousel-1-left").classList.remove("hidden");
+                    document.querySelector("#carousel-1-right").classList.add("hidden");
+                    document.querySelector("#carousel-2-left").classList.remove("hidden");
+                    document.querySelector("#carousel-2-right").classList.add("hidden");
+                } else if (this.dataset.order === "right" ) {
+                    document.querySelectorAll(".flwr_filters_link").forEach((el)=>{
+                        if (el.dataset.order==="left") {
+                            el.classList.remove("selected");
+                        } 
+                    })
+                    this.classList.add("selected");            
+                    document.querySelector("#carousel-1-left").classList.add("hidden");
+                    document.querySelector("#carousel-1-right").classList.remove("hidden");
+                    document.querySelector("#carousel-2-left").classList.add("hidden");
+                    document.querySelector("#carousel-2-right").classList.remove("hidden");
+                }
+            } 
+        }
+    });
+</script>
+
+{% style %}
+    .guide_button {
+        color: #fff;
+        text-align: center;
+        margin: 8px 0 0;
+        font-size: 16px;
+        padding: 8px 20px;
+        font-weight: 700;
+        border-radius: 40px;
+        border-color: #0000;
+        border-width: 1px;
+        background-color: #f6b700;
+        text-decoration: none;
+    }
+    .flwr_custom_outer_container {
+        background-color: white;  
+        /* {{ section.settings.section_top_background_color }}; */
+        padding: 4rem 0 0rem;
+        border-bottom: 1px solid black;
+    }
+    .flwr_custom_top_container {
+        max-width: {{ section.settings.max_width }}%;
+        margin: 0 auto;
+    }
+    .flwr_custom_section_title {
+        font-family: Karla;
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        line-height: 1.2;        
+        color: {{ section.settings.section_top_title_color }};
+        max-width: {{ section.settings.max_width_of_title }}%;
+        margin: 0 auto;
+    }
+    .flwr_filters {
+        font-family: p22-mackinac-pro, serif;
+        font-size: 2rem;
+        font-weight: 800;
+        margin: 1rem 0 2rem;
+        display: flex; 
+        flex-direction: row;
+        column-gap: 5rem;
+        justify-content: center;
+    }
+    .flwr_filters_link {
+        color: {{ section.settings.section_top_filter_color }};
+        position: relative;
+        text-align: center;
+        opacity: 0.5;
+    }
+    .flwr_filters_link.selected {        
+        opacity: 1;
+    }
+    .flwr_filters_link::before {   
+        width: 0%;
+        content: '';
+        background-color: #f4b237;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        height: 2px;
+        z-index: 2;
+        transition: all 0.4s ease-out;
+    }
+    .flwr_filters_link:hover::before {   
+        width: 100%
+    }    
+    .flwr_filters_link.selected::before {
+        content: '';
+        background-color: #f4b237;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 2px;
+        z-index: 2;
+        transition: all 0.2s ease-out;
+    }
+    .flwr_custom_bottom_container {
+        padding: 1rem 0;
+        background-color: #3C64B1;
+        color: white;
+    }
+    .flwr_gutter {
+        max-width: {{ section.settings.max_width }}%;
+        margin: 0 auto;
+    }
+    .flwr_carousel_title {
+        font-family: p22-mackinac-pro;
+        margin: 2rem 0px 1rem;
+        line-height: 1.2;
+        font-weight: 800;
+        font-size: 2rem;
+        color: white;
+    }
+    .flwr_image_carousel {
+        display: flex; 
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 2rem; 
+        row-gap: 2rem;
+        column-gap: 2rem;
+    }
+    .flwr_image_carousel a {
+        width: calc((100% - 4rem) / 3);  
+        display: block; 
+        text-decoration: none;
+        color: black; 
+    }
+    .flwr_carousel_image_title {
+        text-decoration: none;
+        color: white;
+        font-weight: 300;
+        margin: 0.6rem 0 0 0;
+    }
+    .flwr_carousel_image_subtitle {
+        text-decoration: none;
+        color: white; 
+        margin: 0 0 0 0;  
+        font-weight: 800;   
+    }
+    .flwr_image_carousel img {    
+        object-fit: cover;
+        min-width: 100%;
+        height: 24vW;
+    }
+    .flwr_carousel {
+        display: block;
+    }
+    .flwr_carousel.hidden {
+        display: none;
+    }
+    @media screen and (max-width: 749px) {
+        .flwr_custom_outer_container {
+            padding: 6rem 0 0;
+        }
+        .flwr_custom_section_title {
+            max-width: 100%;
+            font-size: 1.2rem;
+        }
+        .flwr_filters {
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        .flwr_filters_link {
+            font-size: 1.5rem;
+            display: inline-block;
+            margin: 0 auto;
+            width: auto;
+        }
+        .flwr_image_carousel a {
+            width: 40vW;  
+            margin-bottom: 40px;
+        }
+        .flwr_image_carousel img {
+            width: 40vW;  
+            height: 40vW
+        }
+    }
+
+{% endstyle %}
+
+{% javascript %}
+{% endjavascript %}

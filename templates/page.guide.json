@@ -1,0 +1,290 @@
+{
+  "sections": {
+    "16513544517e20832e": {
+      "type": "custom-content",
+      "blocks": {
+        "165135445134917c5b-1": {
+          "type": "richtext",
+          "settings": {
+            "title": "HAPNY INSTALLATION GUIDE",
+            "title_size": "50px",
+            "title_weight": "800",
+            "mobile_title_size": "50px",
+            "text": "",
+            "text_size": "18px",
+            "font_color": "#FFFFFF",
+            "mobile_text_align": "center",
+            "maxwidth": "80%",
+            "margin": "100px auto;",
+            "mobilemargin": "100px auto 70px",
+            "mobile_maxwidth": "95%"
+          }
+        }
+      },
+      "block_order": [
+        "165135445134917c5b-1"
+      ],
+      "settings": {
+        "turnpup_bottom_border_color": "#f4b237",
+        "turnpup_background_color": "rgba(0,0,0,0)",
+        "title": "",
+        "margintop": "30px",
+        "mobilemargintop": "30px",
+        "marginbottom": "30px",
+        "mobilemarginbottom": "30px",
+        "alignment": "center",
+        "backgroundimage": "shopify:\/\/shop_images\/tryythis.jpg",
+        "mobilebackgroundimage": "shopify:\/\/shop_images\/htgt_gradient.jpg"
+      }
+    },
+    "1651354026bd718e8f": {
+      "type": "turnpup-one-long-sentence",
+      "blocks": {
+        "5e1bfb8e-8665-413a-a32a-19725fc6a303": {
+          "type": "text",
+          "settings": {
+            "block_text": "Choosing hardware is hard.",
+            "block_font_size": "1.5rem",
+            "mobile_block_font_size": "24px",
+            "block_font_color": "#000000",
+            "font_family_text": "Karla",
+            "font_weight_text": "800",
+            "line_height_text": "1.2",
+            "letter_spacing": "normal",
+            "text_width": "100%",
+            "mobile_text_width": "90%",
+            "text_padding_left": "0px",
+            "text_padding_bottom": "1rem",
+            "is_own_line": true,
+            "text_has_wavy_animation": false,
+            "wavy_animation_color": "#f6b700"
+          }
+        },
+        "16513540268710a29a-0": {
+          "type": "text",
+          "settings": {
+            "block_text": "We’re here to help. We’ve consolidated some best practices and industry rules of thumb when it comes to these topics. BUT the most important thing to remember is - it ultimately comes down to your aesthetic and what’s most functional for your daily lifestyle.",
+            "block_font_size": "1.5rem",
+            "mobile_block_font_size": "24px",
+            "block_font_color": "#000000",
+            "font_family_text": "Karla",
+            "font_weight_text": "400",
+            "line_height_text": "1.2",
+            "letter_spacing": "normal",
+            "text_width": "100%",
+            "mobile_text_width": "90%",
+            "text_padding_left": "0px",
+            "text_padding_bottom": "1rem",
+            "is_own_line": true,
+            "text_has_wavy_animation": false,
+            "wavy_animation_color": "#f6b700"
+          }
+        },
+        "83fa826a-fd12-4706-8c8b-e8209b3b1d35": {
+          "type": "text",
+          "settings": {
+            "block_text": "You’re likely going to be touching these areas many times a day, so make sure your installation choice is what’s most comfortable for you > all other considerations. Nothing we share here is a hard and fast rule or the “right” way to do it. Feel empowered to take what we share here as guidance or inspiration and make the ultimate decision on your own terms.",
+            "block_font_size": "1.5rem",
+            "mobile_block_font_size": "24px",
+            "block_font_color": "#000000",
+            "font_family_text": "Karla",
+            "font_weight_text": "400",
+            "line_height_text": "1.2",
+            "letter_spacing": "normal",
+            "text_width": "100%",
+            "mobile_text_width": "90%",
+            "text_padding_left": "0px",
+            "text_padding_bottom": "1rem",
+            "is_own_line": true,
+            "text_has_wavy_animation": false,
+            "wavy_animation_color": "#f6b700"
+          }
+        },
+        "db38cdc7-d27e-4389-b049-e74b7af4d338": {
+          "type": "text",
+          "settings": {
+            "block_text": "We’re excited to see what you do!",
+            "block_font_size": "1.5rem",
+            "mobile_block_font_size": "24px",
+            "block_font_color": "#000000",
+            "font_family_text": "Karla",
+            "font_weight_text": "400",
+            "line_height_text": "1.2",
+            "letter_spacing": "normal",
+            "text_width": "100%",
+            "mobile_text_width": "90%",
+            "text_padding_left": "0px",
+            "text_padding_bottom": "0px",
+            "is_own_line": true,
+            "text_has_wavy_animation": false,
+            "wavy_animation_color": "#f6b700"
+          }
+        }
+      },
+      "block_order": [
+        "5e1bfb8e-8665-413a-a32a-19725fc6a303",
+        "16513540268710a29a-0",
+        "83fa826a-fd12-4706-8c8b-e8209b3b1d35",
+        "db38cdc7-d27e-4389-b049-e74b7af4d338"
+      ],
+      "settings": {
+        "subtitle": "",
+        "subtitle_font_size": "1.5rem",
+        "subtitle_font_weight": "300",
+        "subtitle_font_family": "'Karla'",
+        "subtitle_font_color": "#555555",
+        "background_color": "#ffffff",
+        "background_opacity": "0.2",
+        "max_width": 70,
+        "mobile_max_width": 90,
+        "margintop": 100,
+        "marginbottom": 100,
+        "alignment": "left",
+        "turnpup_bottom_border_color": "#3c64b1",
+        "mobile_font_size": "12px"
+      }
+    },
+    "main": {
+      "type": "guide-section",
+      "blocks": {
+        "06f6d73b-b6dc-4828-aae0-7b604946199e": {
+          "type": "carousel_one",
+          "settings": {
+            "carousel_title": "",
+            "is_hidden": false,
+            "image_one": "shopify:\/\/shop_images\/Hapny-Collections-wider.gif",
+            "url_one_link": "shopify:\/\/blogs\/guide\/choose-your-type-of-product",
+            "one_title": "STEP 1",
+            "one_subtitle": "DECIDE KNOBS, PULLS, OR BOTH",
+            "image_two": "shopify:\/\/shop_images\/mobile.jpg",
+            "url_two_link": "shopify:\/\/blogs\/guide\/choose-your-type-of-product",
+            "two_title": "STEP 2",
+            "two_subtitle": "DETERMINE HARDWARE SIZE",
+            "image_three": "shopify:\/\/shop_images\/smiley_collection_new.jpg",
+            "url_three_link": "shopify:\/\/pages\/manual-breakout-page-2",
+            "three_title": "STEP 3",
+            "three_subtitle": "CHOOSE YOUR HARDWARE FINISH",
+            "image_four": "shopify:\/\/shop_images\/attempt_two_mobile.gif",
+            "url_four_link": "shopify:\/\/blogs\/guide\/hardware-size",
+            "four_title": "Step 4",
+            "four_subtitle": "SELECT YOUR HARDWARE STYLE",
+            "image_five": "shopify:\/\/shop_images\/guide_sketches_C.png",
+            "url_five_link": "shopify:\/\/blogs\/guide",
+            "five_title": "Step 5",
+            "five_subtitle": "PLACE YOUR HARDWARE",
+            "url_six_link": "",
+            "six_title": "",
+            "six_subtitle": ""
+          }
+        },
+        "a1efb732-cbf3-4d4c-be4a-8065dd9a56ad": {
+          "type": "carousel_two",
+          "disabled": true,
+          "settings": {
+            "carousel_title": "INSTALLATION PHASE",
+            "is_hidden": false,
+            "image_one": "shopify:\/\/shop_images\/facet_pulls_pulls.jpg",
+            "url_one_link": "",
+            "one_title": "STEP 1",
+            "one_subtitle": "CHOOSE YOUR PULL SIZE BASED ON DOOR OR DRAWER SIZE",
+            "image_two": "shopify:\/\/shop_images\/Twist_MB_on_Product.jpg",
+            "url_two_link": "",
+            "two_title": "STEP 2",
+            "two_subtitle": "WHERE TO PLACE ON DRAWER OR DOOR",
+            "image_three": "shopify:\/\/shop_images\/tools.jpg",
+            "url_three_link": "",
+            "three_title": "STEP 3",
+            "three_subtitle": "GATHER TOOLS & INSTALL",
+            "url_four_link": "",
+            "four_title": "",
+            "four_subtitle": "",
+            "url_five_link": "",
+            "five_title": "",
+            "five_subtitle": "",
+            "url_six_link": "",
+            "six_title": "",
+            "six_subtitle": ""
+          }
+        },
+        "03cc3d8d-53b9-4c86-b890-7d6306f690d6": {
+          "type": "carousel_one",
+          "settings": {
+            "carousel_title": "",
+            "is_hidden": true,
+            "image_one": "shopify:\/\/shop_images\/about-us-cropped.jpg",
+            "url_one_link": "https:\/\/hapnyhome.com\/blogs\/news\/choose-your-type-of-product",
+            "one_title": "STEP 1",
+            "one_subtitle": "UNDERSTAND YOUR CURRENT STATE",
+            "image_two": "shopify:\/\/shop_images\/hapny_upside_down.gif",
+            "url_two_link": "",
+            "two_title": "STEP 2",
+            "two_subtitle": "CHOOSE A FINISH",
+            "image_three": "shopify:\/\/shop_images\/Hapny_Price_List_11.30.jpg",
+            "url_three_link": "",
+            "three_title": "STEP 3",
+            "three_subtitle": "CHOOSE A DESIGN",
+            "url_four_link": "",
+            "four_title": "",
+            "four_subtitle": "",
+            "url_five_link": "",
+            "five_title": "",
+            "five_subtitle": "",
+            "url_six_link": "",
+            "six_title": "",
+            "six_subtitle": ""
+          }
+        },
+        "93fac437-0df3-40c3-ad0d-16ed237109ec": {
+          "type": "carousel_two",
+          "disabled": true,
+          "settings": {
+            "carousel_title": "INSTALLATION PHASE",
+            "is_hidden": true,
+            "image_one": "shopify:\/\/shop_images\/cover_v1_8ca951e2-c910-463a-9f95-e76df96d8567.png",
+            "url_one_link": "",
+            "one_title": "STEP 1",
+            "one_subtitle": "GATHER YOUR TOOLS",
+            "image_two": "shopify:\/\/shop_images\/clock.png",
+            "url_two_link": "",
+            "two_title": "STEP 2",
+            "two_subtitle": "UNSCREW YOUR CURRENT HARDWARE",
+            "image_three": "shopify:\/\/shop_images\/tapemeasure.png",
+            "url_three_link": "",
+            "three_title": "STEP 3",
+            "three_subtitle": "SCREW IN YOUR NEW HARDWARE",
+            "url_four_link": "",
+            "four_title": "",
+            "four_subtitle": "",
+            "url_five_link": "",
+            "five_title": "",
+            "five_subtitle": "",
+            "url_six_link": "",
+            "six_title": "",
+            "six_subtitle": ""
+          }
+        }
+      },
+      "block_order": [
+        "06f6d73b-b6dc-4828-aae0-7b604946199e",
+        "a1efb732-cbf3-4d4c-be4a-8065dd9a56ad",
+        "03cc3d8d-53b9-4c86-b890-7d6306f690d6",
+        "93fac437-0df3-40c3-ad0d-16ed237109ec"
+      ],
+      "settings": {
+        "section_top_title": "Are you starting from scratch or swapping out existing hardware?",
+        "section_top_left_filter": "JUST STARTING",
+        "section_top_right_filter": "SWAPPING OUT",
+        "section_top_background_color": "#d1e1ff",
+        "section_top_title_color": "#000000",
+        "section_top_filter_color": "#000000",
+        "max_width": 90,
+        "max_width_of_title": 80
+      }
+    }
+  },
+  "order": [
+    "16513544517e20832e",
+    "1651354026bd718e8f",
+    "main"
+  ]
+}

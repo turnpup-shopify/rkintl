@@ -1,17 +1,118 @@
 {
   "sections": {
     "main": {
-      "type": "main-list-collections",
+      "type": "turnpup_allcollectiononly_header_wide",
       "settings": {
-        "title": "Collections",
-        "sort": "alphabetical",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "columns_mobile": "2"
+        "title": "Hardware Collections",
+        "description": "Create a fully cohesive look for your space by pairing complementary cabinet knobs, cabinet pulls, and appliance pulls. Or feel free to mix and match as it suits you and your personal style.",
+        "is_image_on_right": true,
+        "text_alignment": "left",
+        "turnpup_top_container_height": "80vH",
+        "turnpup_mobile_top_container_height": "65vH",
+        "turnpup_title_size": "30px",
+        "turnpup_mobile_title_size": "26px",
+        "turnpup_title_color": "#ffffff",
+        "turnpup_text_size": "16px",
+        "turnpup_mobile_text_size": "16px",
+        "turnpup_text_color": "#ffffff",
+        "turnpup_note_text_size": "18px",
+        "turnpup_mobile_note_text_size": "16px",
+        "turnpup_note_text_color": "#ffffff",
+        "turnpup_note_text_weight": "700",
+        "turnpup_margin_left": "10%",
+        "turnpup_margin_right": "10%",
+        "turnpup_margin_top": "10%",
+        "turnpup_margin_bottom": "10%",
+        "turnpup_header_background": "rgba(0,0,0,0)",
+        "turnpup_text_background": "#3c64b1",
+        "image": "shopify:\/\/shop_images\/Hapny_Collections.gif",
+        "link": "",
+        "full_width": false,
+        "turnpup_half_width": true,
+        "turnpup_image_background_color": "#ffffff",
+        "turnpup_image_padding": "0px",
+        "button_label": "",
+        "turnpup_button_size": "18px",
+        "button_link": "",
+        "color_text": "#ffffff",
+        "color_accent": "#f4b237",
+        "turnpup_hover_txt_color": "#f4b237",
+        "turnpup_hover_background_color": "#ffffff",
+        "turnpup_bottom_border_color": "rgba(0,0,0,0)"
+      }
+    },
+    "list-collections": {
+      "type": "list-collections-template",
+      "blocks": {
+        "1484256559451": {
+          "type": "collection",
+          "settings": {
+            "collection": "acrylic-collection"
+          }
+        },
+        "1484256561216": {
+          "type": "collection",
+          "settings": {
+            "collection": "ribbed-collection"
+          }
+        },
+        "1484256562272": {
+          "type": "collection",
+          "settings": {
+            "collection": "diamond-collection"
+          }
+        },
+        "f7d27751-fd9c-464b-9334-3b52df5904e3": {
+          "type": "collection",
+          "settings": {
+            "collection": "sunburst"
+          }
+        },
+        "5342b899-8acf-4873-93a5-1aa6975e92a8": {
+          "type": "collection",
+          "settings": {
+            "collection": "twist"
+          }
+        },
+        "6d7906fb-b473-49ad-8f2b-4ae0940d7cca": {
+          "type": "collection",
+          "settings": {
+            "collection": "half-moon"
+          }
+        },
+        "c5060858-e451-45f4-bb63-6efe7ae8a9f1": {
+          "type": "collection",
+          "settings": {
+            "collection": "horizon"
+          }
+        },
+        "6ae8c3e6-5e12-4fad-ae00-b494ab34c6dd": {
+          "type": "collection",
+          "settings": {
+            "collection": "smiley-collection"
+          }
+        }
+      },
+      "block_order": [
+        "1484256559451",
+        "1484256561216",
+        "1484256562272",
+        "f7d27751-fd9c-464b-9334-3b52df5904e3",
+        "5342b899-8acf-4873-93a5-1aa6975e92a8",
+        "6d7906fb-b473-49ad-8f2b-4ae0940d7cca",
+        "c5060858-e451-45f4-bb63-6efe7ae8a9f1",
+        "6ae8c3e6-5e12-4fad-ae00-b494ab34c6dd"
+      ],
+      "settings": {
+        "title": "All collections",
+        "layout": "grid",
+        "description_hidden": true,
+        "list_mode": "manual"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "list-collections"
   ]
 }

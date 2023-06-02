@@ -1,0 +1,252 @@
+{% schema %}
+  {
+    "name": "Showroom Styles Below",
+    "class": "showroom-top-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Individual Showroom Settings",
+        "info": "The below settings apply to the rest of the page and will control the color / size of the individual elements in the showroom sections below."
+      },
+      {
+        "type": "range",
+        "id": "state_font_size",
+        "min": 8,
+        "max": 36,
+        "step": 1,
+        "unit": "px",
+        "label": "State Font size",
+        "default": 16 
+      },
+      {
+        "type": "color",
+        "id": "state_color",
+        "label": "State Color",
+        "default": "#002D72"
+      },         
+      {
+        "type": "color",
+        "id": "location_color",
+        "label": "Location Color",
+        "default": "#002D72"
+      },      
+      {
+        "type": "range",
+        "id": "location_font_size",
+        "min": 8,
+        "max": 24,
+        "step": 1,
+        "unit": "px",
+        "label": "Location Font size",
+        "default": 16 
+      },
+      {
+        "type": "color",
+        "id": "address_color",
+        "label": "Address Color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "website_color",
+        "label": "Website Color",
+        "default": "#F6B700"
+      },
+      {
+        "type": "color",
+        "id": "website_color_on_hover",
+        "label": "Color of Website on Hover",
+        "default": "#002D72"
+      },
+      {
+        "type": "color",
+        "id": "directions_color",
+        "label": "Color of Directions Copy",
+        "default": "#002D72"
+      },
+      {
+        "type": "color",
+        "id": "directions_color_on_hover",
+        "label": "Color of Directions on Hover",
+        "default": "#002D72"
+      },
+      {
+        "type": "text",
+        "id": "margin_bottom_of_page",
+        "label": "Margin Bottom of Page",
+        "default": "0px"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Showroom Top",
+        "category": "Advanced layout"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>  
+  
+  .showroom-top-section .page_a_container {
+    margin-top: -40px;
+    padding-top: {{ section.settings.spacing_top }};
+    margin-bottom: calc({{section.settings.spacing_bottom}} - 20px);;
+  }
+  
+  .showroom-top-section .page_a_container .page_a_section_description {
+    margin-bottom: {{section.settings.padding_between_descriptions}};
+  }
+  
+  body {
+   background-color:#FFF;
+  }
+  
+  .showroom-top-section, .page-top {
+   background-color: {{ section.settings.background_color }}; 
+  }
+  
+  .showroom-top-section .wave-divider {
+    background-color: {{ section.settings.background_color }};
+  }
+  .showroom-top-section .wave-divider path {
+    fill: #FFF;
+  }
+  
+  .page-header,
+  .content-util {
+   display:none;
+  }
+  
+  .page_a_section_title {
+    font-weight: {{ section.settings.header_font_weight }};
+	font-size: {{ section.settings.header_font_size }};
+    color: {{ section.settings.header_font_color }};
+  }
+  
+  .page_a_section_description {
+    color: {{ section.settings.page_description_font_color }};
+  }
+
+  .showroom-section:last-of-type {
+    margin-bottom: {{ section.settings.margin_bottom_of_page }};
+  }
+  .start_flex {
+	display: flex;
+  }
+  .showroom_third--single {
+      padding: 0 0 20px 0;
+      width: 32%;
+	  text-align: left;
+      padding-left: 2%;
+  }
+  .showroom_third--single:first-of-type {
+      padding-left: 0%;
+  }
+  .state {
+    font-family: 'p22-mackinac-pro', serif; 
+    font-weight: 800;
+    text-align: left;
+    margin: 6px 0px 4px;
+    color: {{section.settings.state_color}};
+    font-size: {{section.settings.state_font_size}}px;
+  }
+  .showroom_name {
+    border: 0; 
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+	margin-bottom: 0px;
+    text-align: left;
+  }
+  .page-accordion__title {
+    color: {{section.settings.location_color}};
+    font-size: {{section.settings.location_font_size}}px; 
+  }
+  .address {
+	transition: all 0.35s;
+    display: block;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+	margin-bottom: 0px;
+    color: #000000;
+    text-align:left;
+    font-size: {{section.settings.location_font_size}}px;
+  }
+  .website {
+	transition: all 0.35s;
+    display: block;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    text-align:left;
+    color: {{section.settings.website_color}};
+    font-size: {{section.settings.location_font_size}}px;
+    text-decoration: none;
+
+  }
+  .website:hover {
+    color: {{section.settings.website_color_on_hover}}; 
+  }
+  .directions {
+	transition: all 0.35s;
+    display: block;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    text-align:left;
+    color: {{section.settings.directions_color}};
+    font-size: {{section.settings.location_font_size}}px;
+    text-decoration: none;
+    font-style: italic;
+  }
+  .directions:hover {
+    color: {{ section.settings.directions_color_on_hover }};
+  }
+  .showroom_name:before { 
+
+  }
+
+  @media only screen and (max-width: 700px) {
+    .showroom-top-section .page_a_container {
+      padding-top: 0px;
+    }
+    .page_a_section_title, .page_a_section_description {
+      text-align: left;
+    }
+    .start_flex {
+      display: block;
+    }
+    .showroom_third--single {
+      padding: 0px 0px;
+      text-align: center;
+      width: 100%;
+    }
+    .showroom_name, .website, .address, .state, .directions {
+      text-align: center;
+    }
+    .state {
+      margin: 0px 0px 10px;
+    }
+    .directions {
+     padding-bottom: 20px; 
+    }
+  }
+
+</style>
+
+{% javascript %}
+{% endjavascript %}

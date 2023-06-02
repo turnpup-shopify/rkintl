@@ -1,0 +1,116 @@
+
+.guide_image_container_3 {
+  width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between;
+}
+.guide_image_container_3.blog_center {
+  justify-content: center !important;
+}
+.guide_image_container_3 img {
+  width: 27%;
+}
+.blog-permalink article section img {
+  margin: 0 0 26px;
+}
+@media screen and (max-width: 600px) {
+  .guide_image_container_3 img {
+    width: 70%;
+  }
+  .collection.blog header.collection-header {
+    margin-top: 44px !important;
+  }
+}
+
+.blob {
+  width: 200px;
+  height: 80px;
+  border-radius: 70% 40% 30% 80% / 55% 45% 60% 50%;
+  background-color: royalblue;
+  border: 0px solid blue;
+}
+.blob:hover {
+  /* transform: rotate(10deg); */
+  /* transition: transform 1s linear infinite; */
+
+  /* https://9elements.github.io/fancy-border-radius/#44.46.23.36--371.300 */
+  animation: jitter 1s linear infinite;
+}
+
+@-webkit-keyframes jitter {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes jitter {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+footer.site-footer form.contact-form button {
+  margin: 0px;
+  padding: 14px 0px 10px 0px;
+}
+
+footer.site-footer form.contact-form button svg {
+  height: 16px;
+}
+
+footer.site-footer form.contact-form button svg path {
+  fill: #3c64b1;
+}
+
+
+@media screen and (max-width: 600px) {
+  #menu.panel .search .input-wrapper input {
+    font-size: 1.1rem;
+  }
+}
+
+.collection.blog {
+  margin-top: 40px!important;
+}
+/* .collection.blog header.collection-header {
+  margin-top: 40px!important;
+} */
+
+@media screen and (max-width: 800px) {
+  .collection.blog {
+    margin-top: 80px!important;
+  }
+  /* .collection.blog header.collection-header {
+    margin-top: 0px!important;
+  } */
+  header.collection-header h1 {
+    margin-top: 0px !important;
+  }
+}
+

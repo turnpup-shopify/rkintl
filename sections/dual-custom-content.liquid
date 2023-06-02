@@ -1,0 +1,418 @@
+{% assign image = section.settings.image %}
+<div class="dual-custom-content" data-section-id="{{ section.id }}" data-section-type="custom-content-section">
+  <div>
+    <div class="wrapper">
+
+      {% if section.settings.title != blank %}
+        <header>
+          <h4>{{ section.settings.title | escape }}</h4>
+        </header>
+      {% endif %}
+      <div class="custom-content-container align-{{ section.settings.alignment }}">
+        {% for block in section.blocks %}
+          <div id="block-{{ block.id }}" style="display:inline-block;vertical-align:middle;width:{{block.settings.text_width}};" class="custom__item-{{ block.type }} {% if block.settings.full_width %}custom__item-full_width{% endif %}" {{ block.shopify_attributes }}>
+            {% case block.type %}
+              {% when 'page' %}
+                <div class="content rte">
+                  {% if block.settings.show_title %}
+                    <h2 class="align-{{ section.settings.alignment }}">{{ pages[block.settings.page].title }}</h2>
+                  {% endif %}
+                  <div class="content-page">{{ pages[block.settings.page].content }}</div>
+                </div>
+              {% when 'image' %}
+                {% if block.settings.link != blank %}
+                  <a href="{{ block.settings.link }}" class="content">
+                {% else %}
+                  <div class="content">
+                {% endif %}
+
+                {%- assign image = block.settings.image -%}
+                {% if image != blank %}
+                  <div class="card__image-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%">
+                    {% assign image_widths = '360,540,720,900,1000,1200,1500,1800,2000,2400' %}
+                    {% include 'theme-rias' %}
+                    <img class="card__image lazyload fade-in"
+                      data-src="{{ image_url_pattern }}"
+                      data-widths="[{{ image_widths }}]"
+                      data-aspectratio="{{ image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ image.alt | escape }}">
+                    <noscript>
+                      <img class="card__image" src="{{ image | img_url: '1200x' }}" alt="{{ image.alt | escape }}">
+                    </noscript>
+                  </div>
+                  <style media="screen">
+                    #block-{{ block.id }}:not(.custom__item-full_width) {
+                      max-width: {{ image.width }}px;
+                      margin-left: auto;
+                      margin-right: auto;
+                    }
+                    //
+                  </style>
+                {% else %}
+                  {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                  {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+
+                {% if block.settings.link != blank %}
+                  </a>
+                {% else %}
+                  </div>
+                {% endif %}
+              {% when 'video' %}
+                <div class="content video__container video__container--default-ratio" data-video-type="{{ block.settings.video_url.type }}" data-video-id="{{ block.settings.video_url.id }}">
+                  {% case block.settings.video_url.type %}
+                    {% when 'youtube' %}
+                      <iframe class="lazyload" data-src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+                    {% when 'vimeo' %}
+                      <iframe class="lazyload" data-src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}?color={{ settings.primary_accent_color | remove: '#' }}&title=0&byline=0&portrait=0" width="850" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  {% endcase %}
+                </div>
+              {% when 'richtext' %}
+                <div class="content rte" style="padding-left:{{block.settings.text_padding_left}};">
+                  {% if block.settings.title != blank %}
+                    <h2 style="font-size:{{block.settings.title_size}};color:{{ block.settings.font_color }};">{{ block.settings.title | escape }}</h2>
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    <div class="richtext" style="line-height:{{block.settings.line_height_text}};font-weight:{{block.settings.font_weight_text}};font-family:{{block.settings.font_family_text}};font-size:{{block.settings.text_size}};color:{{ block.settings.font_color }};">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+                </div>
+              {% when 'html' %}
+                <div class="content">
+                  {% if block.settings.code != blank %}
+                    {{ block.settings.code }}
+                  {% endif %}
+                </div>
+              {% when 'button' %}
+                {% if block.settings.button_link != blank and block.settings.button_label != blank %}
+                  <div class="content">
+                    <a href="{{ block.settings.button_link }}" class="button large outline">{{ block.settings.button_label | escape }}</a>
+                    {% comment %} turnpup changes {% endcomment %}
+                    <style media="screen">
+                    #block-{{ block.id }} a.button {
+                      color: {{ block.settings.color_accent }};
+                      border-color: {{ block.settings.color_accent }};
+                    }
+                    #block-{{ block.id }} a.button:hover,
+                    #block-{{ block.id }} a.button:focus {
+                      color: {{ block.settings.turnpup_hover_txt_color }};
+                      border-color: {{ block.settings.color_accent }}; 
+                      background-color: {{ block.settings.color_accent }};
+                    }
+                    //
+                  </style>
+                  </div>
+                {% endif %}
+            {% endcase %}
+
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+<style>
+  .dual-custom-content {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:{{section.settings.margintop}} {{section.settings.padding_right_left}} {{section.settings.marginbottom}};
+    margin:0 auto;
+    background-color: {{section.settings.background_color}};
+    border-bottom: 1px solid {{section.settings.turnpup_bottom_border_color}};
+  }
+  .richtext {
+    line-height: {{block.settings.line_height_text}};
+  }
+  .richtext strong {
+    font-weight: 900;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Dual Custom Content",
+  "class": "dual-custom-content-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Custom content"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+	{
+      "type": "text",
+      "id": "padding_right_left",
+      "label": "Padding Left and Right",
+      "default": "5%"
+    },
+    {
+      "type": "text",
+      "id": "margintop",
+      "label": "Top Margin",
+      "default": "30px"
+    },
+    {
+      "type": "text",
+      "id": "marginbottom",
+      "label": "Bottom Margin",
+      "default": "30px"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "center",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background Image (optional)"
+    },
+    {
+      "type": "color",
+      "id": "turnpup_bottom_border_color",
+      "label": "Bottom Border Color",
+      "default": "#F4B237"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page content"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_title",
+          "label": "Show title",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full browser width",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "text_width",
+          "label": "Text Width",
+          "default": "100%"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image link"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full browser width",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "text_width",
+          "label": "Text Width",
+          "default": "100%"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "id": "video_url",
+          "type": "video_url",
+          "label": "Video URL",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full browser width",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "text_width",
+          "label": "Text Width",
+          "default": "100%"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Talk about your brand"
+        },
+        {
+          "type": "text",
+          "id": "title_size",
+          "label": "Title Size",
+          "default": "24px"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        },
+        {
+          "type": "text",
+          "id": "font_family_text",
+          "label": "Font Family",
+          "default": "Helvetica"
+		},
+        {
+          "type": "text",
+          "id": "font_weight_text",
+          "label": "Font Weight",
+          "default": "800"
+		},
+        {
+          "type": "text",
+          "id": "line_height_text",
+          "label": "Line Height",
+          "default": "1.2"
+		},
+        {
+          "type": "text",
+          "id": "text_size",
+          "label": "Text Size",
+          "default": "18px"
+        },
+        {
+          "type": "text",
+          "id": "font_color",
+          "label": "Font Color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "text_width",
+          "label": "Text Width",
+          "default": "100%"
+        },
+        {
+          "type": "text",
+          "id": "text_padding_left",
+          "label": "Padding Left",
+          "default": "0px"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "Text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "color_accent",
+          "label": "Accent",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "turnpup_hover_txt_color",
+          "label": "Hover Text Color",
+          "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "name": "Custom HTML",
+      "settings": [
+        {
+          "type": "html",
+          "id": "code",
+          "label": "HTML"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full browser width",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dual Text Custom Content (side by side)",
+      "category": "Advanced layout",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "richtext",
+          "settings": {
+            "title": "Dual Content"
+          }
+        },
+        {
+          "type": "button",
+          "settings": {
+            "button_label": "See all products",
+            "button_link": "shopify://collections/all"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

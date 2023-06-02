@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "blog-template-simple",
+      "settings": {
+        "show_title": false,
+        "show_image_first": "after",
+        "show_author": false,
+        "show_date": true,
+        "center_title": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

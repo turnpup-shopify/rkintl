@@ -1,0 +1,765 @@
+{% assign background_image = section.settings.backgroundimage %}
+{% assign mobile_background_image = section.settings.mobilebackgroundimage %}
+
+<div id="tp-custom-content" class="custom-content" data-section-id="{{ section.id }}" data-section-type="custom-content-section" style="">
+  <div class="contain-full-width module-left">
+    <div class="wrapper">
+
+      {% if section.settings.title != blank %}
+        <header>
+          <h4>{{ section.settings.title | escape }}</h4>
+        </header>
+      {% endif %}
+      <div class="custom-content-container align-{{ section.settings.alignment }}">
+        {% for block in section.blocks %}
+          <div id="block-{{ block.id }}" class="custom__item custom__item-{{ block.type }} {% if block.settings.full_width %}custom__item-full_width{% endif %}" {{ block.shopify_attributes }}>
+            {% case block.type %}
+              {% when 'page' %}
+                <div class="content rte">
+                  {% if block.settings.show_title %}
+                    <h2 class="align-{{ section.settings.alignment }}">{{ pages[block.settings.page].title }}</h2>
+                  {% endif %}
+                  <div class="content-page">{{ pages[block.settings.page].content }}</div>
+                </div>
+              {% when 'image' %}
+                {% if block.settings.link != blank %}
+                  <a href="{{ block.settings.link }}" class="content">
+                {% else %}
+                  <div class="content">
+                {% endif %}
+
+                {%- assign image = block.settings.image -%}
+                {% if image != blank %}
+                  <div class="card__image-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%">
+                    {% assign image_widths = '360,540,720,900,1000,1200,1500,1800,2000,2400,5000' %}
+                    {% include 'theme-rias' %}
+                    <img class="card__image lazyload fade-in"
+                      data-src="{{ image_url_pattern }}"
+                      data-widths="[{{ image_widths }}]"
+                      data-aspectratio="{{ image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ image.alt | escape }}">
+                    <noscript>
+                      <img class="card__image" src="{{ image | img_url: '5000x' }}" alt="{{ image.alt | escape }}">
+                    </noscript>
+                  </div>
+                  <style media="screen">
+                    #block-{{ block.id }}:not(.custom__item-full_width) {
+                      max-width: {{ image.width }}px;
+                      margin-left: auto;
+                      margin-right: auto;
+                    }
+                    //
+                  </style>
+                {% else %}
+                  {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                  {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+
+                {% if block.settings.link != blank %}
+                  </a>
+                {% else %}
+                  </div>
+                {% endif %}
+              {% when 'video' %}
+                <div class="content video__container video__container--default-ratio" data-video-type="{{ block.settings.video_url.type }}" data-video-id="{{ block.settings.video_url.id }}">
+                  {% case block.settings.video_url.type %}
+                    {% when 'youtube' %}
+                      <iframe class="lazyload" data-src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+                    {% when 'vimeo' %}
+                      <iframe class="lazyload" data-src="https://player.vimeo.com/video/{{ block.settings.video_url.id }}?color={{ settings.primary_accent_color | remove: '#' }}&title=0&byline=0&portrait=0" width="850" height="480" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  {% endcase %}
+                </div>
+              {% when 'richtext' %}
+                <div class="content rte">
+                  {% if block.settings.title != blank %}
+                    <h2> {{ block.settings.title | escape }}</h2>
+                    <style>
+                      #block-{{ block.id }} {
+                        max-width:{{ block.settings.maxwidth}};
+                        margin: {{ block.settings.margin }};
+                      }
+                      #block-{{ block.id }} .content h2 {
+                        font-size: {{ block.settings.title_size }};
+                        color:{{ block.settings.font_color }};
+                        font-weight: {{ block.settings.title_weight }};
+                        
+                       }
+                      @media screen and (max-width: 700px) {
+                        #block-{{ block.id }} {
+                          max-width:{{ block.settings.mobile_maxwidth}};
+                          margin: {{ block.settings.mobilemargin }};
+                        }
+                         #block-{{ block.id }} .content h2 {
+                         font-size: {{ block.settings.mobile_title_size }};
+                         text-align: {{ block.settings.mobile_text_align }};
+                       }
+                      }
+                    </style>
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    <div class="richtext" style="font-size:{{block.settings.text_size}};color:{{ block.settings.font_color }};">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+                </div>
+              {% when 'html' %}
+                <div class="content">
+                  {% if block.settings.code != blank %}
+                    {{ block.settings.code }}
+                  {% endif %}
+                </div>
+              {% when 'button' %}
+                {% if block.settings.button_link != blank and block.settings.button_label != blank %}
+                  <div class="content">
+                    {% assign id = "button-" | append: block.id %}
+                    {%
+                      render "hapny-button",
+                      threeD: block.settings.is_hero_button,
+                      button_link: block.settings.button_link,
+                      button_label: block.settings.button_label,
+                      bottom_background_color: block.settings.bottom_background_color,
+                      middle_background_color: block.settings.middle_background_color,
+                      top_background_color: block.settings.top_background_color,
+                      id: id
+                    %}
+                    {% if block.settings.second_button_label %}
+                      {% assign id_two = "block-2-" | append: block.id %}
+                      {%
+                        render "hapny-button",
+                        threeD: block.settings.second_is_hero_button,
+                        button_link: block.settings.second_button_link,
+                        button_label: block.settings.second_button_label,
+                        bottom_background_color: block.settings.second_bottom_background_color,
+                        middle_background_color: block.settings.second_middle_background_color,
+                        top_background_color: block.settings.second_top_background_color,
+                        id: id_two
+                      %}
+                    {% endif %}
+                    {% comment %} turnpup changes {% endcomment %}
+                    <style>                                           
+                      #block-{{ block.id }} {
+                        display: inline-block;
+                        max-width:{{ block.settings.maxwidth }};
+                        margin: {{ block.settings.margin }};
+                      }
+                      #block-{{ block.id }} .hapny_button_container:not(:first-of-type) {
+                        {% if block.settings.second_button_is_second_button %}
+                          margin: 0px 0 10px 12px !important;
+                        {% endif %}
+                      }
+                      #block-{{ block.id }} a.button {
+                        color: {{ block.settings.color_text }};
+                        border-color: {{ block.settings.color_accent }};
+                        font-size: {{ block.settings.button_font_size }};
+                        font-weight: {{ block.settings.button_font_weight }};
+                        border-width: {{ block.settings.button_border_width }}px;
+                        background-color: {{ block.settings.button_background_color }};
+                        border-radius: {{ block.settings.button_border_radius }};
+                        padding: {{ block.settings.button_padding }};
+                      }
+                      #block-{{ block.id }} a.button:hover,
+                      #block-{{ block.id }} a.button:focus {
+                        color: {{ block.settings.turnpup_hover_txt_color }};
+                        border-color: {{ block.settings.hover_color_accent }}; 
+                        border-width: {{ block.settings.button_border_width }}px;
+                        background-color: {{ block.settings.button_hover_background_color }};
+                      }
+                      @media screen and (max-width: 700px) {                       
+                        #block-{{ block.id }} {
+                          max-width:{{ block.settings.mobile_maxwidth}};
+                          margin: {{ block.settings.mobilemargin }};
+                        }
+                        #block-{{ block.id }} a.button {
+                          font-size: {{ block.settings.mobile_button_font_size }};\
+                        }
+                        #block-{{ block.id }} .content {  
+                          {% if block.settings.mobile_button_align %}
+                            margin: 0 auto;
+                            width: fit-content;
+                          {% endif %}
+                        }
+                      }
+                  </style>
+                  </div>
+                {% endif %}
+            {% endcase %}
+
+          </div>
+          <style>
+              
+          </style>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+<style>
+  	.custom-content-section {
+      border-bottom: 1px solid {{ section.settings.turnpup_bottom_border_color }};
+      background-color: {{ section.settings.turnpup_background_color }};
+      {% if background_image != blank %}
+        background: url({{ background_image | img_url: '5000x' }}) no-repeat center center; /* fixed */      
+        background-size: cover;
+      {% endif %}
+    }
+    .custom-content-section .custom__item {
+     padding: 0px; 
+    }
+    #tp-custom-content {
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding:{{section.settings.margintop}} 0px {{section.settings.marginbottom}};
+    }
+    @media only screen and (max-width: 700px) {
+      #tp-custom-content {
+        {% if mobile_background_image != blank %}
+          background: url({{ mobile_background_image | img_url: '5000x' }}) no-repeat center center; /* fixed */      
+          background-size: cover;
+        {% else %}
+          background: #fff;
+        {% endif %}
+        padding:{{section.settings.mobilemargintop}} 0px {{section.settings.mobilemarginbottom}};
+      }
+    }
+</style>
+
+
+{% schema %}
+{
+  "name": "Showrooms Module Homepage",
+  "class": "custom-content-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "turnpup_bottom_border_color",
+      "label": "Bottom Border Color",
+      "default": "#F4B237"
+    },
+    {
+      "type": "color",
+      "id": "turnpup_background_color",
+      "label": "Background Color",
+      "default": "#94da29"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Custom content"
+    },	
+    {
+      "type": "text",
+      "id": "margintop",
+      "label": "Top Margin",
+      "default": "30px"
+    },
+    {
+      "type": "text",
+      "id": "mobilemargintop",
+      "label": "Mobile Top Margin",
+      "default": "30px"
+    },        
+    {
+      "type": "text",
+      "id": "marginbottom",
+      "label": "Bottom Margin",
+      "default": "30px"
+    },
+    {
+      "type": "text",
+      "id": "mobilemarginbottom",
+      "label": "Mobile Bottom Margin",
+      "default": "30px"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "Alignment",
+      "default": "center",
+      "options": [
+        {"value": "left", "label": "Left"},
+        {"value": "center", "label": "Center"},
+        {"value": "right", "label": "Right"}
+      ]
+    },
+    {
+      "type": "image_picker",
+      "id": "backgroundimage",
+      "label": "Background Image (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobilebackgroundimage",
+      "label": "Mobile: Background Image (optional)"
+    }
+  ],
+  "blocks": [
+        {
+          "type": "page",
+          "name": "Page",
+          "settings": [
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Page content"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_title",
+          "label": "Show title",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full browser width",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Image link"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full browser width",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "id": "video_url",
+          "type": "video_url",
+          "label": "Video URL",
+          "accept": ["youtube", "vimeo"],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full browser width",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "name": "Rich text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Talk about your brand"
+        },
+        {
+          "type": "text",
+          "id": "title_size",
+          "label": "Title Size",
+          "default": "24px"
+        },
+        {
+          "type": "text",
+          "id": "title_weight",
+          "label": "Title Weight",
+          "default": "400"
+        },
+        {
+          "type": "text",
+          "id": "mobile_title_size",
+          "label": "Mobile Title Size",
+          "default": "18px"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+        },
+        {
+          "type": "text",
+          "id": "text_size",
+          "label": "Text Size",
+          "default": "18px"
+        },
+        {
+          "type": "text",
+          "id": "font_color",
+          "label": "Font Color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "text",
+          "id": "mobile_text_align",
+          "label": "Mobile Text Align",
+          "default": "center"
+        },
+        {
+          "type": "text",
+          "id": "maxwidth",
+          "label": "Max Width",
+          "default": "50%"
+        },
+        {
+          "type": "text",
+          "id": "margin",
+          "label": "Margin",
+          "default": "10px 0px 10px 0px",
+          "info": "e.g. 10px 0px 10px 0px"
+        },
+        {
+          "type": "text",
+          "id": "mobilemargin",
+          "label": "Mobile: Margin",
+          "default": "10px 0px 10px 0px",
+          "info": "e.g. 10px 0px 10px 0px"
+        },
+        {
+          "type": "text",
+          "id": "mobile_maxwidth",
+          "label": "Mobile: Max Width",
+          "default": "80%"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "maxwidth",
+          "label": "Max Width",
+          "default": "50%"
+        },
+        {
+          "type": "text",
+          "id": "margin",
+          "label": "Margin",
+          "default": "10px 0px 10px 0px",
+          "info": "e.g. 10px 0px 10px 0px"
+        },
+        {
+          "type": "text",
+          "id": "mobilemargin",
+          "label": "Mobile: Margin",
+          "default": "10px 0px 10px 0px",
+          "info": "e.g. 10px 0px 10px 0px"
+        },
+        {
+          "type": "text",
+          "id": "mobile_maxwidth",
+          "label": "Mobile: Max Width",
+          "default": "80%"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "text",
+          "id": "button_font_size",
+          "label": "Button Font Size",
+		  "default": "18px"
+        },
+        {
+          "type": "text",
+          "id": "mobile_button_font_size",
+          "label": "Mobile Button Font Size",
+          "default": "12px"
+        },
+        {
+          "type": "text",
+          "id": "button_font_weight",
+          "label": "Button Font Weight",
+          "default": "400"
+        },
+        {
+          "type": "text",
+          "id": "button_border_radius",
+          "label": "Button Border Radius",
+          "default": "0px"
+        },
+        {
+          "type": "text",
+          "id": "button_padding",
+          "label": "Button Padding",
+          "default": "12px 16px"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "Text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "color_accent",
+          "label": "Accent",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "button_background_color",
+          "label": "Background",
+          "default": "#F4B237"
+        },
+        {
+          "type": "color",
+          "id": "button_hover_background_color",
+          "label": "Hover Background",
+          "default": "#F4B237"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_hero_button",
+          "label": "3D Hero Button?"
+        },    
+        {
+          "type": "color",
+          "id": "bottom_background_color",
+          "label": "Bottom Button Background Color",
+           "default": "#28499c" 
+        },    
+        {
+          "type": "color",
+          "id": "middle_background_color",
+          "label": "Middle Button Background Color",
+           "default": "#ea5e33" 
+        },
+        {
+          "type": "color",
+          "id": "top_background_color",
+          "label": "Top Button Background Color",
+           "default": "#f4b237" 
+        },
+        {
+          "type": "color",
+          "id": "hover_color_accent",
+          "label": "Hover Accent",
+          "default": "#F4B237"
+        },
+        {
+          "type": "color",
+          "id": "turnpup_hover_txt_color",
+          "label": "Hover Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type":"range",
+          "id":"button_border_width",
+          "min":0,
+          "max":5,
+          "step":1,
+          "unit":"px",
+          "label":"Button Border Width",
+          "default":1
+        },
+        {
+          "type": "checkbox",
+          "id": "mobile_button_align",
+          "label": "Mobile Button Align",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "button_is_second_button",
+          "label": "Is Second Mobile Button?",
+          "default": true
+        },
+        { 
+          "type": "header",
+          "content": "Second Button",
+          "info": "hi"
+        },
+        {
+          "type": "text",
+          "id": "second_button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "text",
+          "id": "second_button_font_size",
+          "label": "Button Font Size",
+		  "default": "18px"
+        },
+        {
+          "type": "text",
+          "id": "second_mobile_button_font_size",
+          "label": "Mobile Button Font Size",
+          "default": "12px"
+        },
+        {
+          "type": "text",
+          "id": "second_button_font_weight",
+          "label": "Button Font Weight",
+          "default": "400"
+        },
+        {
+          "type": "text",
+          "id": "second_button_border_radius",
+          "label": "Button Border Radius",
+          "default": "0px"
+        },
+        {
+          "type": "text",
+          "id": "second_button_padding",
+          "label": "Button Padding",
+          "default": "12px 16px"
+        },
+        {
+          "type": "url",
+          "id": "second_button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "color",
+          "id": "second_color_text",
+          "label": "Text",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "second_color_accent",
+          "label": "Accent",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color",
+          "id": "second_button_background_color",
+          "label": "Background",
+          "default": "#F4B237"
+        },
+        {
+          "type": "color",
+          "id": "second_button_hover_background_color",
+          "label": "Hover Background",
+          "default": "#F4B237"
+        },
+        {
+          "type": "checkbox",
+          "id": "second_is_hero_button",
+          "label": "3D Hero Button?"
+        },    
+        {
+          "type": "color",
+          "id": "second_bottom_background_color",
+          "label": "Bottom Button Background Color",
+           "default": "#28499c" 
+        },    
+        {
+          "type": "color",
+          "id": "second_middle_background_color",
+          "label": "Middle Button Background Color",
+           "default": "#ea5e33" 
+        },
+        {
+          "type": "color",
+          "id": "second_top_background_color",
+          "label": "Top Button Background Color",
+           "default": "#f4b237" 
+        },
+        {
+          "type": "color",
+          "id": "second_hover_color_accent",
+          "label": "Hover Accent",
+          "default": "#F4B237"
+        },
+        {
+          "type": "color",
+          "id": "second_turnpup_hover_txt_color",
+          "label": "Hover Text Color",
+          "default": "#ffffff"
+        },
+        {
+          "type":"range",
+          "id":"second_button_border_width",
+          "min":0,
+          "max":5,
+          "step":1,
+          "unit":"px",
+          "label":"Button Border Width",
+          "default":1
+        },
+        {
+          "type": "checkbox",
+          "id": "second_mobile_button_align",
+          "label": "Mobile Button Align",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "second_button_is_second_button",
+          "label": "Is Second Mobile Button?",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "name": "Custom HTML",
+      "settings": [
+        {
+          "type": "html",
+          "id": "code",
+          "label": "HTML"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full browser width",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom content (statement earrings)",
+      "category": "Advanced layout",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "richtext",
+          "settings": {
+            "title": ""
+          }
+        },
+        {
+          "type": "button",
+          "settings": {
+            "button_label": "See all products",
+            "button_link": "shopify://collections/all"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

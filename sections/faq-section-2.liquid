@@ -1,0 +1,173 @@
+{% schema %}
+  {
+    "name": "FAQ",
+    "class": "faq-section",
+    "settings": [
+
+    ],
+	"blocks": [
+      {
+        "name": "HEADER",
+        "type": "Title",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_section_title",
+            "label": "Section Title",
+            "default": "SMART QUESTIONS"
+          }
+        ]		
+      }, {
+		"name": "FAQ",
+        "type": "Question",
+        "settings": [
+          {
+            "type": "text",
+            "id": "question",
+            "label": "Question",
+            "default": "How do I likka the leffs?"
+          },
+          {
+            "type": "text",
+            "id": "answer",
+            "label": "Answer",
+            "default": "PeePaws Lickaloo Spindrifter the 4th"
+          }
+        ]
+      }, {
+        "name": "End Section",
+        "type": "END"
+      }
+    ]
+  }
+{% endschema %}
+<div class="page_a_container">
+  <p class="page_a_section_title">{{ section.settings.title }}</p>
+  <p class="page_a_section_description"> {{ section.settings.description }}  </p>
+  {% for block in section.blocks %}
+    {% if block.type == "END"%}
+      </div>
+    {% elsif block.type == "Title"%}
+        <div class="faq_block">      
+      {% if block.settings.faq_section_title != blank %}
+        <p class="faq_section_title" id="{{ block.settings.faq_section_title | downcase }}"> {{ block.settings.faq_section_title }} </p>
+      {% endif %}
+    {% else %}
+      {% if block.settings.question != blank %}
+          <div class="page-accordion--single">
+
+              <button class="turnpup_question" aria-expanded="false" js-accordion-header>
+                <span class="page-accordion__title">{{ block.settings.question }}</span>
+              </button>
+              <p class="turnpup_answer" js-accordion-content>
+                <span style="display:block;margin-top:8px;">
+                {{ block.settings.answer }}
+                </span>
+              </p>
+          </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+  .turnpup_answer.visible {
+    /* this controls the plus +/- in the after  */
+  }
+  .turnpup_answer {
+    display:none;
+    margin: 0px 0px 0px 0px;
+    flex: 1;
+    font-weight: 400;
+    padding: 0px 40px 0px 0px;
+	font-size: 15px;
+    color: #111;
+  }
+</style>
+<script>
+  window.addEventListener("hashchange", function () {
+      window.scrollTo(window.scrollX, window.scrollY - 100);
+  });
+  </script>
+{% style %}
+  .page-header,
+  .content-util {
+   display:none;
+  }
+  .page-accordion__title {
+	font-size: 18px;
+  }
+  .page-accordion--single {
+      border-bottom: .0625rem solid #000;
+      padding: 1rem 0;
+      width: 100%;
+  }
+  .page-accordion--single:first-of-type {
+      border-top: .0625rem solid #000;
+  }
+  .faq_block {
+    margin-bottom: 40px;
+  }
+  .faq_section_title {
+    font-family: 'p22-mackinac-pro', serif;
+    font-weight: 800;
+    color: #3c64b1;
+	margin-bottom: 0.3em
+  }
+  .turnpup_question {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    background-color: transparent;
+    text-align: left;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    padding: 0px 40px 0px 0px;
+    color: #000;
+  }
+  .turnpup_question:before, .turnpup_question:after {
+	content: "";
+    position: absolute;
+    top: 40%;
+    right: 0;
+    margin: 0 0 -8px;
+    background: #000;
+    border-radius: 0px;
+  }
+  {% comment %} vertical bar {% endcomment %}
+  .turnpup_question:before { 
+	right: 8px;
+    width: 2px;
+    height: 15px;
+    transition: all 0.35s;
+    margin-top: -7.5px;
+    background: #000;
+  }
+  {% comment %} vertical bar {% endcomment %}
+  .turnpup_question:after {
+    right: 1px;
+    width: 16px;
+    height: 2px;
+    margin-top: -1.5px;
+    background: #000;
+  }
+  .turnpup_question.expanded:before {
+    height: 0;
+    margin-top: 0;
+  }
+
+{% endstyle %}
+
+{% javascript %}
+{% endjavascript %}

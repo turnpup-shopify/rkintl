@@ -1,0 +1,69 @@
+{
+  "sections": {
+    "1644807092c404f462": {
+      "type": "page-top",
+      "settings": {
+        "background_color": "#3c64b1",
+        "wave_bottom_color": "#f5b700",
+        "spacing_top": "80px",
+        "spacing_bottom": "50px",
+        "mobile_spacing_top": "20px",
+        "mobile_spacing_bottom": "50px",
+        "header_font_size": "30px",
+        "header_font_color": "#ffffff",
+        "header_font_weight": "600",
+        "page_description_font_color": "#ffffff",
+        "padding_between_descriptions": "#000000",
+        "description_two_color": "#000000"
+      }
+    },
+    "164484898111475c05": {
+      "type": "manual-page-what-you-need",
+      "settings": {
+        "background_color": "#f6b700",
+        "header_color": "#ffffff",
+        "header_font_family": "'p22-mackinac-pro', serif",
+        "header_font_size": "26px",
+        "header_font_weight": "600",
+        "thing_you_need_color": "#ffffff",
+        "thing_you_need_font_family": "'karla'",
+        "thing_you_need_font_size": "20px",
+        "thing_you_need_font_weight": "400",
+        "top_padding_container": "40px 0 60px",
+        "width": "600px",
+        "image_width": "140px"
+      }
+    },
+    "1644850299a8d75c4e": {
+      "type": "manual-page-directions",
+      "settings": {
+        "background_color": "#f1ece7",
+        "header_color": "#000000",
+        "header_font_family": "'p22-mackinac-pro', serif",
+        "tbd_color": "#000000",
+        "top_padding_container": "40px 0 60px",
+        "width": "600px"
+      }
+    },
+    "1644866248c3cce879": {
+      "type": "manual-bottom-next",
+      "settings": {
+        "subtitle": "next up",
+        "subtitle_font_size": "16px",
+        "background_color": "#ffa1a1",
+        "header_color": "#ffffff",
+        "header_font_family": "'p22-mackinac-pro', serif",
+        "title_font_size": "30px",
+        "text_color": "#ffffff",
+        "top_padding_container": "60px 0 80px",
+        "width": "600px"
+      }
+    }
+  },
+  "order": [
+    "1644807092c404f462",
+    "164484898111475c05",
+    "1644850299a8d75c4e",
+    "1644866248c3cce879"
+  ]
+}

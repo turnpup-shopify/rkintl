@@ -1,0 +1,63 @@
+<section class="page">
+    <div class="page_a_container">
+     
+      <div class="content-container narrow contact form" style="margin-top: 20px">
+        {% form 'contact' %}
+  
+          {% comment %}
+            Successful message
+          {% endcomment %}
+          {% if form.posted_successfully? %}
+            <p class="note form-success">
+              {{ 'contact.form.post_success' | t }}
+            </p>
+          {% endif %}
+  
+          <div class="selection-wrapper">
+            {{ form.errors | default_errors }}
+          </div>
+  
+          <div class="selection-wrapper">
+            <div class="input-row">
+              {% assign name_attr = 'contact.form.name' | t | handle %}
+              <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+              <input style="background-color: #F0F0F0;" type="text" id="ContactFormName" class="input-full" name="contact[{{ name_attr }}]" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+            </div>
+            <div class="input-row">
+              {% assign name_attr = 'contact.form.contactPerson' | t | handle %}
+              <label for="ContactFormContactPerson" class="hidden-label">{{ 'contact.form.contactPerson' | t }}</label>
+              <input style="background-color: #F0F0F0;" type="text" id="ContactFormContactPerson" class="input-full" name="contact[contactPerson]" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.contactPerson }}{% endif %}">
+            </div>
+            <div class="input-row">
+              {% assign name_attr = 'contact.form.phone' | t | handle %}
+              <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+              <input style="background-color: #F0F0F0;" type="tel" id="ContactFormPhone" class="input-full" name="contact[{{ name_attr }}]" pattern="[0-9\-]*" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+            </div>
+            <div class="input-row">
+              <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+              <input style="background-color: #F0F0F0;" type="email" id="ContactFormEmail" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+            </div>     
+            <div class="input-row">
+              <label for="ContactFormWebsite" class="hidden-label">{{ 'contact.form.website' | t }}</label>
+              <input style="background-color: #F0F0F0;" type="website" id="ContactFormEmail" class="input-full" name="contact[website]" autocorrect="off" autocapitalize="off" value="{% if form.website %}{{ form.website }}{% elsif customer %}{{ customer.website }}{% endif %}">
+            </div>   
+            <div class="input-row">
+              <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+              <textarea style="background-color: #F0F0F0;" rows="10" id="ContactFormMessage" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+            </div>
+            <p class="submit">
+              <input type="submit" class="button solid" value="{{ 'contact.form.send' | t }}">
+            </p>
+          </div>
+  
+        {% endform %}
+  
+      </div>
+    </div>
+  </section>
+  <style>
+    .page input:-webkit-autofill {
+         -webkit-text-fill-color: #000000;
+    }
+  </style>
+  

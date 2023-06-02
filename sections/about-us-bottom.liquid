@@ -1,0 +1,205 @@
+<div class="about_container">
+  <div class="module" style="padding: 20px 0px;">
+    <div style="margin: 0 auto;">
+      <div class="about_flex">
+        <div class="about_left">
+          <img src="{{ section.settings.founder_image_link }}" alt="" />
+        </div>
+        <div class="about_right">
+          <div>
+            <p class="p1">{{ section.settings.pargraph_text_0 }}</p>
+            <p class="p1">{{ section.settings.pargraph_text_1 }}</p>
+            <p class="p1">{{ section.settings.pargraph_text_2 }}</p>
+            <p class="p2">{{ section.settings.pargraph_text_3 }}</p>
+            <p class="p2">{{ section.settings.pargraph_text_4 }}</p>
+            <h3 class="about_us_yellow_header" style="max-width: 1200px; margin: 0px auto;">Grab a screwdriver, and let’s get started.</h3>
+            
+            
+            
+            <div style="margin-top: 20px;">
+              {% if section.settings.signature != blank %}
+                {% assign image = section.settings.signature %}
+                {% assign image_widths = '400,600,800,900,1000,1200,1500,1800,2000,2400' %}
+                {% include 'theme-rias' %}
+                <img class="slide__image slide__image-desktop lazyload"
+                  src="{{ image | img_url: '2400x' }}"   
+                  data-src="{{ image_url_pattern }}"
+                  data-widths="[{{ image_widths }}]"
+                  data-aspectratio="{{ image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ image.alt | escape }}"
+                  style="height:100px;"   
+                     >
+                {% if forloop.first %}
+                <noscript>
+                  <img src="{{ image | img_url: '5000x' }}" alt="{{ image.alt | escape }}">
+                </noscript>
+                {% endif %} 
+                {% assign height = image.height | plus: 0 %}
+                {% assign width = image.width | plus: 0 %}
+                {% assign padding_ratio = height | times: 100 | divided_by: width %}
+              {% else %}
+                {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                {% assign padding_ratio = 40 %}
+              {% endif %}
+            </div>            
+            
+            
+            
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .about_us_bottom_container {
+    margin-top: -12px;
+    display: block;
+    background-color: {{ section.settings.background_color }};
+  }
+  .about_container {
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: {{ section.settings.max_width }};;
+    margin: 0 auto 0; 
+  }
+  .about_flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .about_left {
+    max-width: 50%;
+    flex: 1 0 30%;
+  }
+  .about_right {
+    max-width: 50%;
+    flex: 1 0 30%;
+    padding-left: {{ section.settings.pargraph_padding_left }};
+  }
+  .about_us_yellow_header {
+    text-align: left;
+    color: #f4b237;
+    font-size: 24px;
+    font-family: {{ section.settings.screwdriver_family }};
+  }
+  .wave-divider {
+    background-color: white;
+  }
+  .wave-divider path {
+    fill: {{ section.settings.background_color }};
+  }
+  .p1, .p2 {
+    color: {{ section.settings.pargraph_color }};
+  }
+  @media only screen and (max-width: 700px) {
+    .about_left {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+    .about_right {
+      max-width: 100%;
+      flex: 0 0 100%;
+      padding-left: 0px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+</style>
+{% schema %}
+  {
+    "name": "About Us Bottom",
+    "class": "about_us_bottom_container", 
+    "settings": [
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#939393"
+        },
+        {
+            "type": "text",
+            "id": "max_width",
+            "label": "Max Width",
+            "default": "70%"
+        },
+        {
+            "type": "color",
+            "id": "pargraph_color",
+            "label": "Paragraph Color",
+            "default": "#fff"
+        },
+        {
+            "type": "text",
+            "id": "pargraph_padding_left",
+            "label": "Paragraph Padding Left",
+            "default": "20px"
+        },
+        {
+            "type": "text",
+            "id": "pargraph_text_0",
+            "label": "Paragraph Text 0",
+            "default": "HI, I'M PRIYA!"
+        },
+        {
+            "type": "text",
+            "id": "pargraph_text_1",
+            "label": "Paragraph Text 1",
+            "default": "#fff"
+        },
+        {
+            "type": "text",
+            "id": "pargraph_text_2",
+            "label": "Paragraph Text 2",
+            "default": "#fff"
+        },
+        {
+            "type": "text",
+            "id": "pargraph_text_3",
+            "label": "Paragraph Text 3",
+            "default": "#fff"
+        },
+        {
+            "type": "text",
+            "id": "pargraph_text_4",
+            "label": "Paragraph Text 4",
+            "default": "hello"
+        },
+        {
+            "type": "image_picker",
+            "id": "signature",
+            "label": "Signature"
+        },
+        {
+          "type": "text",
+          "id": "founder_image_link",
+          "label": "Founder Image Link",
+          "default": "https://cdn.shopify.com/s/files/1/0449/1667/0615/files/about-us-cropped.jpg?v=1647225227"
+        },
+        {
+          "type": "text",
+          "id": "screwdriver_family",
+          "label": "Screwdriver Font Family",
+          "default": "'p22-mackinac-pro'"
+        }
+    ],
+    "presets": [
+      {
+        "name": "About Us Bottom",
+        "category": "Advanced layout"        
+      }
+    ]
+  }
+  
+{% endschema %}
+
+{% stylesheet %}
+  
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

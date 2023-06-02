@@ -1,0 +1,7 @@
+{%- capture turnpup_global_object -%}
+    TurnpupObject.Strings = {
+      example: "Example 1",
+      instagramInvalidToken: {{ 'homepage.onboarding.instagram_invalid_token' | t | json }}   
+    }
+{%- endcapture -%}
+{{ turnpup_global_object }}

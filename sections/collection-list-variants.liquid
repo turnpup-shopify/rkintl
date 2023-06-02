@@ -1,0 +1,344 @@
+{% if section.blocks.size > 0 %}
+  {%- assign enable_sidebar = true -%}
+{% else %}
+  {%- assign enable_sidebar = false -%}
+{% endif %}
+{%- assign products_per_page = section.settings.products_per_page_range -%}
+
+{% if section.settings.image_placement != 'default' and section.settings.image_placement != 'hidden' and collection.image %}
+  <div class="hero-content header {{ section.settings.image_placement }}">
+    {%- assign image = collection.image -%}
+    <div class="collection-image" {% if section.settings.image_placement == 'above' %}style="max-width:{{ image.width }}px;"{% endif %}>
+      <div class="card__image-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%">
+        {% assign image_widths = '295,394,590,700,900,1200,1500,1800,2000,2400' %}
+        {% include 'theme-rias' %}
+        <img class="card__image lazyload"
+          src="{{ image | img_url: '590x' }}"
+          data-src="{{ image_url_pattern }}"
+          data-widths="[{{ image_widths }}]"
+          data-aspectratio="{{ image.aspect_ratio }}"
+          data-sizes="auto"
+          alt="{{ image.alt | escape }}">
+        <noscript>
+          <img class="card__image" src="{{ image | img_url: '1200x' }}" alt="{{ image.alt | escape }}">
+        </noscript>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% paginate collection.products by products_per_page %}
+<section class="collection" data-section-id="{{ section.id }}" data-section-type="collection-template" style="padding-left:{{section.settings.turnpup_margin_leftright}};padding-right:{{section.settings.turnpup_margin_leftright}};">
+  <div class="wrapper" style="max-width:none;margin-right:0;margin-left:0;">
+
+<!--     <div class="quickhit_container">
+      <a class="quickhit" href="/collections/cabinet-knobs">Knobs</a>
+      <a class="quickhit" href="/collections/cabinet-pulls">Pulls</a>
+      <a class="quickhit" href="/collections/appliance-pulls">Appliance Pulls</a>
+    </div> -->
+    {% if section.settings.enable_sorting_2 %}
+      <div class="aside-container">
+        <aside>
+          <script>console.log("2.0 sorting enabled");</script>
+          {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+          <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>        
+          <div class="page-width" id="main-collection-filters" data-id="{{ section.id }}">
+            {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering_2, enable_sorting: section.settings.enable_sorting_2, collapse_on_larger_devices: section.settings.collapse_on_larger_devices_2 %}
+          </div>
+        </aside>
+      </div>
+    {% endif %}
+
+    
+    <div class="grid {% unless enable_sidebar %}full-width{% endunless %}" style="margin-left:0">
+      <div class="collection-container" style="padding-left:0;{% if section.settings.enable_sorting_2 %}width:100%;{% endif %}">
+        <header class="collection-header">
+          <div class="container">
+            
+          {% comment %}
+            TURNPUP remove the section below
+            <h1>{{ collection.title }}</h1>
+          {% endcomment %}
+            
+          {% comment %}            
+            <header class="content-util">
+            {% include 'breadcrumb' %}
+            {% include 'social-icons' %}
+            </header>
+          {% endcomment %}
+            
+            {% include 'collection-sorting' %}
+          </div>
+          {% if section.settings.image_placement == 'default' and collection.image %}
+            {%- assign image = collection.image -%}
+            <div class="collection-image" style="max-width:{{ image.width }}px;">
+              <div class="card__image-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%">
+                {% assign image_widths = '295,394,590,700,900,1200,1500,1800,2000,2400' %}
+                {% include 'theme-rias' %}
+                <img class="card__image lazyload"
+                  src="{{ image | img_url: '590x' }}"
+                  data-src="{{ image_url_pattern }}"
+                  data-widths="[{{ image_widths }}]"
+                  data-aspectratio="{{ image.aspect_ratio }}"
+                  data-sizes="auto"
+                  style="width:{{ image.width }}px;"
+                  alt="{{ image.alt | escape }}">
+                <noscript>
+                  <img class="card__image" src="{{ image | img_url: '1200x' }}" alt="{{ image.alt | escape }}">
+                </noscript>
+              </div>
+            </div>
+          {% endif %}
+          {% if collection.description != blank %}
+          
+          {% endif %}
+        </header>
+        
+        {% if enable_sidebar %}
+          <div class="mobile-aside-container">
+            <a href="#" class="button simple">{{ 'layout.navigation.collection_menu' | t}}</a>
+            <aside>
+              {% include 'collection-sidebar' %}
+            </aside>
+          </div>
+        {% endif %}
+
+        <div class="products products-grid {% unless enable_sidebar %}full-width{% endunless %}">
+          {% for product in collection.products %}
+            {% for option in product.options %}
+            {% if option == 'Color' %}
+            {% assign index = forloop.index0 %}
+            {% assign colorlist = '' %}
+            {% assign color = '' %}
+            {% for variant in product.variants %}
+            {% capture color %}
+            {{ variant.options[index] }}
+            {% endcapture %}
+                {% unless colorlist contains color %}
+                    {% include 'product-grid-item-color' %}
+                    {% capture tempList %}
+                        {{colorlist | append: color | append: " " }}
+                    {% endcapture %}
+                {% assign colorlist = tempList %}
+                {% endunless %}
+                {% endfor %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+        </div>
+        {% if paginate.pages > 1 %}
+        <footer class="collection-footer">
+          {% include 'pagination' %}
+        </footer>
+        {% endif %}
+      </div>
+
+      {% if enable_sidebar and section.settings.enable_sorting_2 != true %}
+        <div class="aside-container">
+          <aside>
+            {% include 'collection-sidebar' %}
+          </aside>
+        </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+</section>
+<style>
+  .quickhit_container {
+    display: none;
+  }
+  .quickhit {
+    display: inline-block; 
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 8px 16px;
+    color: black;
+    border: {{ section.settings.button_border_width }} solid {{ section.settings.button_border_color }};
+    border-radius: 16px;
+    background-color: transparent;
+  }
+  .quickhit:first-of-type {
+    margin: 0 20px 0 0;
+  }
+  .quickhit:last-of-type {
+        margin-right: 0px;
+  }
+  @media only screen and (max-width: 700px) {
+    .quickhit_container {
+      display: block;
+      padding-top: 20px;
+    }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+      {%- for product in collection.products -%}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index | json }},
+          "url": {{ product.url | json }},
+          "name": {{ product.title | json }}
+        }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+  ]
+}
+</script>
+
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Collection List Variants",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page_range",
+      "label": "Number of products on each page",
+      "min": 12,
+      "max": 48,
+      "step": 12,
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "image_placement",
+      "label": "Collection image placement",
+      "options": [
+        { "value": "default", "label": "After collection title" },
+        { "value": "above", "label": "After navigation" },
+        { "value": "above-full", "label": "After navigation full width" },
+        { "value": "hidden", "label": "Hidden" }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering_2",
+      "default": true,
+      "label": "Enable Filtering 2.0"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting_2",
+      "default": true,
+      "label": "Enable Sorting 2.0"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_on_larger_devices_2",
+      "default": false,
+      "label": "Collapse on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_enable",
+      "label": "Enable sorting",
+      "default": true
+    }, 
+    {
+      "type": "checkbox",
+      "id": "sort_featured_enable",
+      "label": "Enable Featured sorting",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_best_selling_enable",
+      "label": "Enable Best Selling sorting",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_alphabetical_enable",
+      "label": "Enable Alphabetical sorting",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_price_enable",
+      "label": "Enable Price sorting",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_date_enable",
+      "label": "Enable Date sorting",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button Border Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "text",
+      "id": "button_border_width",
+      "label": "Button Border Width",
+      "default": "2px"
+    },
+    {
+      "type": "checkbox",
+      "id": "layout_enable",
+      "label": "Enable grid and list views",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "turnpup_margin_leftright",
+      "label": "Text margin left and right",
+      "default": "10%"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Sidebar menu",
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "linklist",
+          "label": "Menu",
+          "default": "main-menu"
+        }
+      ]
+    },
+    {
+      "type": "tags",
+      "name": "Sidebar tags",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Shop by"
+        },
+        {
+          "type": "radio",
+          "id": "tag_style",
+          "label": "Show tags as",
+          "options": [
+            { "value": "buttons", "label": "Buttons" },
+            { "value": "menu", "label": "Menu" }
+          ],
+          "default": "buttons"
+        },
+        {
+          "type": "checkbox",
+          "id": "tag_grouping",
+          "label": "Enable tag grouping",
+          "default": false,
+          "info": "[Learn how to set up tag groups](http://help.stylehatch.com/article/289-collections)"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

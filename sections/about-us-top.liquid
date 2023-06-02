@@ -1,0 +1,174 @@
+<div class="about_us_top_container">
+  <div class="page_a_container" style="margin-top: {{ section.settings.padding_top }};">
+    <div class="about_us_top_container">
+      <div style="margin: 0 auto; width: 100%; max-width: 600px;">
+        <img width="100%" src="https://cdn.shopify.com/s/files/1/0449/1667/0615/files/Untitled_Artwork_0b271d6e-da8d-495f-a867-c9a9e5c6624e_1024x1024.png?v=1612746301" alt="" /> 
+      </div>
+      <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <p class="about_us_hapny">{{ section.settings.subtitle_text }}</p>
+        <p class="about_us_title">
+          <b>
+          <span class="first_letter">H</span>ouston | 
+          <span class="first_letter">A</span>ustin | 
+          <span class="first_letter">P</span>ortland | 
+          <span class="first_letter">N</span>ew 
+          <span class="first_letter">Y</span>ork
+          </b>
+        </p>
+      </div>
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <div></div>
+        <p class="about_us_subtitle">{{ section.settings.description_text }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  {% include 'wave-divider.svg' %}
+</div>
+<style>
+  .first_letter {
+    color: {{ section.settings.title_first_letter_color }};
+  }
+  .about_us_hapny {
+    text-align: center;
+    font-family: 'Karla';
+    font-size: {{section.settings.description_size}};
+    color: {{section.settings.description_color}};
+    margin-bottom: 10px;
+  }
+  .about_us_title {
+    text-align: center;
+    font-family: {{section.settings.title_family}};
+    font-size: {{section.settings.title_size}}; 
+    letter-spacing: .3px;
+    color: {{section.settings.title_color}};
+    margin-bottom: 0.2em;
+    line-height: 1.2;
+  }
+  .about_us_subtitle {
+    text-align: center;
+    font-family: 'Karla';
+    font-size: {{section.settings.subtitle_size}};
+    line-height: 1.5em;
+    color: {{section.settings.subtitle_color}}; 
+    margin-top: 14px;
+  }
+</style>
+{% schema %}
+  {
+    "name": "About Us Top",
+    "class": "about_us_top", 
+    "settings": [
+      {
+          "type": "text",
+          "id": "padding_top",
+          "label": "Padding Top",
+          "default": "40px"
+      },
+      {
+          "type": "text",
+          "id": "subtitle_text",
+          "label": "Subtitle Text",
+          "default": "HAPNY"
+      },
+      {
+          "type": "text",
+          "id": "subtitle_size",
+          "label": "Subtitle Text",
+          "default": "14px"
+      },
+      {
+          "type": "text",
+          "id": "subtitle_weight",
+          "label": "Subtitle Text",
+          "default": "400"
+      },
+      {
+          "type": "text",
+          "id": "subtitle_family",
+          "label": "Subtitle Family",
+          "default": "'Karla'"
+      },
+      {
+          "type": "color",
+          "id": "subtitle_color",
+          "label": "Subtitle Color",
+          "default": "#999"
+      },
+      {
+          "type": "color",
+          "id": "title_first_letter_color",
+          "label": "Title First Color",
+          "default": "#fd39dd"
+      },
+      {
+          "type": "text",
+          "id": "title_size",
+          "label": "Title Text",
+          "default": "14px"
+      },
+      {
+          "type": "text",
+          "id": "title_weight",
+          "label": "Title Text",
+          "default": "400"
+      },
+      {
+          "type": "text",
+          "id": "title_family",
+          "label": "Title Family",
+          "default": "'Karla'"
+      },
+      {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#999"
+      },
+      {
+          "type": "text",
+          "id": "description_text",
+          "label": "Description Text",
+          "default": "hapny is a love letter to the cities i’ve lived in and the apartments i’ve worked hard to make feel like home"
+      },
+      {
+          "type": "text",
+          "id": "description_size",
+          "label": "Description Text",
+          "default": "14px"
+      },
+      {
+          "type": "text",
+          "id": "description_weight",
+          "label": "Description Text",
+          "default": "400"
+      },
+      {
+          "type": "text",
+          "id": "description_family",
+          "label": "Description Family",
+          "default": "'Karla'"
+      },
+      {
+          "type": "color",
+          "id": "description_color",
+          "label": "Description Color",
+          "default": "#999"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Us Top",
+        "category": "Advanced layout"        
+      }
+    ]
+  }
+  
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

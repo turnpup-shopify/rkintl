@@ -1,0 +1,205 @@
+<header class="util">
+  <div class="wrapper" id="fixed_mobile_nav_bar">
+
+    <div class="search-wrapper">
+      {% include 'search-bar' %}
+    </div>
+
+    <div class="left-wrapper">
+      
+      
+      <div id="mobileLogoLeft">
+        <a href="hapnyhome.com">          
+          {% if template.name == 'index' %}
+            <div class="site-logo {% if settings.logo %}has-image{% endif %}"> 
+            {% comment %} change h1 to div {% endcomment %}
+          {% else %}
+            <div class="site-logo {% if settings.logo %}has-image{% endif %}">
+          {% endif %}
+            {% if settings.logo %}
+              {%- assign image = settings.logo -%}
+              <a href="{{ routes.root_url }}" class="logo-image card__image-wrapper">
+                  {% include 'theme-rias' %}
+                  <img class="mobileCardImage lazyload js"
+                    src="{{ image | img_url: image_default }}"
+                    data-src="{{ image_url_pattern }}"
+                    data-widths="[{{ image_widths }}]"
+                    data-aspectratio="{{ image.aspect_ratio }}"
+                    data-sizes="auto"
+                    alt="{{ image.alt | escape | default: shop.name  }}">
+              </a>
+            {% else %}
+              <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+            {% endif %}
+          {% if template.name == 'index' %}
+            </div>
+          {% else %}
+            </div>
+          {% endif %}
+          </a>
+        </div>
+      
+      
+      <ul class="text-links">
+        <li class="mobile-menu">
+          <a href="#menu" class="toggle-menu menu-link">
+            <span class="icon-text">
+              <span class="icon icon-menu" aria-hidden="true">{% include 'icon-ui-menu' %}</span>
+              <span class="text" data-close-text="{{ 'layout.drawers.close_menu' | t }}">{{ 'layout.navigation.menu' | t }}</span>
+            </span>
+          </a>
+        </li>
+        {% comment %} TURNPUP: 1 New Line Below {% endcomment %}
+        {%- if settings.turnpup_hide_search == false -%}
+        <li>
+          <a href="#" class="search">
+            <span class="icon-text">
+              <span class="icon icon-search" aria-hidden="true">{% include 'icon-ui-search' %}</span>
+              <span class="text">{{ 'general.search.submit' | t }}</span>
+            </span>
+          </a>
+        </li>
+       {%- endif -%}
+       {% comment %} TURNPUP: 1 New Line Above {% endcomment %}
+      </ul>
+  
+      {%- assign locale_selector = false -%}
+      {%- assign currency_selector = false -%}
+      {%- if shop.enabled_currencies.size > 1 -%}
+        {%- assign currency_selector = true -%}
+      {%- endif -%}
+
+      {%- if shop.published_locales.size > 1 -%}
+        {%- assign locale_selector = true -%}
+      {%- endif -%}
+      {%- if locale_selector or currency_selector -%}
+        {%- form 'localization', class: 'selectors-form', id: 'localization_form--top-bar' -%}
+          {%- if locale_selector -%}
+            <div class="selectors-form__item selectors-form__item--locale">
+              <h2 class="visually-hidden" id="lang-heading">
+                {{ 'general.language.dropdown_label' | t }}
+              </h2>
+
+              <div class="disclosure" data-disclosure-locale>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
+                  {{ form.current_locale.endonym_name }}
+                </button>
+                <ul id="lang-list" class="disclosure-list" data-disclosure-list>
+                  {% for locale in form.available_locales %}
+                    <li class="disclosure-list__item {% if locale.iso_code == form.current_locale.iso_code %}disclosure-list__item--current{% endif %}">
+                      <a class="disclosure-list__option" href="#" lang="{{ locale.iso_code }}" {% if locale.iso_code == form.current_locale.iso_code %}aria-current="true"{% endif %} data-value="{{ locale.iso_code }}" data-disclosure-option>
+                        {{ locale.endonym_name }}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ form.current_locale.iso_code }}" data-disclosure-input/>
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if currency_selector -%}
+            <div class="selectors-form__item  selectors-form__item--currency">
+              <h2 class="visually-hidden" id="currency-heading">
+                {{ 'general.currency.dropdown_label' | t }}
+              </h2>
+
+              <div class="disclosure" data-disclosure-currency>
+                <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="currency-list" aria-describedby="currency-heading" data-disclosure-toggle>
+                  {{ form.current_currency.iso_code }} {%- if form.current_currency.symbol -%}{{ form.current_currency.symbol }}{%- endif -%}
+                </button>
+                <ul id="currency-list" class="disclosure-list" data-disclosure-list>
+                  {% for currency in form.available_currencies %}
+                    <li class="disclosure-list__item {% if currency.iso_code == form.current_currency.iso_code %}disclosure-list__item--current{% endif %}">
+                      <a class="disclosure-list__option" href="#" {% if currency.iso_code == form.current_currency.iso_code %}aria-current="true"{% endif %} data-value="{{ currency.iso_code }}" data-disclosure-option>
+                        {{ currency.iso_code }} {%- if currency.symbol -%}{{ currency.symbol }}{%- endif -%}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                <input type="hidden" name="currency_code" id="CurrencySelector" value="{{ form.current_currency.iso_code }}" data-disclosure-input/>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+      {%- endif -%}
+    </div>
+
+    
+    
+      <div class="right-wrapper">
+        
+{% comment %} CUSTOMER ===== CUSTOMER ===== CUSTOMER ===== CUSTOMER {% endcomment %}        
+        {% comment %}
+          If customer accounts are enabled, provide login and create account links
+        {% endcomment %}
+        {% if shop.customer_accounts_enabled %}
+          {% include 'accounts-nav' %}
+        {% endif %}
+
+        
+        
+{% comment %} CART ===== CART ===== CART ===== CART ===== CART {% endcomment %}
+        {%- if settings.turnpup_hide_cart == false -%}
+        <a href="{{ routes.cart_url }}" id="CartButton">
+          <span class="icon-fallback-text">
+            {%- assign cart_icon = 'icon-ui-' | append: settings.cart_icon -%}
+            <span class="icon icon-cart" aria-hidden="true">{% include cart_icon %}</span>
+          </span>
+          {% comment %} TURNPUP REMOVED THE BELOW FROM CART
+          <span id="CartCount">{{ cart.item_count }}</span>
+          {{ 'layout.cart.title' | t }}
+          <span id="CartCost" class="money">{% unless cart.item_count == 0 %}{{ cart.total_price | money }}{% endunless %}</span>
+          {% endcomment %}
+        </a>
+       {% endif %}
+        
+        
+        
+{% comment %} INLINE SEARCH ===== INLINE SEARCH ===== INLINE SEARCH {% endcomment %}       
+        
+        {%- if settings.turnpup_show_search -%}        
+          {% include 'search-nav-item' %}
+        {% endif %}        
+
+        
+        
+        
+        <div id="mobileLogoRight">
+          <a href="hapnyhome.com">          
+            {% if template.name == 'index' %}
+              <div class="site-logo {% if settings.logo %}has-image{% endif %}"> 
+              {% comment %} change h1 to div {% endcomment %}
+            {% else %}
+              <div class="site-logo {% if settings.logo %}has-image{% endif %}">
+            {% endif %}
+              {% if settings.logo %}
+                {%- assign image = settings.logo -%}
+                <a href="{{ routes.root_url }}" class="logo-image card__image-wrapper">
+                    {% include 'theme-rias' %}
+                    <img class="mobileCardImage lazyload js"
+                      src="{{ image | img_url: image_default }}"
+                      data-src="{{ image_url_pattern }}"
+                      data-widths="[{{ image_widths }}]"
+                      data-aspectratio="{{ image.aspect_ratio }}"
+                      data-sizes="auto"
+                      alt="{{ image.alt | escape | default: shop.name  }}">
+                </a>
+              {% else %}
+                <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+              {% endif %}
+            {% if template.name == 'index' %}
+              </div>
+            {% else %}
+              </div>
+            {% endif %}
+            </a>
+          </div>
+        
+        {% if settings.ajax_cart_enable %}
+          {% include 'cart-preview' %}
+        {% endif %}
+      </div>
+   {% comment %} TURNPUP: 1 New Line Above {% endcomment %}
+  </div>
+</header>

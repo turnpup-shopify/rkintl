@@ -1,0 +1,153 @@
+{% schema %}
+  {
+    "name": "showroom",
+    "class": "showroom-section",
+    "settings": [      
+      {
+        "type": "text",
+        "id": "directions_language",
+        "label": "Get Directions Copy",
+        "default": "Take me there!"
+      }
+    ],
+	"blocks": [
+      {
+        "name": "----- Start section of 3",
+        "type": "spacer",
+        "settings": [
+          {
+            "type": "header",
+            "content": "How it works",
+            "info": "This block should be placed to start a new row of showroooms."
+          }
+        ]
+      },
+      {
+		"name": "Showroom",
+        "type": "showroom",
+        "settings": [
+          {
+            "type": "text",
+            "id": "location_name",
+            "label": "Location",
+            "default": "How do I likka the leffs?"
+          },
+          {
+            "type": "text",
+            "id": "address",
+            "label": "Address",
+            "default": "PeePaws Lickaloo Spindrifter the 4th"
+          },
+          {
+            "type": "text",
+            "id": "website_url",
+            "label": "Website Link",
+            "default": "http://pips.com/"
+          },
+          {
+            "type": "checkbox",
+            "id": "hero_button",
+            "label": "Hero Button",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "website",
+            "label": "Website Consumer Facing Name",
+            "default": "kingpips.com"
+          },
+          {
+            "type": "text",
+            "id": "directions_url",
+            "label": "Get Directions Link",
+            "default": "googlemaps.com/navigatetokingppipshome"
+          }
+        ]
+      }, {
+        "name": "----- End sections of 3",
+        "type": "endsection",
+        "settings": [
+          {
+            "type": "header",
+            "content": "How it works",
+            "info": "This block should be placed anytime there are at least 3 blocks in a row OR if want to start a new state section."
+          }
+        ]
+      },
+      {
+        "name": "State",
+        "type": "state",
+        "settings": [
+          {
+            "type": "text",
+            "id": "state_name",
+            "label": "State Name",
+            "default": "Should only go before HEADER section"
+          }
+        ]		
+      }
+    ],
+    "presets": [
+      {
+        "name": "Showroom",
+        "category": "Advanced layout"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="page_a_container" style="margin-bottom: {{ section.settings.margin_bottom_of_page }};">
+{% for block in section.blocks %}
+  {% if block.type == "state"%}
+    <p class="state"> {{ block.settings.state_name }} </p>
+  {% elsif block.type == "endsection"%}
+    </div>
+  {% elsif block.type == "spacer"%}
+      <div class="start_flex">      
+  	{% if block.settings.showroom_section_title != blank %}
+      <p class="showroom_section_title"> {{ block.settings.showroom_section_title }} </p>
+    {% endif %}
+  {% else %}
+    {% if block.settings.location_name != blank %}
+        <div class="showroom_third--single">          
+            <p class="showroom_name" aria-expanded="false" aria-controls="showroom_third__content" {% comment %}js-accordion-header{% endcomment %}>
+              <span class="page-accordion__title">{{ block.settings.location_name }}</span>
+            </p>
+            <p class="address">
+              {{ block.settings.address }}
+            </p>            
+            {% if block.settings.hero_button %}
+              {%
+                render "hapny-button",
+                threeD:  block.settings.hero_button,
+                button_link: block.settings.website_url,
+                button_label:  block.settings.website,
+                bottom_background_color: "#3C64B1",
+                middle_background_color: "#EA5E33",
+                top_background_color: "#F6B700",
+                id: "split_3d_button"
+              %}            
+            {% else %}
+                <a class="website" href="{{ block.settings.website_url }}" target="_blank">
+                  {{ block.settings.website }}
+                </a>
+            {% endif %}            
+            <a class="directions" href="{{ block.settings.directions_url }}" target="_blank" >
+              {{ section.settings.directions_language }}
+            </a>
+        </div>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+</div>
+
+{% javascript %}
+  window.addEventListener('DOMContentLoaded', (event) => {
+    var numShowrooms = 0;
+    document.querySelectorAll(".showroom_name").forEach((showroom) => {
+      numShowrooms = numShowrooms + 1;
+    });
+    var textNum = numShowrooms.toString();
+    console.log(`number of showrooms --> ${textNum}`);
+  });
+{% endjavascript %}

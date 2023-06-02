@@ -1,0 +1,271 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-top",
+      "settings": {
+        "background_color": "#3c64b1",
+        "spacing_top": "90px",
+        "spacing_bottom": "50px",
+        "mobile_spacing_top": "20px",
+        "mobile_spacing_bottom": "50px",
+        "header_font_size": "30px",
+        "header_font_color": "#ffffff",
+        "header_font_weight": "600",
+        "page_description_font_color": "#ffffff",
+        "padding_between_descriptions": "0px",
+        "description_two_color": "#ffffff"
+      }
+    },
+    "faq-section": {
+      "type": "faq-section",
+      "blocks": {
+        "d83c4ff4-b2c2-4da8-95be-117e175ba686": {
+          "type": "Title",
+          "settings": {
+            "faq_section_title": "PRODUCT"
+          }
+        },
+        "8caf4dac-ccf7-4c10-8b35-483bd662bb67": {
+          "type": "Question",
+          "settings": {
+            "question": "I need these products in my home! Where can I buy Hapny hardware?",
+            "answer": "Hapny products are available for purchase at select online and brick & mortar decorative, plumbing, and home furnishing showrooms nationwide. Check our <a target=\"_blank\" href=\"https:\/\/hapnyhome.com\/pages\/showrooms\">Showrooms page<\/a> for a dealer near you and to see our hardware in person. You can also send us a note at <u><i>hello@hapnyhome.com<\/i><\/u> to see if there's a local rep who can show you our products in your area."
+          }
+        },
+        "43a919c7-63e2-494b-955f-58a7d37b5532": {
+          "type": "Question",
+          "settings": {
+            "question": "What are your products made of?",
+            "answer": "We keep it simple. Our metal products are made with 100% solid brass to ensure quality and product longevity."
+          }
+        },
+        "f699b7fa-fcb1-483d-a72e-05ba28b56260": {
+          "type": "Question",
+          "settings": {
+            "question": "Are there variations in finishes across your brass products?",
+            "answer": "Yes, due to the manual nature of the finishing process, you will sometimes see lot-to-lot variation across products. We think it’s all part of the beauty and fun."
+          }
+        },
+        "4dd8f236-02db-4bf6-9056-d57699fd3e9b": {
+          "type": "Question",
+          "settings": {
+            "question": "Are your finishes \"living\" finishes?",
+            "answer": "Our Venetian Bronze finish will subtly change with time, touch, and exposure to different climates. Our other finishes are not considered “living” or unlacquered."
+          }
+        },
+        "3cf0a377-1e23-45a6-ad98-45f2bc2ba183": {
+          "type": "Question",
+          "settings": {
+            "question": "Do I need my own screws, or do you provide them?",
+            "answer": "We got you. All Hapny hardware includes (2) different mounting screws to accommodate almost all cabinet door and drawer sizes.<br><br>Our knobs and pulls include a <u>#8-32, 1”<\/u> Phillps head screw and a <u>break-away #8-32, 1.75”<\/u> Phillips head screw with four break points (¾\", 1\", 1 ¼\" and 1 ½\"). Our knobs come with (1) of each screw per product and our pulls come with (2) of each screw per product. Our appliance pulls include (2) <u>1\/4”-20, 1.25”<\/u> Phillips head screws and (2) <u>1\/4”-20, 1.75”<\/u> Phillips head screws.  <br><br>For custom or additional screw needs, you should be able to find what you need at your local hardware store."
+          }
+        },
+        "2ea8e37f-2bac-44e4-b597-6919a6d859ea": {
+          "type": "Question",
+          "settings": {
+            "question": "How do I keep my hardware looking as clean as new?",
+            "answer": "Gentle is key. Clean your hardware with a soft, damp cloth, and wipe completely dry. Do not leave any water or soap residue on your product. <b>Never<\/b> use any chemicals or harsh over-the-counter cleansers. These will strip your hardware of its finish and, even worse, void your warranty."
+          }
+        },
+        "1da94bd4-4546-40ce-b94f-32c8b65b688d": {
+          "type": "END",
+          "settings": {
+          }
+        },
+        "f81d5c37-1018-4623-8a13-aa976fef3781": {
+          "type": "Title",
+          "settings": {
+            "faq_section_title": "DEALER GENERAL INFO"
+          }
+        },
+        "b223efec-99de-4699-9373-060ce73887d1": {
+          "type": "Question",
+          "settings": {
+            "question": "How do I become a dealer of Hapny Home products?",
+            "answer": "We’re thrilled you asked! In order to become a registered dealer of Hapny Home products, you must have a showroom to display our product to the public. We typically require a minimum purchase of <u>four half-size display boards<\/u> to open a wholesale account with us.<br><br>To start the process, please visit our <a target=\"_blank\" href=\"https:\/\/hapnyhome.com\/pages\/become-a-dealer\">Become a Dealer page<\/a> to share more information, or send an email with your company and request details <u><i>orders@hapnyhome.com<\/i><\/u>."
+          }
+        },
+        "c23e3d7a-d273-4d01-b259-75d795d414ec": {
+          "type": "Question",
+          "settings": {
+            "question": "Where do I send my orders?",
+            "answer": "All orders should be emailed to <u><i>orders@hapnyhome.com<\/i><\/u>. <br><br>Please make sure to include all necessary order information (PO #, Hapny SKU #s, “Ship To” address, etc). Assuming products are in stock, all orders placed by 3:00pm CST will ship the same day.<br><br>We will reach out regarding any supply shortages or issues. We are not responsible for any order cancellations or changes once it has shipped.<br><br>For any order-related questions, please contact <u><i>orders@hapnyhome.com<\/i><\/u> with your PO# as the subject line."
+          }
+        },
+        "b6f50413-5539-4939-8f8a-496ccfcded3b": {
+          "type": "Question",
+          "settings": {
+            "question": "Are there any minimum fees?",
+            "answer": "Nope! No minimum order or service fees here."
+          }
+        },
+        "51e22068-02e2-440e-a3cf-efda74127a9c": {
+          "type": "Question",
+          "settings": {
+            "question": "What are my order terms?",
+            "answer": "First orders are shipped prepaid via credit card payment. We usually establish NET 30 credit terms after the first order and a basic credit check."
+          }
+        },
+        "64fbc8f7-5b41-4c47-85a8-d597f1a5aaac": {
+          "type": "Question",
+          "settings": {
+            "question": "How do you handle past due accounts?",
+            "answer": "We do not ship orders to past due accounts. We also reserve the right to terminate any account at any time for consistently late or incomplete payments, or for failure to comply with Hapny Home terms & conditions."
+          }
+        },
+        "3eb18b00-e7b7-43ef-bb6e-9781e30c5aeb": {
+          "type": "END",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "d83c4ff4-b2c2-4da8-95be-117e175ba686",
+        "8caf4dac-ccf7-4c10-8b35-483bd662bb67",
+        "43a919c7-63e2-494b-955f-58a7d37b5532",
+        "f699b7fa-fcb1-483d-a72e-05ba28b56260",
+        "4dd8f236-02db-4bf6-9056-d57699fd3e9b",
+        "3cf0a377-1e23-45a6-ad98-45f2bc2ba183",
+        "2ea8e37f-2bac-44e4-b597-6919a6d859ea",
+        "1da94bd4-4546-40ce-b94f-32c8b65b688d",
+        "f81d5c37-1018-4623-8a13-aa976fef3781",
+        "b223efec-99de-4699-9373-060ce73887d1",
+        "c23e3d7a-d273-4d01-b259-75d795d414ec",
+        "b6f50413-5539-4939-8f8a-496ccfcded3b",
+        "51e22068-02e2-440e-a3cf-efda74127a9c",
+        "64fbc8f7-5b41-4c47-85a8-d597f1a5aaac",
+        "3eb18b00-e7b7-43ef-bb6e-9781e30c5aeb"
+      ],
+      "settings": {
+      }
+    },
+    "faq-section-2": {
+      "type": "faq-section-2",
+      "blocks": {
+        "fb04266b-0a87-4a26-b3b0-a5afd69e926c": {
+          "type": "Title",
+          "settings": {
+            "faq_section_title": "DEALER SHIPPING & RETURNS INFO"
+          }
+        },
+        "44906d1c-b44d-47a4-8ae2-cc792a380c17": {
+          "type": "Question",
+          "settings": {
+            "question": "Products are missing from my shipment. What do I do?",
+            "answer": "Claims for shortages must be made within (7) business days of receiving the order. We will ship out the missing hardware immediately."
+          }
+        },
+        "bd6fa2e6-c027-4b74-ad6d-46cfd3832ba2": {
+          "type": "Question",
+          "settings": {
+            "question": "Products in my shipment are defective. How do I get a replacement?",
+            "answer": "Claims for defective items must be made within (7) business days of receiving the order. We will ship out replacements immediately."
+          }
+        },
+        "e1b07af4-4050-4443-96a3-8b742246b726": {
+          "type": "Question",
+          "settings": {
+            "question": "How do I return products? Are there restock fees?",
+            "answer": "We allow returns up to (90) days from the original date of purchase.  All returns are subject to a 30% restock fee, assuming they are returned in good and “resalable” condition. Damaged returns will face higher restock fees, and unusable product will be rejected."
+          }
+        },
+        "a1a4f670-9853-4447-b7e1-fc384cd53210": {
+          "type": "Question",
+          "settings": {
+            "question": "What shipping service do you use to ship your orders?",
+            "answer": "All of our orders are shipped via UPS Ground."
+          }
+        },
+        "6cf4dae4-4223-4a14-94d6-c0599db3eeb0": {
+          "type": "Question",
+          "settings": {
+            "question": "Do you offer expedited shipping?",
+            "answer": "Yes! Expedited shipping options, such as UPS Red (\"Next Day Air\"), UPS Blue (\"Two Day\") or UPS Orange (\"Third Day\") are all available for an additional cost."
+          }
+        },
+        "dfb5f8aa-2215-477b-bd27-8f751cbdc901": {
+          "type": "Question",
+          "settings": {
+            "question": "I have my own UPS account. Can you use that to ship my order?",
+            "answer": "Yes! Many vendors have us ship their orders via their verified UPS account number. Third-party billing is often a way to get a deeper discount on UPS freight charges."
+          }
+        },
+        "63b798e7-0a87-4165-953c-38964d85ef87": {
+          "type": "Question",
+          "settings": {
+            "question": "How is freight calculated?",
+            "answer": "Our freight costs are calculated directly by UPS, taking into account factors like package weight, destination, insurance, etc. Expedited shipping adds an additional charge onto the total freight amount.  We charge freight on all orders, including items that are shipping as a result of an original backorder.  We do not add on any service or handling fees."
+          }
+        },
+        "ce7f7baf-f911-4493-b511-d627591eb7cb": {
+          "type": "Question",
+          "settings": {
+            "question": "Do you charge any drop ship fees?",
+            "answer": "Nope!"
+          }
+        },
+        "d78554d8-ec34-415b-bae2-a8f69c5295c9": {
+          "type": "END",
+          "settings": {
+          }
+        },
+        "eaf83fa1-da94-4c9f-b55b-0c46545af69c": {
+          "type": "Title",
+          "settings": {
+            "faq_section_title": "WARRANTY"
+          }
+        },
+        "50b5f3ad-025b-4bb9-81ab-b7a8e26155b9": {
+          "type": "Question",
+          "settings": {
+            "question": "Is there a warranty for your products?",
+            "answer": "Yes, we got you. At Hapny Home, we are committed to creating high quality products for your home. We offer all our consumers a Limited Lifetime Warranty to show that we stand behind the quality, durability, and design of our goods. <br><br> Hapny Home products are covered from all manufacturer defects and breakage. Our warranty applies to the original purchaser and is non-transferrable. The warranty lasts for the lifetime of the original purchaser for as long as they own the Hapny Home product. Selling or transferring the product invalidates the warranty."
+          }
+        },
+        "bc78d4d7-eec8-4099-8c27-c3ad419dd7cd": {
+          "type": "Question",
+          "settings": {
+            "question": "What isn't covered under your warranty?",
+            "answer": "Our warranty does <b>NOT<\/b> cover:<br> -Normal wear and tear of product over time. This is not considered a defect.<br> -Product damage due to improper installation or failure to follow mounting instructions<br> -Misuse of the product<br> -Any damages or expenses caused by defective product <br> -Finish and metal deterioration caused by things out of our control, such as exposure to atmospheric conditions, corrosive air, outdoor environments, natural disasters, or accidents"
+          }
+        },
+        "b30297f2-f54b-4b5b-b32f-df13e17c68a4": {
+          "type": "Question",
+          "settings": {
+            "question": "Do you replace damaged hardware?",
+            "answer": "Under the warranty, we commit to repair or replace the defective product or provide a refund on a case-by-case basis. Please email us at <u><i>support@hapnyhome.com<\/i><\/u> with a photo showing the damaged or defective product(s) and documentation of you being the original purchaser, and we'll be in touch with next steps."
+          }
+        },
+        "b4f5de34-e98c-4785-8733-70a760d94a4c": {
+          "type": "END",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "fb04266b-0a87-4a26-b3b0-a5afd69e926c",
+        "44906d1c-b44d-47a4-8ae2-cc792a380c17",
+        "bd6fa2e6-c027-4b74-ad6d-46cfd3832ba2",
+        "e1b07af4-4050-4443-96a3-8b742246b726",
+        "a1a4f670-9853-4447-b7e1-fc384cd53210",
+        "6cf4dae4-4223-4a14-94d6-c0599db3eeb0",
+        "dfb5f8aa-2215-477b-bd27-8f751cbdc901",
+        "63b798e7-0a87-4165-953c-38964d85ef87",
+        "ce7f7baf-f911-4493-b511-d627591eb7cb",
+        "d78554d8-ec34-415b-bae2-a8f69c5295c9",
+        "eaf83fa1-da94-4c9f-b55b-0c46545af69c",
+        "50b5f3ad-025b-4bb9-81ab-b7a8e26155b9",
+        "bc78d4d7-eec8-4099-8c27-c3ad419dd7cd",
+        "b30297f2-f54b-4b5b-b32f-df13e17c68a4",
+        "b4f5de34-e98c-4785-8733-70a760d94a4c"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq-section",
+    "faq-section-2"
+  ]
+}
