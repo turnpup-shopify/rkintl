@@ -189,18 +189,6 @@
             "answer": "Returns are allowed up to ninety (90) days from the original date of purchase. All returns are subject to a 30% restock fee, assuming products are returned in \"resalable\"condition. Product unusable will be rejected, and damaged items will have higher restock fees implemented."
           }
         },
-        "5fac201c-ea88-4578-bbe7-1a91ccf3a06f": {
-          "type": "Question",
-          "settings": {
-            "question": "How do I likka the leffs?",
-            "answer": "PeePaws Lickaloo Spindrifter the 4th"
-          }
-        },
-        "d78554d8-ec34-415b-bae2-a8f69c5295c9": {
-          "type": "END",
-          "settings": {
-          }
-        },
         "7aa1a1b4-6652-4ed3-9008-18853fdc0c2c": {
           "type": "Question",
           "settings": {
@@ -211,8 +199,20 @@
         "bd171792-ebb9-4270-b051-2fa0eec44190": {
           "type": "Question",
           "settings": {
-            "question": "How do I likka the leffs?",
+            "question": "What if I need an order expedited?",
+            "answer": "Expedited shipping options, such as UPS Red (aka \"Next Day Air\"), UPS Blue (aka \"Two Day\") or UPS Orange (aka \"Third Day\") are available at additional premiums to ground rates from UPS."
+          }
+        },
+        "5fac201c-ea88-4578-bbe7-1a91ccf3a06f": {
+          "type": "Question",
+          "settings": {
+            "question": "How is freight charged?",
             "answer": "PeePaws Lickaloo Spindrifter the 4th"
+          }
+        },
+        "d78554d8-ec34-415b-bae2-a8f69c5295c9": {
+          "type": "END",
+          "settings": {
           }
         },
         "4f782b7f-b5a7-4f0e-a2e1-626e1c5ec69a": {
@@ -240,10 +240,10 @@
         "dfb5f8aa-2215-477b-bd27-8f751cbdc901",
         "63b798e7-0a87-4165-953c-38964d85ef87",
         "ce7f7baf-f911-4493-b511-d627591eb7cb",
-        "5fac201c-ea88-4578-bbe7-1a91ccf3a06f",
-        "d78554d8-ec34-415b-bae2-a8f69c5295c9",
         "7aa1a1b4-6652-4ed3-9008-18853fdc0c2c",
         "bd171792-ebb9-4270-b051-2fa0eec44190",
+        "5fac201c-ea88-4578-bbe7-1a91ccf3a06f",
+        "d78554d8-ec34-415b-bae2-a8f69c5295c9",
         "4f782b7f-b5a7-4f0e-a2e1-626e1c5ec69a",
         "f004c2c4-04c7-44b2-92bf-e39b9e95d492"
       ],
