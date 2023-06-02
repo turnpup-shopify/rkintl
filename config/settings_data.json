@@ -2098,6 +2098,7 @@
     "instafeed_header_font_family": "'p22-mackinac-pro', serif",
     "instafeed_header_font_size": 30,
     "instafeed_header_font_weight": 700,
+    "logo": "shopify:\/\/shop_images\/rk_logo.jpg",
     "checkout_header_image": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/HapnyLogo_a543d14b-231c-4495-af7a-05d731e3b5ef.png",
     "checkout_logo_position": "left",
