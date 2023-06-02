@@ -143,8 +143,8 @@
         "bd6fa2e6-c027-4b74-ad6d-46cfd3832ba2": {
           "type": "Question",
           "settings": {
-            "question": "Products in my shipment are defective. How do I get a replacement?",
-            "answer": ""
+            "question": "Where do I send my orders?",
+            "answer": "Orders can be faxed to <a href=\"Tel:713-532-3375\">713-532-3375<\/a> or emailed to <a href=\"mailto:orders@rkintl.com\">orders@rkintl.com<\/a>\n<br>\nPlease ensure all pertinent order information (PO #, RKI Item #s, Ship-to-Addresses, etc.) is clearly legible. Assuming products are in stock, orders placed by 3:00pm CST ship the same day.\n<br>\nWe are not liable for any order cancellation or changes once they have shipped."
           }
         },
         "e1b07af4-4050-4443-96a3-8b742246b726": {
