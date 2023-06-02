@@ -164,8 +164,8 @@
         "6cf4dae4-4223-4a14-94d6-c0599db3eeb0": {
           "type": "Question",
           "settings": {
-            "question": "Do you offer expedited shipping?",
-            "answer": ""
+            "question": "Do you ship to past due accounts?",
+            "answer": "No orders are shipped to past due accounts. Additionally, we reserve the right to terminate any account at any time for habitually late or insufficient payments, or for failure to comply with RKI policies, terms and conditions."
           }
         },
         "dfb5f8aa-2215-477b-bd27-8f751cbdc901": {
