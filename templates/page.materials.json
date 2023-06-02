@@ -8,7 +8,7 @@
         "spacing_top": "90px",
         "spacing_bottom": "50px",
         "mobile_spacing_top": "20px",
-        "mobile_spacing_bottom": "50px",
+        "mobile_spacing_bottom": "30px",
         "header_font_size": "30px",
         "header_font_color": "#ffffff",
         "header_font_weight": "600",
