@@ -2167,6 +2167,8 @@
         "type": "header",
         "settings": {
           "header_layout": "horizontal",
+          "logo": "shopify:\/\/shop_images\/try_logo.jpg",
+          "turnpup_hover_logo": "shopify:\/\/shop_images\/try_logo.jpg",
           "logo_max_width": 300,
           "main_linklist": "main-menu",
           "mega_menu": false,
