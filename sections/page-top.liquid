@@ -119,8 +119,9 @@
   }
   
   .page-top-section .page_a_container {
-    margin-top: -40px;
+    {% comment %} margin-top: -40px; {% endcomment %}
     padding-top: {{ section.settings.spacing_top }};
+    padding-bottom: {{ section.settings.spacing_top }};
     margin-bottom: {{section.settings.spacing_bottom}};
     background-color: {{section.settings.background_color}};
   }
