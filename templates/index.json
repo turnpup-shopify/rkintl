@@ -28,9 +28,9 @@
         "button_label": "VIEW COLLECTION",
         "turnpup_button_size": "22px",
         "button_link": "shopify:\/\/collections\/all",
-        "color_text": "#ffffff",
+        "color_text": "#000000",
         "color_accent": "#3c64b1",
-        "turnpup_hover_txt_color": "#ffffff"
+        "turnpup_hover_txt_color": "#000000"
       }
     },
     "9751f23d-0106-4b11-bbbf-3ed3db380ca6": {
