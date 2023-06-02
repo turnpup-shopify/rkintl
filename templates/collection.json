@@ -48,8 +48,8 @@
           "type": "tags",
           "settings": {
             "title": "Shop by",
-            "tag_style": "menu",
-            "tag_grouping": false
+            "tag_style": "buttons",
+            "tag_grouping": true
           }
         }
       },
