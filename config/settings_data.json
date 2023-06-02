@@ -2200,7 +2200,7 @@
             "settings": {
               "title": "COLLECTIONS",
               "text": "",
-              "footer_linklist": "",
+              "footer_linklist": "footer-menu-2",
               "block_width": "12%",
               "mobile_block_width": "100%"
             }
@@ -2209,8 +2209,8 @@
             "type": "menu",
             "settings": {
               "title": "RESOURCES",
-              "text": "Learn more about us",
-              "footer_linklist": "footer",
+              "text": "",
+              "footer_linklist": "footer-menu-3",
               "block_width": "12%",
               "mobile_block_width": "100%"
             }
