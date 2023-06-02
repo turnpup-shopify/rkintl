@@ -9,7 +9,7 @@
     "f16c1d38-a019-4fa8-8dc4-a1ec59496983": {
       "type": "page-top",
       "settings": {
-        "background_color": "#3c64b1",
+        "background_color": "#3c3c3c",
         "wave_bottom_color": "#ffffff",
         "spacing_top": "60px",
         "spacing_bottom": "0px",
@@ -41,7 +41,6 @@
     "2a27ef22-7494-4ca8-b56d-85f08b8f00f5": {
       "type": "json",
       "settings": {
-        "directions_language": "Take me there!"
       }
     }
   },
