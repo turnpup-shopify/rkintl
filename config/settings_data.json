@@ -2065,7 +2065,7 @@
     "cart_icon": "cart",
     "turnpup_hide_search": true,
     "mobile_dropdown_size": 24,
-    "mobile_logo_size": 80,
+    "mobile_logo_size": 85,
     "mobile_dropdown_top_padding": 8,
     "mobile_dropdown_left_padding": 0,
     "nav_transparent_after_scroll": false,
