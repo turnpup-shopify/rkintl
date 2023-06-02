@@ -2190,7 +2190,7 @@
             "settings": {
               "title": "PRODUCTS",
               "text": "",
-              "footer_linklist": "",
+              "footer_linklist": "footer",
               "block_width": "12%",
               "mobile_block_width": "100%"
             }
