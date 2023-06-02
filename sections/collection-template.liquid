@@ -112,7 +112,7 @@
           </div>
         {% endif %}
 
-        <div id="product-grid" class="collection products products-grid {% unless enable_sidebar %}full-width{% endunless %} ">
+        <div id="product-grid"  data-id="{{ section.id }}" class="collection products products-grid {% unless enable_sidebar %}full-width{% endunless %} ">
           {% comment %}
             Loop through our products in the current collection.
             See the snippet 'product-grid-item' for the layout.
