@@ -87,7 +87,7 @@
                   </div>
                 </div>             
               {%- endif -%}
-              {%- if block.settings.title != blank  or block.settings.text != blank or block.settings.description != blank -%}
+              {%- if block.settings.title != blank  or block.settings.text != blank or block.settings.description != blank or block.settings.link_label != blank -%}
                 <div class="multicolumn-card__info" style="max-width: {{ block.settings.text_max_width }};">
                   {%- if block.settings.title != blank -%}
                     <h3>
@@ -710,7 +710,7 @@
           }
         ],
         "default": "center",
-        "label": "Alignment"
+        "label": "Block Text Alignment"
       },
       {
         "type": "color",
