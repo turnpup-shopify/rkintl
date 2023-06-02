@@ -222,6 +222,11 @@
               margin-top: {{ block.settings.description_margin_top }};
               margin-bottom: {{ block.settings.description_margin_bottom }};
             }
+            .multicolumn-card__image {
+              max-height: 400px;
+              width: auto;
+              object-fit: contain;
+            }
           }
         </style>
         {%- endfor -%}
