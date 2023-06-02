@@ -2841,7 +2841,7 @@
             "disabled": true,
             "settings": {
               "question": "Where can I see your Price List or Product Catalog?",
-              "answer": "Check out our  can all of our latest product literature <a href=\"https:\/\/www.hapnyhome.com\/pages\/literature%E2%80%9D>here<\/a>.\"><\/a>"
+              "answer": "Check out our  can all of our latest product literature <a href=\"https:\/\/www.hapnyhome.com\/pages\/literature%E2%80%9D&gt;here&lt;\/a&gt;.\"><\/a>"
             }
           },
           "ff2560c3-b035-4361-afab-de077a45390d": {
@@ -2889,7 +2889,7 @@
             "type": "Question",
             "settings": {
               "question": "I need these products in my home! Where can I buy Hapny hardware?",
-              "answer": "Hapny products are available for purchase at select online and brick & mortar decorative, plumbing, and home furnishing showrooms nationwide. Check our <a target=\"_blank\" href=\"https:\/\/hapnyhome.com\/pages\/showrooms\">Showrooms page<\/a> for a dealer near you and to see our hardware in person. You can also send us a note at <u><i>hello@hapnyhome.com<\/i><\/u> to see if there's a local rep who can show you our products in your area."
+              "answer": "Hapny products are available for purchase at select online and brick &amp; mortar decorative, plumbing, and home furnishing showrooms nationwide. Check our <a target=\"_blank\" href=\"https:\/\/hapnyhome.com\/pages\/showrooms\">Showrooms page<\/a> for a dealer near you and to see our hardware in person. You can also send us a note at <u><i>hello@hapnyhome.com<\/i><\/u> to see if there's a local rep who can show you our products in your area."
             }
           },
           "43a919c7-63e2-494b-955f-58a7d37b5532": {
@@ -2970,7 +2970,7 @@
             "type": "Question",
             "settings": {
               "question": "How do you handle past due accounts?",
-              "answer": "We do not ship orders to past due accounts. We also reserve the right to terminate any account at any time for consistently late or incomplete payments, or for failure to comply with Hapny Home terms & conditions."
+              "answer": "We do not ship orders to past due accounts. We also reserve the right to terminate any account at any time for consistently late or incomplete payments, or for failure to comply with Hapny Home terms &amp; conditions."
             }
           },
           "3eb18b00-e7b7-43ef-bb6e-9781e30c5aeb": {
