@@ -193,38 +193,6 @@
           "type": "END",
           "settings": {
           }
-        },
-        "eaf83fa1-da94-4c9f-b55b-0c46545af69c": {
-          "type": "Title",
-          "settings": {
-            "faq_section_title": "WARRANTY"
-          }
-        },
-        "50b5f3ad-025b-4bb9-81ab-b7a8e26155b9": {
-          "type": "Question",
-          "settings": {
-            "question": "Is there a warranty for your products?",
-            "answer": "Yes, we got you. At Hapny Home, we are committed to creating high quality products for your home. We offer all our consumers a Limited Lifetime Warranty to show that we stand behind the quality, durability, and design of our goods. <br><br> Hapny Home products are covered from all manufacturer defects and breakage. Our warranty applies to the original purchaser and is non-transferrable. The warranty lasts for the lifetime of the original purchaser for as long as they own the Hapny Home product. Selling or transferring the product invalidates the warranty."
-          }
-        },
-        "bc78d4d7-eec8-4099-8c27-c3ad419dd7cd": {
-          "type": "Question",
-          "settings": {
-            "question": "What isn't covered under your warranty?",
-            "answer": "Our warranty does <b>NOT<\/b> cover:<br> -Normal wear and tear of product over time. This is not considered a defect.<br> -Product damage due to improper installation or failure to follow mounting instructions<br> -Misuse of the product<br> -Any damages or expenses caused by defective product <br> -Finish and metal deterioration caused by things out of our control, such as exposure to atmospheric conditions, corrosive air, outdoor environments, natural disasters, or accidents"
-          }
-        },
-        "b30297f2-f54b-4b5b-b32f-df13e17c68a4": {
-          "type": "Question",
-          "settings": {
-            "question": "Do you replace damaged hardware?",
-            "answer": "Under the warranty, we commit to repair or replace the defective product or provide a refund on a case-by-case basis. Please email us at <u><i>support@hapnyhome.com<\/i><\/u> with a photo showing the damaged or defective product(s) and documentation of you being the original purchaser, and we'll be in touch with next steps."
-          }
-        },
-        "b4f5de34-e98c-4785-8733-70a760d94a4c": {
-          "type": "END",
-          "settings": {
-          }
         }
       },
       "block_order": [
@@ -237,12 +205,7 @@
         "dfb5f8aa-2215-477b-bd27-8f751cbdc901",
         "63b798e7-0a87-4165-953c-38964d85ef87",
         "ce7f7baf-f911-4493-b511-d627591eb7cb",
-        "d78554d8-ec34-415b-bae2-a8f69c5295c9",
-        "eaf83fa1-da94-4c9f-b55b-0c46545af69c",
-        "50b5f3ad-025b-4bb9-81ab-b7a8e26155b9",
-        "bc78d4d7-eec8-4099-8c27-c3ad419dd7cd",
-        "b30297f2-f54b-4b5b-b32f-df13e17c68a4",
-        "b4f5de34-e98c-4785-8733-70a760d94a4c"
+        "d78554d8-ec34-415b-bae2-a8f69c5295c9"
       ],
       "settings": {
       }
