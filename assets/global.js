@@ -329,6 +329,7 @@ class MenuDrawer extends HTMLElement {
 
     this.addEventListener('keyup', this.onKeyUp.bind(this));
     this.addEventListener('focusout', this.onFocusOut.bind(this));
+    console.log("about to bind events");
     this.bindEvents();
   }
 
