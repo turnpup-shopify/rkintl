@@ -137,56 +137,56 @@
           "type": "Question",
           "settings": {
             "question": "Products are missing from my shipment. What do I do?",
-            "answer": "Claims for shortages must be made within (7) business days of receiving the order. We will ship out the missing hardware immediately."
+            "answer": ""
           }
         },
         "bd6fa2e6-c027-4b74-ad6d-46cfd3832ba2": {
           "type": "Question",
           "settings": {
             "question": "Products in my shipment are defective. How do I get a replacement?",
-            "answer": "Claims for defective items must be made within (7) business days of receiving the order. We will ship out replacements immediately."
+            "answer": ""
           }
         },
         "e1b07af4-4050-4443-96a3-8b742246b726": {
           "type": "Question",
           "settings": {
             "question": "How do I return products? Are there restock fees?",
-            "answer": "We allow returns up to (90) days from the original date of purchase.  All returns are subject to a 30% restock fee, assuming they are returned in good and “resalable” condition. Damaged returns will face higher restock fees, and unusable product will be rejected."
+            "answer": ""
           }
         },
         "a1a4f670-9853-4447-b7e1-fc384cd53210": {
           "type": "Question",
           "settings": {
             "question": "What shipping service do you use to ship your orders?",
-            "answer": "All of our orders are shipped via UPS Ground."
+            "answer": ""
           }
         },
         "6cf4dae4-4223-4a14-94d6-c0599db3eeb0": {
           "type": "Question",
           "settings": {
             "question": "Do you offer expedited shipping?",
-            "answer": "Yes! Expedited shipping options, such as UPS Red (\"Next Day Air\"), UPS Blue (\"Two Day\") or UPS Orange (\"Third Day\") are all available for an additional cost."
+            "answer": ""
           }
         },
         "dfb5f8aa-2215-477b-bd27-8f751cbdc901": {
           "type": "Question",
           "settings": {
             "question": "I have my own UPS account. Can you use that to ship my order?",
-            "answer": "Yes! Many vendors have us ship their orders via their verified UPS account number. Third-party billing is often a way to get a deeper discount on UPS freight charges."
+            "answer": ""
           }
         },
         "63b798e7-0a87-4165-953c-38964d85ef87": {
           "type": "Question",
           "settings": {
             "question": "How is freight calculated?",
-            "answer": "Our freight costs are calculated directly by UPS, taking into account factors like package weight, destination, insurance, etc. Expedited shipping adds an additional charge onto the total freight amount.  We charge freight on all orders, including items that are shipping as a result of an original backorder.  We do not add on any service or handling fees."
+            "answer": ""
           }
         },
         "ce7f7baf-f911-4493-b511-d627591eb7cb": {
           "type": "Question",
           "settings": {
             "question": "Do you charge any drop ship fees?",
-            "answer": "Nope!"
+            "answer": ""
           }
         },
         "d78554d8-ec34-415b-bae2-a8f69c5295c9": {
