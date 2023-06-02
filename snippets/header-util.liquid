@@ -185,6 +185,7 @@
                       data-sizes="auto"
                       alt="{{ image.alt | escape | default: shop.name  }}">
                 </a>
+                {% echo image_widths %}
               {% else %}
                 <a href="{{ routes.root_url }}">{{ shop.name }}</a>
               {% endif %}
