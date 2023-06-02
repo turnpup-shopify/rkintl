@@ -1053,7 +1053,7 @@
         "id": "mobile_logo_size",
         "min": 50,
         "max": 250,
-        "step": 10,
+        "step": 5,
         "unit": "px",
         "label": "Mobile Logo Width",
         "default": 140
