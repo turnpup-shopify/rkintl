@@ -4,6 +4,7 @@
       "type": "page-top",
       "settings": {
         "background_color": "#3c64b1",
+        "wave_bottom_color": "#ffffff",
         "spacing_top": "90px",
         "spacing_bottom": "50px",
         "mobile_spacing_top": "20px",
@@ -28,8 +29,8 @@
         "8caf4dac-ccf7-4c10-8b35-483bd662bb67": {
           "type": "Question",
           "settings": {
-            "question": "I need these products in my home! Where can I buy Hapny hardware?",
-            "answer": "Hapny products are available for purchase at select online and brick & mortar decorative, plumbing, and home furnishing showrooms nationwide. Check our <a target=\"_blank\" href=\"https:\/\/hapnyhome.com\/pages\/showrooms\">Showrooms page<\/a> for a dealer near you and to see our hardware in person. You can also send us a note at <u><i>hello@hapnyhome.com<\/i><\/u> to see if there's a local rep who can show you our products in your area."
+            "question": "How do I buy your products?",
+            "answer": "RKI products are available for purchase in over twenty-five hundred fine decorative, plumbing and home furnishing showrooms nationwide. Our product is also available through major online retailers.Check the dealer locator section for a dealer near you, or the internet for online retailers that sell the item you are looking for. We do not sell direct to individual consumers."
           }
         },
         "43a919c7-63e2-494b-955f-58a7d37b5532": {
