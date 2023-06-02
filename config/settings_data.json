@@ -2191,7 +2191,7 @@
               "title": "PRODUCTS",
               "text": "",
               "footer_linklist": "",
-              "block_width": "17%",
+              "block_width": "12%",
               "mobile_block_width": "100%"
             }
           },
@@ -2201,7 +2201,7 @@
               "title": "COLLECTIONS",
               "text": "",
               "footer_linklist": "",
-              "block_width": "22%",
+              "block_width": "12%",
               "mobile_block_width": "100%"
             }
           },
@@ -2211,7 +2211,7 @@
               "title": "RESOURCES",
               "text": "Learn more about us",
               "footer_linklist": "footer",
-              "block_width": "25%",
+              "block_width": "12%",
               "mobile_block_width": "100%"
             }
           },
@@ -2225,8 +2225,8 @@
               "contact_link": "",
               "address": "<p><a>customerservice@rkintl.com<\/a><\/p>",
               "show_social": false,
-              "block_width": "17%",
-              "mobile_block_width": "100%"
+              "block_width": "12%",
+              "mobile_block_width": "12%"
             }
           }
         },
