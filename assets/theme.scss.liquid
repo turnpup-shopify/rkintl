@@ -1267,6 +1267,19 @@ body {
     font-size: em(12px);
   }
 
+   a.turnpup_button_home_top, a.tpmaintop_button_home_top {
+      border: 2px solid $primaryTextColor;
+      color: $primaryTextColor;
+      text-transform: $siteHeaderNavTextTransform;
+      font-weight: $siteHeaderNavTextWeight;
+      font-family: $navFontStack;
+      &:hover,
+      &:focus {
+        color: $primaryAccentColor;
+        border-color: $primaryAccentColor;
+      }
+    }
+
    .hapny_button {
     color: {{ settings.color_text }};
     text-align: center;

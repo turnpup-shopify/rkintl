@@ -26,18 +26,8 @@ a.turnpup_button_home_top, a.tpmaintop_button_home_top {
   padding: 14px 24px;
   border-radius: 0px;
   padding: 14px 24px;
-  border: 2px solid $primaryTextColor;
-  color: $primaryTextColor;
-  text-transform: $siteHeaderNavTextTransform;
-  font-weight: $siteHeaderNavTextWeight;
-  font-family: $navFontStack;
   text-decoration: none;
   outline: none;
-  &:hover,
-  &:focus {
-    color: $primaryAccentColor;
-    border-color: $primaryAccentColor;
-  }
 }
 
 .blob {
