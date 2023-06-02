@@ -3,7 +3,7 @@
     "1641264427e1493256": {
       "type": "page-top",
       "settings": {
-        "background_color": "#3c64b1",
+        "background_color": "#3c3c3c",
         "wave_bottom_color": "#ffffff",
         "spacing_top": "90px",
         "spacing_bottom": "50px",
@@ -22,14 +22,12 @@
       "settings": {
         "header_font_size": "30px",
         "header_font_weight": "700",
-        "header_font_color": "#f6b700",
+        "header_font_color": "#3c3c3c",
         "first_header_text": "Catalog",
-        "image_catalogue": "shopify:\/\/shop_images\/cover_v1_8ca951e2-c910-463a-9f95-e76df96d8567.png",
-        "link_catalogue": "https:\/\/cdn.shopify.com\/s\/files\/1\/0449\/1667\/0615\/files\/Hapny_2022_Product_Catalog.pdf?v=1660758222",
+        "link_catalogue": "https:\/\/cdn.shopify.com\/s\/files\/1\/0765\/8884\/3282\/files\/2023-rki-catalog.pdf?v=1685738416",
         "label_catalogue": "Download Product Catalog",
         "second_header_text": "Price List",
-        "image_pricelist": "shopify:\/\/shop_images\/Hapny_Price_List_11.30.jpg",
-        "link_pricelist": "https:\/\/cdn.shopify.com\/s\/files\/1\/0449\/1667\/0615\/files\/Hapny_05.22_Price_List.pdf?v=1653058497",
+        "link_pricelist": "https:\/\/cdn.shopify.com\/s\/files\/1\/0765\/8884\/3282\/files\/rki-pricelist-2023.pdf?v=1685738414",
         "label_pricelist": "Download Price List",
         "materials_link_color": "#3c64b1",
         "materials_link_font_size": 13
