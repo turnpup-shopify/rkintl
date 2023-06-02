@@ -103,7 +103,7 @@
           </div>
         {% endif %}
 
-        <div class="products products-grid {% unless enable_sidebar %}full-width{% endunless %}">
+        <div id="product-grid" class="products products-grid {% unless enable_sidebar %}full-width{% endunless %}">
           {% for product in collection.products %}
             {% for option in product.options %}
             {% if option == 'Color' %}
