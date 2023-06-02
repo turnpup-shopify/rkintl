@@ -207,7 +207,7 @@
           "type": "Question",
           "settings": {
             "question": "How is freight charged?",
-            "answer": "PeePaws Lickaloo Spindrifter the 4th"
+            "answer": "Shipping charges are directly calculated by UPS, taking into account factors like package weight, destination, insurance, etc. Any charges for expedited shipping are direct charges added to the freight amount by UPS.\n<br>\nFreight is charged on all orders, including items that ship as a result of an original backorder.\n<br>\nRKI does not add any service or handling fees."
           }
         },
         "d78554d8-ec34-415b-bae2-a8f69c5295c9": {
