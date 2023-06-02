@@ -10,7 +10,7 @@
         "turnpup_bottom_border_color": "#ffffff",
         "turnpup_margin_top": "0px",
         "height": "80vH",
-        "mobile_height": "90vH",
+        "mobile_height": "auto",
         "turnpup_margin_left_right": "15vH",
         "turnpup_mobile_margin_left_right": "20px",
         "turnpup_text_width": "700px",
