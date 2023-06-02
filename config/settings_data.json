@@ -2167,7 +2167,7 @@
         "type": "header",
         "settings": {
           "header_layout": "horizontal",
-          "logo_max_width": 200,
+          "logo_max_width": 300,
           "main_linklist": "main-menu",
           "mega_menu": false,
           "scroll_lock": "header",
