@@ -21,7 +21,7 @@
         "title": "SATIN BRASS COLLECTION",
         "turnpup_title_size": "30px",
         "turnpup_mobile_title_size": "16px",
-        "turnpup_title_color": "#3C64B1",
+        "turnpup_title_color": "#000000",
         "text": "",
         "turnpup_text_size": "18px",
         "turnpup_text_color": "#373F41",
@@ -29,8 +29,8 @@
         "turnpup_button_size": "18px",
         "button_link": "shopify:\/\/collections\/all",
         "color_text": "#ffffff",
-        "color_accent": "#F4B237",
-        "turnpup_hover_txt_color": "#F4B237"
+        "color_accent": "#000000",
+        "turnpup_hover_txt_color": "#000000"
       }
     }
   },
