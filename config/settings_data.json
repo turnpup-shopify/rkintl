@@ -2021,10 +2021,10 @@
     "turnpup_align_nav": "center",
     "mobile_nav_background_color": "#ffffff",
     "footer_background_color": "#f9f9f9",
-    "footer_title_text_color": "#3c64b1",
+    "footer_title_text_color": "#000000",
     "footer_title_accent_color": "#000000",
-    "footer_title_accent_color_hover": "#3c64b1",
-    "contact_form_button_color": "#3c64b1",
+    "footer_title_accent_color_hover": "#3c3c3c",
+    "contact_form_button_color": "#3c3c3c",
     "turnpup_margin_top": "0px",
     "turnpup_pdp_featured_image": true,
     "turnpup_page_desktop_desc_font_size": "16px",
@@ -2236,7 +2236,7 @@
           "1477520939001"
         ],
         "settings": {
-          "background_color": "#c5d4e9",
+          "background_color": "#ffffff",
           "background_opacity": "0.5",
           "show_payment_icons": true,
           "show_locale_selector": true,
