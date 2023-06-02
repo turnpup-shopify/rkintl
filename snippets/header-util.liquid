@@ -180,12 +180,11 @@
                     <img class="mobileCardImage lazyload js"
                       src="{{ image | img_url: image_default }}"
                       data-src="{{ image_url_pattern }}"
-                      data-widths="[{{ image_widths }}]"
+                      data-widths="[600,600]"
                       data-aspectratio="{{ image.aspect_ratio }}"
                       data-sizes="auto"
                       alt="{{ image.alt | escape | default: shop.name  }}">
                 </a>
-                {% echo image_widths %}
               {% else %}
                 <a href="{{ routes.root_url }}">{{ shop.name }}</a>
               {% endif %}
