@@ -23,7 +23,7 @@
         "d83c4ff4-b2c2-4da8-95be-117e175ba686": {
           "type": "Title",
           "settings": {
-            "faq_section_title": "PRODUCT"
+            "faq_section_title": "FAQ"
           }
         },
         "8caf4dac-ccf7-4c10-8b35-483bd662bb67": {
@@ -37,35 +37,42 @@
           "type": "Question",
           "settings": {
             "question": "What are your products made of?",
-            "answer": "We keep it simple. Our metal products are made with 100% solid brass to ensure quality and product longevity."
+            "answer": "Our products are cast with durable, high quality metals including solid brass and zinc."
           }
         },
         "f699b7fa-fcb1-483d-a72e-05ba28b56260": {
           "type": "Question",
           "settings": {
-            "question": "Are there variations in finishes across your brass products?",
-            "answer": "Yes, due to the manual nature of the finishing process, you will sometimes see lot-to-lot variation across products. We think it’s all part of the beauty and fun."
+            "question": "Are there variations in finishes or “lot-to-lot variances”?",
+            "answer": "Yes. Due the nature of the finishing process, you will see some lot-to-lot variation. More elaborate finishes will have deeper variations within a specific lot as well, such as color, accents, and \/ or explicit finish differences."
           }
         },
         "4dd8f236-02db-4bf6-9056-d57699fd3e9b": {
           "type": "Question",
           "settings": {
-            "question": "Are your finishes \"living\" finishes?",
+            "question": "Are these “living” finishes?",
             "answer": "Our Venetian Bronze finish will subtly change with time, touch, and exposure to different climates. Our other finishes are not considered “living” or unlacquered."
           }
         },
         "3cf0a377-1e23-45a6-ad98-45f2bc2ba183": {
           "type": "Question",
           "settings": {
-            "question": "Do I need my own screws, or do you provide them?",
-            "answer": "We got you. All Hapny hardware includes (2) different mounting screws to accommodate almost all cabinet door and drawer sizes.<br><br>Our knobs and pulls include a <u>#8-32, 1”<\/u> Phillps head screw and a <u>break-away #8-32, 1.75”<\/u> Phillips head screw with four break points (¾\", 1\", 1 ¼\" and 1 ½\"). Our knobs come with (1) of each screw per product and our pulls come with (2) of each screw per product. Our appliance pulls include (2) <u>1\/4”-20, 1.25”<\/u> Phillips head screws and (2) <u>1\/4”-20, 1.75”<\/u> Phillips head screws.  <br><br>For custom or additional screw needs, you should be able to find what you need at your local hardware store."
+            "question": "How do I care for your products?",
+            "answer": "We got you. All Hapny hardware includes (2) different mounting screws to accommodate almost all cabinet door and drawer sizes.Our knobs and pulls include a #8-32, 1” Phillps head screw and a break-away #8-32, 1.75” Phillips head screw with four break points (¾\", 1\", 1 ¼\" and 1 ½\"). Our knobs come with (1) of each screw per product and our pulls come with (2) of each screw per product. Our appliance pulls include (2) 1\/4”-20, 1.25” Phillips head screws and (2) 1\/4”-20, 1.75” Phillips head screws.  For custom or additional screw needs, you should be able to find what you need at your local hardware store."
           }
         },
         "2ea8e37f-2bac-44e4-b597-6919a6d859ea": {
           "type": "Question",
           "settings": {
-            "question": "How do I keep my hardware looking as clean as new?",
-            "answer": "Gentle is key. Clean your hardware with a soft, damp cloth, and wipe completely dry. Do not leave any water or soap residue on your product. <b>Never<\/b> use any chemicals or harsh over-the-counter cleansers. These will strip your hardware of its finish and, even worse, void your warranty."
+            "question": "What screws come with the cabinet knobs and pulls?",
+            "answer": "Gentle is key. Clean your hardware with a soft, damp cloth, and wipe completely dry. Do not leave any water or soap residue on your product. Never use any chemicals or harsh over-the-counter cleansers. These will strip your hardware of its finish and, even worse, void your warranty."
+          }
+        },
+        "b223efec-99de-4699-9373-060ce73887d1": {
+          "type": "Question",
+          "settings": {
+            "question": "How do I get extra screws or mounting hardware?",
+            "answer": "We’re thrilled you asked! In order to become a registered dealer of Hapny Home products, you must have a showroom to display our product to the public. We typically require a minimum purchase of four half-size display boards to open a wholesale account with us.To start the process, please visit our Become a Dealer page to share more information, or send an email with your company and request details orders@hapnyhome.com."
           }
         },
         "1da94bd4-4546-40ce-b94f-32c8b65b688d": {
@@ -76,42 +83,21 @@
         "f81d5c37-1018-4623-8a13-aa976fef3781": {
           "type": "Title",
           "settings": {
-            "faq_section_title": "DEALER GENERAL INFO"
-          }
-        },
-        "b223efec-99de-4699-9373-060ce73887d1": {
-          "type": "Question",
-          "settings": {
-            "question": "How do I become a dealer of Hapny Home products?",
-            "answer": "We’re thrilled you asked! In order to become a registered dealer of Hapny Home products, you must have a showroom to display our product to the public. We typically require a minimum purchase of <u>four half-size display boards<\/u> to open a wholesale account with us.<br><br>To start the process, please visit our <a target=\"_blank\" href=\"https:\/\/hapnyhome.com\/pages\/become-a-dealer\">Become a Dealer page<\/a> to share more information, or send an email with your company and request details <u><i>orders@hapnyhome.com<\/i><\/u>."
+            "faq_section_title": "WARRANTY"
           }
         },
         "c23e3d7a-d273-4d01-b259-75d795d414ec": {
           "type": "Question",
           "settings": {
-            "question": "Where do I send my orders?",
-            "answer": "All orders should be emailed to <u><i>orders@hapnyhome.com<\/i><\/u>. <br><br>Please make sure to include all necessary order information (PO #, Hapny SKU #s, “Ship To” address, etc). Assuming products are in stock, all orders placed by 3:00pm CST will ship the same day.<br><br>We will reach out regarding any supply shortages or issues. We are not responsible for any order cancellations or changes once it has shipped.<br><br>For any order-related questions, please contact <u><i>orders@hapnyhome.com<\/i><\/u> with your PO# as the subject line."
+            "question": "What is the warranty for your products?",
+            "answer": ""
           }
         },
         "b6f50413-5539-4939-8f8a-496ccfcded3b": {
           "type": "Question",
           "settings": {
-            "question": "Are there any minimum fees?",
-            "answer": "Nope! No minimum order or service fees here."
-          }
-        },
-        "51e22068-02e2-440e-a3cf-efda74127a9c": {
-          "type": "Question",
-          "settings": {
-            "question": "What are my order terms?",
-            "answer": "First orders are shipped prepaid via credit card payment. We usually establish NET 30 credit terms after the first order and a basic credit check."
-          }
-        },
-        "64fbc8f7-5b41-4c47-85a8-d597f1a5aaac": {
-          "type": "Question",
-          "settings": {
-            "question": "How do you handle past due accounts?",
-            "answer": "We do not ship orders to past due accounts. We also reserve the right to terminate any account at any time for consistently late or incomplete payments, or for failure to comply with Hapny Home terms & conditions."
+            "question": "What doesn't the warranty cover?",
+            "answer": ""
           }
         },
         "3eb18b00-e7b7-43ef-bb6e-9781e30c5aeb": {
@@ -128,13 +114,11 @@
         "4dd8f236-02db-4bf6-9056-d57699fd3e9b",
         "3cf0a377-1e23-45a6-ad98-45f2bc2ba183",
         "2ea8e37f-2bac-44e4-b597-6919a6d859ea",
+        "b223efec-99de-4699-9373-060ce73887d1",
         "1da94bd4-4546-40ce-b94f-32c8b65b688d",
         "f81d5c37-1018-4623-8a13-aa976fef3781",
-        "b223efec-99de-4699-9373-060ce73887d1",
         "c23e3d7a-d273-4d01-b259-75d795d414ec",
         "b6f50413-5539-4939-8f8a-496ccfcded3b",
-        "51e22068-02e2-440e-a3cf-efda74127a9c",
-        "64fbc8f7-5b41-4c47-85a8-d597f1a5aaac",
         "3eb18b00-e7b7-43ef-bb6e-9781e30c5aeb"
       ],
       "settings": {
