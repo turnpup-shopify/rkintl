@@ -13,7 +13,7 @@
         "wave_bottom_color": "#ffffff",
         "spacing_top": "60px",
         "spacing_bottom": "40px",
-        "mobile_spacing_top": "20px",
+        "mobile_spacing_top": "50px",
         "mobile_spacing_bottom": "50px",
         "header_font_size": "30px",
         "header_font_color": "#ffffff",
