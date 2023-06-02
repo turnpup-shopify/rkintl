@@ -3,7 +3,7 @@
     "main": {
       "type": "page-top",
       "settings": {
-        "background_color": "#3c64b1",
+        "background_color": "#3c3c3c",
         "wave_bottom_color": "#ffffff",
         "spacing_top": "90px",
         "spacing_bottom": "50px",
