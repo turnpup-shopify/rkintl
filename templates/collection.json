@@ -20,7 +20,7 @@
             "text_padding_bottom": "0px",
             "is_own_line": true,
             "text_has_wavy_animation": true,
-            "wavy_animation_color": "#F6B700"
+            "wavy_animation_color": "#f6b700"
           }
         }
       },
@@ -49,7 +49,7 @@
       "settings": {
         "title": "ALEXS COLLECTION",
         "text": "<p>COLLECTION MADE FORM ALEXS TOP PICKS IN CABINET HARDWARE<\/p>",
-        "alignment": "left"
+        "alignment": "center"
       }
     },
     "collection-template": {
