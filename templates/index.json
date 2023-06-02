@@ -2,7 +2,6 @@
   "sections": {
     "8e0d19a5-f8bc-40a9-b831-9fff1ef5c00b": {
       "type": "turnpup_image_only",
-      "disabled": true,
       "settings": {
         "turnpup_margin_topbottom_container": "50%",
         "image": "shopify:\/\/shop_images\/3191-1502463748-5028-1496030209-banner_2.png",
