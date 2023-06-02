@@ -2242,7 +2242,7 @@
           "show_locale_selector": true,
           "show_currency_selector": true,
           "trust_richtext": "",
-          "footer_top_padding": "20px"
+          "footer_top_padding": "80px"
         }
       },
       "product-template": {
