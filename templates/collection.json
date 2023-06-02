@@ -2,6 +2,7 @@
   "sections": {
     "164688313850b8e45e": {
       "type": "turnpup_collection_header_wide",
+      "disabled": true,
       "settings": {
         "title": "All Products",
         "description": "Shop our selection of cabinet hardware and appliance pulls across a variety of finishes, shapes, and sizes for all your space and furniture refresh needs.",
