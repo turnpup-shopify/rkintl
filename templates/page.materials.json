@@ -31,7 +31,7 @@
         "image_pricelist": "shopify:\/\/shop_images\/rki-pricelist-2023-cover.jpg",
         "link_pricelist": "https:\/\/cdn.shopify.com\/s\/files\/1\/0765\/8884\/3282\/files\/rki-pricelist-2023.pdf?v=1685738414",
         "label_pricelist": "Download Price List",
-        "materials_link_color": "#3c64b1",
+        "materials_link_color": "#3c3c3c",
         "materials_link_font_size": 13
       }
     }
