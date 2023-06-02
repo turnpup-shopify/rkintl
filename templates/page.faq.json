@@ -210,23 +210,23 @@
             "answer": "Shipping charges are directly calculated by UPS, taking into account factors like package weight, destination, insurance, etc. Any charges for expedited shipping are direct charges added to the freight amount by UPS.\n<br>\nFreight is charged on all orders, including items that ship as a result of an original backorder.\n<br>\nRKI does not add any service or handling fees."
           }
         },
-        "d78554d8-ec34-415b-bae2-a8f69c5295c9": {
-          "type": "END",
-          "settings": {
-          }
-        },
         "4f782b7f-b5a7-4f0e-a2e1-626e1c5ec69a": {
           "type": "Question",
           "settings": {
-            "question": "How do I likka the leffs?",
-            "answer": "PeePaws Lickaloo Spindrifter the 4th"
+            "question": "Are there any drop ship fees?",
+            "answer": "No."
           }
         },
         "f004c2c4-04c7-44b2-92bf-e39b9e95d492": {
           "type": "Question",
           "settings": {
-            "question": "How do I likka the leffs?",
-            "answer": "PeePaws Lickaloo Spindrifter the 4th"
+            "question": "I have my own UPS account? Can you use that?",
+            "answer": "Yes. In fact many vendors have us ship their orders via their verified UPS account number. Third-party billing is often a way to get a deeper discount on freight charges from UPS."
+          }
+        },
+        "d78554d8-ec34-415b-bae2-a8f69c5295c9": {
+          "type": "END",
+          "settings": {
           }
         }
       },
@@ -243,9 +243,9 @@
         "7aa1a1b4-6652-4ed3-9008-18853fdc0c2c",
         "bd171792-ebb9-4270-b051-2fa0eec44190",
         "5fac201c-ea88-4578-bbe7-1a91ccf3a06f",
-        "d78554d8-ec34-415b-bae2-a8f69c5295c9",
         "4f782b7f-b5a7-4f0e-a2e1-626e1c5ec69a",
-        "f004c2c4-04c7-44b2-92bf-e39b9e95d492"
+        "f004c2c4-04c7-44b2-92bf-e39b9e95d492",
+        "d78554d8-ec34-415b-bae2-a8f69c5295c9"
       ],
       "custom_css": [
 
