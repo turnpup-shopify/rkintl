@@ -195,6 +195,7 @@
           }
           #Slide-{{ section.id }}-{{ forloop.index }} .multicolumn-card__image {
             border-radius: {{ block.settings.image_border_radius }};
+            object-fit: contain;
           }          
           #Slide-{{ section.id }}-{{ forloop.index }} .flwr_multicolumn_hero_button {           	 
             margin-right: {{ block.settings.space_between_buttons }}px;
@@ -337,6 +338,9 @@
   .grid--1-col .grid__item {
     max-width: 100%;
     width: 100%;
+  }
+  .multicolumn-card__info {
+    text-align: {{ section.settings.block_text_alignment }};
   }
   .multicolumn-card__info .link {
     text-decoration: none;
@@ -686,6 +690,26 @@
           }
         ],
         "default": "left",
+        "label": "Section Title Alignment"
+      },
+      {
+        "type": "select",
+        "id": "block_text_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left Aligned"
+          },
+          {
+            "value": "center",
+            "label": "Center Aligned"
+          },
+          {
+            "value": "right",
+            "label": "Right Aligned"
+          }
+        ],
+        "default": "center",
         "label": "Alignment"
       },
       {
@@ -732,7 +756,7 @@
           "label": "Image Border Radius",
           "info": "Full this in if you want to have rounded borders on the image",
           "default": "0px"
-        },
+        },        
         {
           "type": "header",
           "content": "Title",

@@ -1,8 +1,8 @@
 <div data-section-id="{{ section.id }}" data-section-type="footer-section">
-  <footer class="site-footer">
+  <footer class="site-footer" style="padding: {{ section.settings.footer_top_padding }} 0px;">
     <div class="wrapper">      
       {% if section.settings.trust_badge or section.settings.trust_richtext != blank %}
-        <div class="box trust-badge" style="padding: {{ section.settings.footer_top_padding }} 0px 0px;width:100px;margin:0 auto;">
+        <div class="box trust-badge" style="width:100px;margin:0 auto;">
           {% if section.settings.trust_richtext != blank %}
             <div class="rte">{{ section.settings.trust_richtext }}</div>
           {% endif %}
@@ -222,9 +222,7 @@
           {% endif %}
         </div>
 
-      <!-- <p class="copyright">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}<br>
-        {{ powered_by_link }}</p> -->
-        <div class="copyright_container"> 
+        {% comment %} <div class="copyright_container"> 
           <!-- <button class="blob"> shop </button> -->
           <p class="legal_link"><a href="https://hapnyhome.com/pages/accessibility">Accessibility</a></p>
           <p class="legal_link">|</p>
@@ -232,7 +230,7 @@
           <p class="legal_link">|</p>
           <p class="copyright"><span>site by</span> <a class="footer_text" href="https://flwrmarket.com?utm_source=hapnyhome">flwr market</a>
             <a class="footer_image" href="https://flwrmarket.com?utm_source=hapnyhome"><img class="lazyload copyright_overlay" data-src="https://cdn.shopify.com/s/files/1/0449/1667/0615/files/gif_try.gif?v=1653454066"></a></p>
-        </div>
+        </div> {% endcomment %}
     </div>
   </footer>
 </div>

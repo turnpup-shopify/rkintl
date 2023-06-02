@@ -1984,7 +1984,7 @@
   "current": {
     "turnpup_button_size": "16px",
     "turnpup_button_padding_height": "14px",
-    "turnpup_border_radius": "3px",
+    "turnpup_border_radius": "0px",
     "turnpup_button_font_weight": "700",
     "color_accent": "rgba(0,0,0,0)",
     "button_background_color": "#f6b700",
@@ -2021,25 +2021,27 @@
     "turnpup_align_nav": "center",
     "mobile_nav_background_color": "#ffffff",
     "footer_background_color": "#f9f9f9",
-    "footer_title_text_color": "#3c64b1",
+    "footer_title_text_color": "#000000",
     "footer_title_accent_color": "#000000",
-    "footer_title_accent_color_hover": "#3c64b1",
-    "contact_form_button_color": "#3c64b1",
+    "footer_title_accent_color_hover": "#3c3c3c",
+    "contact_form_button_color": "#3c3c3c",
     "turnpup_margin_top": "0px",
     "turnpup_pdp_featured_image": true,
     "turnpup_page_desktop_desc_font_size": "16px",
     "turnpup_button_font_size": "16",
+    "turnpup_nav_p22": false,
+    "turnpup_headings_p22": false,
     "turnpup_nav_space_between": "10px",
     "turnpup_nav_size": "13",
     "turnpup_body_marketfresh": false,
-    "typography_body_font": "karla_n4",
+    "typography_body_font": "sans-serif",
     "typography_base_size_modify": "1.125",
-    "typography_headings_font": "poppins_n6",
+    "typography_headings_font": "sans-serif",
     "typography_header_base_size_modify": "0.825",
     "typography_headings_capitalize": false,
     "turnpup_headings_marketfresh": false,
     "typography_headings_bold": false,
-    "typography_navigation_font": "karla_n4",
+    "typography_navigation_font": "sans-serif",
     "favicon": "shopify:\/\/shop_images\/hapny_web_animation2.gif",
     "collections_product_ratio": "100%",
     "turnpup_collection_squares": true,
@@ -2098,7 +2100,7 @@
     "instafeed_header_font_family": "'p22-mackinac-pro', serif",
     "instafeed_header_font_size": 30,
     "instafeed_header_font_weight": 700,
-    "logo": "shopify:\/\/shop_images\/hapnylogooo.png",
+    "logo": "shopify:\/\/shop_images\/logo_newer.png",
     "checkout_header_image": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/HapnyLogo_a543d14b-231c-4495-af7a-05d731e3b5ef.png",
     "checkout_logo_position": "left",
@@ -2167,8 +2169,9 @@
         "type": "header",
         "settings": {
           "header_layout": "horizontal",
-          "logo": "shopify:\/\/shop_images\/hapnylogooo.png",
-          "logo_max_width": 480,
+          "logo": "shopify:\/\/shop_images\/logo_newer.png",
+          "turnpup_hover_logo": "shopify:\/\/shop_images\/logo_newer.png",
+          "logo_max_width": 320,
           "main_linklist": "main-menu",
           "mega_menu": false,
           "scroll_lock": "header",
@@ -2185,62 +2188,62 @@
           "1477519493091": {
             "type": "menu",
             "settings": {
-              "title": "Shop",
+              "title": "PRODUCTS",
               "text": "",
-              "footer_linklist": "footermenu",
-              "block_width": "17%",
+              "footer_linklist": "",
+              "block_width": "12%",
               "mobile_block_width": "100%"
             }
           },
           "a986418f-575a-4b1e-8bd2-fafd75c378ee": {
             "type": "menu",
             "settings": {
-              "title": "Resources",
+              "title": "COLLECTIONS",
               "text": "",
-              "footer_linklist": "more-info",
-              "block_width": "22%",
+              "footer_linklist": "",
+              "block_width": "12%",
+              "mobile_block_width": "100%"
+            }
+          },
+          "3ca0a47c-6d0d-42e4-8a60-885c70f56523": {
+            "type": "menu",
+            "settings": {
+              "title": "RESOURCES",
+              "text": "Learn more about us",
+              "footer_linklist": "footer",
+              "block_width": "12%",
               "mobile_block_width": "100%"
             }
           },
           "1477603756570": {
             "type": "contact",
             "settings": {
-              "title": "Say hi 👋🏽",
+              "title": "CONTACT",
               "show_contact": true,
-              "phone": "(281) 547-2367",
-              "contact_text": "hello@hapnyhome.com",
-              "contact_link": "mailto:hello@hapnyhome.com",
-              "address": "",
-              "show_social": true,
-              "block_width": "17%",
-              "mobile_block_width": "100%"
-            }
-          },
-          "1477520939001": {
-            "type": "newsletter",
-            "settings": {
-              "title": "Hapny ~happenings~",
-              "text_richtext": "<p>Sign up for our emails to get the hardware content you never knew you needed, sent on a minimal cadence.<\/p>",
-              "block_width": "30%",
-              "mobile_block_width": "100%"
+              "phone": "P: (713) 532-7277",
+              "contact_text": "F: (713) 532-3375",
+              "contact_link": "",
+              "address": "<p><a>customerservice@rkintl.com<\/a><\/p>",
+              "show_social": false,
+              "block_width": "12%",
+              "mobile_block_width": "12%"
             }
           }
         },
         "block_order": [
           "1477519493091",
           "a986418f-575a-4b1e-8bd2-fafd75c378ee",
-          "1477603756570",
-          "1477520939001"
+          "3ca0a47c-6d0d-42e4-8a60-885c70f56523",
+          "1477603756570"
         ],
         "settings": {
-          "background_color": "#c5d4e9",
+          "background_color": "#ffffff",
           "background_opacity": "0.5",
           "show_payment_icons": true,
           "show_locale_selector": true,
           "show_currency_selector": true,
           "trust_richtext": "",
-          "footer_top_padding": "20px",
-          "trust_badge": "shopify:\/\/shop_images\/hapny_web_animation2.gif"
+          "footer_top_padding": "80px"
         }
       },
       "product-template": {

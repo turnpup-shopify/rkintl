@@ -408,7 +408,7 @@ $gutter: em(30px);
 }
 
 @mixin buttonOutline(){
-  padding: 2px 12px;
+  padding: 14px 24px;
   border: 2px solid $primaryTextColor;
   color: $primaryTextColor;
   text-transform: $siteHeaderNavTextTransform;
@@ -1276,11 +1276,9 @@ body {
     @extend .button.outline;
     display: inline-block;
     margin: 8px 0 0;
-    padding: 4px 24px;
-    //turnpup replace with below --> font-size: em(12px);
+    padding: 14px 24px;
     font-size: em({{ settings.turnpup_button_font_size }}px);
-    //TURNPUP
-    border-radius: 20px;
+    border-radius: 0px;
   }
 
    .hapny_button {
@@ -2526,11 +2524,11 @@ body:not(.template-index) main.main-content {
 .button.outline {
   @include buttonOutline;
   &.large {
-    padding: 6px 24px;
+    padding: 14px 24px;
     //turnpup replace with below --> font-size: em(14px);
     font-size: em({{settings.turnpup_button_font_size}}px);
     // TURNPUP Button Outline: add the 3 below
-    border-radius: 20px;
+    border-radius: 0px;
     color: $turnpupButtonAccentColor;
     border-color: $turnpupButtonAccentColor;
   }
