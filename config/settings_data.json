@@ -2188,7 +2188,7 @@
           "1477519493091": {
             "type": "menu",
             "settings": {
-              "title": "Shop",
+              "title": "PRODUCTS",
               "text": "",
               "footer_linklist": "",
               "block_width": "17%",
@@ -2198,33 +2198,34 @@
           "a986418f-575a-4b1e-8bd2-fafd75c378ee": {
             "type": "menu",
             "settings": {
-              "title": "Resources",
+              "title": "COLLECTIONS",
               "text": "",
               "footer_linklist": "",
               "block_width": "22%",
               "mobile_block_width": "100%"
             }
           },
-          "1477603756570": {
-            "type": "contact",
+          "3ca0a47c-6d0d-42e4-8a60-885c70f56523": {
+            "type": "menu",
             "settings": {
-              "title": "Say hi 👋🏽",
-              "show_contact": true,
-              "phone": "(281) 547-2367",
-              "contact_text": "hello@hapnyhome.com",
-              "contact_link": "mailto:hello@hapnyhome.com",
-              "address": "",
-              "show_social": true,
-              "block_width": "17%",
+              "title": "RESOURCES",
+              "text": "Learn more about us",
+              "footer_linklist": "footer",
+              "block_width": "25%",
               "mobile_block_width": "100%"
             }
           },
-          "1477520939001": {
-            "type": "newsletter",
+          "1477603756570": {
+            "type": "contact",
             "settings": {
-              "title": "Hapny ~happenings~",
-              "text_richtext": "<p>Sign up for our emails to get the hardware content you never knew you needed, sent on a minimal cadence.<\/p>",
-              "block_width": "30%",
+              "title": "CONTACT",
+              "show_contact": true,
+              "phone": "P: (713) 532-7277",
+              "contact_text": "F: (713) 532-3375",
+              "contact_link": "",
+              "address": "<p><a>customerservice@rkintl.com<\/a><\/p>",
+              "show_social": false,
+              "block_width": "17%",
               "mobile_block_width": "100%"
             }
           }
@@ -2232,8 +2233,8 @@
         "block_order": [
           "1477519493091",
           "a986418f-575a-4b1e-8bd2-fafd75c378ee",
-          "1477603756570",
-          "1477520939001"
+          "3ca0a47c-6d0d-42e4-8a60-885c70f56523",
+          "1477603756570"
         ],
         "settings": {
           "background_color": "#ffffff",
