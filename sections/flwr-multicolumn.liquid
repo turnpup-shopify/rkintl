@@ -197,8 +197,8 @@
             border-radius: {{ block.settings.image_border_radius }};
             object-fit: contain;
           }          
-          #Slide-{{ section.id }}-{{ forloop.index }} .flwr_multicolumn_hero_button {           	 
-            margin-right: {{ block.settings.space_between_buttons }}px;
+          #Slide-{{ section.id }}-{{ forloop.index }} .flwr_multicolumn_hero_button:not(:first-child) {           	 
+            margin-left: {{ block.settings.space_between_buttons }}px;
           }
           @media screen and (max-width: 749px) {
             #Slide-{{ section.id }}-{{ forloop.index }} {           
