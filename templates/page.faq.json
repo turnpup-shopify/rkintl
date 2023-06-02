@@ -137,7 +137,7 @@
           "type": "Question",
           "settings": {
             "question": "How do I become a dealer of your products?",
-            "answer": "Establishing a wholesale account and becoming a registered RKI dealer requires having a showroom in which you can display our product to the public. A minimum purchase of six full size displays is typically required to open an account. <br><br> Download our credit application <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0765\/8884\/3282\/files\/RKICREDITAPPL.pdf?v=1685732219\" target=\"_blank\">here.<\/a> <br><br> Email your completed credit application to customerservice@rkintl.com<br><br>Fax your completed credit application to 713-532-3375"
+            "answer": "Establishing a wholesale account and becoming a registered RKI dealer requires having a showroom in which you can display our product to the public. A minimum purchase of six full size displays is typically required to open an account. <br><br> Download our credit application <a href=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0765\/8884\/3282\/files\/RKICREDITAPPL.pdf?v=1685732219\" target=\"_blank\">here.<\/a> <br><br> Email your completed credit application to <a href=\"mailto:customerservice@rkintl.com\">customerservice@rkintl.com<\/a><br><br>Fax your completed credit application to <a href=\"\">713-532-3375<\/a>"
           }
         },
         "bd6fa2e6-c027-4b74-ad6d-46cfd3832ba2": {
@@ -206,6 +206,9 @@
         "63b798e7-0a87-4165-953c-38964d85ef87",
         "ce7f7baf-f911-4493-b511-d627591eb7cb",
         "d78554d8-ec34-415b-bae2-a8f69c5295c9"
+      ],
+      "custom_css": [
+
       ],
       "settings": {
       }
