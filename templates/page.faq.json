@@ -150,15 +150,15 @@
         "e1b07af4-4050-4443-96a3-8b742246b726": {
           "type": "Question",
           "settings": {
-            "question": "How do I return products? Are there restock fees?",
-            "answer": ""
+            "question": "Are there any minimum fees?",
+            "answer": "No. There are no minimum order, quantity or service fees."
           }
         },
         "a1a4f670-9853-4447-b7e1-fc384cd53210": {
           "type": "Question",
           "settings": {
-            "question": "What shipping service do you use to ship your orders?",
-            "answer": ""
+            "question": "What are my terms? Do I get credit?",
+            "answer": "First orders are shipped prepaid via credit card payment. NET 30 credit terms are usually established after the first order and a basic credit check."
           }
         },
         "6cf4dae4-4223-4a14-94d6-c0599db3eeb0": {
