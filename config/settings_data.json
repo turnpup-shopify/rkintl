@@ -2098,7 +2098,7 @@
     "instafeed_header_font_family": "'p22-mackinac-pro', serif",
     "instafeed_header_font_size": 30,
     "instafeed_header_font_weight": 700,
-    "logo": "shopify:\/\/shop_images\/new_logo.jpg",
+    "logo": "shopify:\/\/shop_images\/try_logo.jpg",
     "checkout_header_image": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/HapnyLogo_a543d14b-231c-4495-af7a-05d731e3b5ef.png",
     "checkout_logo_position": "left",
@@ -2167,7 +2167,7 @@
         "type": "header",
         "settings": {
           "header_layout": "horizontal",
-          "logo_max_width": 880,
+          "logo_max_width": 200,
           "main_linklist": "main-menu",
           "mega_menu": false,
           "scroll_lock": "header",
