@@ -12,7 +12,7 @@
         "background_color": "#3c3c3c",
         "wave_bottom_color": "#ffffff",
         "spacing_top": "60px",
-        "spacing_bottom": "0px",
+        "spacing_bottom": "40px",
         "mobile_spacing_top": "20px",
         "mobile_spacing_bottom": "50px",
         "header_font_size": "30px",
@@ -27,14 +27,14 @@
       "type": "showroom_top",
       "settings": {
         "state_font_size": 20,
-        "state_color": "#3c64b1",
-        "location_color": "#f6b700",
+        "state_color": "#000000",
+        "location_color": "#4a4a4a",
         "location_font_size": 16,
         "address_color": "#000000",
         "website_color": "#3c64b1",
         "website_color_on_hover": "#f6b700",
         "directions_color": "#373f41",
-        "directions_color_on_hover": "#ff4b00",
+        "directions_color_on_hover": "#f6b700",
         "margin_bottom_of_page": "60px"
       }
     },
