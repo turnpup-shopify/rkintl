@@ -69,17 +69,33 @@
 
         <aside class="product-aside">
           
-          <div class="purchase-box {% if section.settings.product_box_padding %}padding-box{% endif %}">
+          <div class="purchase-box {% if section.settings.product_box_padding %}padding-box{% endif %}" style="margin-bottom:0px;">
             {% comment %}
               ID addToCartForm is a selector for the ajax cart plugin
             {% endcomment %}
             <div id="AddToCartForm-{{ section.id }}" data-AddToCartForm class="form-vertical product-form product-form-{{ section.id }}" {% if section.settings.show_payment_button %}data-dynamic-checkout="true"{% endif %} data-section="{{ section.id }}">
-              {% include 'product-form' %}
+              {% include 'showroom-product-form' %}
             </div>
             
+            {% comment %} turnpup custom where to buy {% endcomment %}
+            {% if product.metafields.pdp.where_to_buy != blank %}            
+              <div class="pdp_buttons">
+                {% unless section.settings.buy_online_button_copy == "" %}
+                  <a class="hapny_button" target="_blank" href="{{ product.metafields.pdp.where_to_buy }}">
+                    {{ section.settings.buy_online_button_copy }}
+                  </a>
+                {% endunless %}
+                <a class="hapny_button" target="_blank" href="https://hapnyhome.com/pages/showrooms">
+                  {{ section.settings.find_a_showroom_button_copy }}
+                </a>
+              </div>
+            {% endif %}
+            
+            {% comment %}
             <div class="product-single__store-availability-container" data-store-availability-container>
             </div>
-
+            {% endcomment %}
+            
           </div>
           
           {% if section.settings.trust_badge %}
@@ -107,6 +123,9 @@
           {% endif %}
 
           <div class="description rte" data-tabs-enable="{{ section.settings.tabs_enable }}">
+            <div class="description-label-wrapper">
+              <label> Description </label>
+            </div>
             {%- assign description_parts = product.description | split: '<!-- split -->' -%}
             {%- assign description_first_part = description_parts | first -%}
             {%- if section.settings.tabs_enable -%}
@@ -239,16 +258,22 @@
   <div class="turnpup_specification">
     <div class="wrapper three-column">
       <div class="turnpup_left">
-        <h2 class="pdp_bottom_header">{{section.settings.tp_bottom_left_title}}</h2>
-        <p>{{ product.metafields.pdp.details }}</p>
+        <a class="pdp_bottom_header" js-accordion-header> 
+          <span>{{ section.settings.bottom_left_section_title }}</span>
+        </a>
+        <div class="pdp_lower_cms_section invisible" aria-hidden="true" js-accordion-content>{{ product.metafields.pdp.details }}</div>       
       </div>
       <div class="turnpup_middle">
-        <h2 class="pdp_bottom_header">{{section.settings.tp_bottom_middle_title}}</h2>
-        <p>{{ product.metafields.pdp.dimensions }}</p>
+        <a class="pdp_bottom_header" js-accordion-header>
+          <span>{{ section.settings.bottom_middle_section_title }}</span>
+        </a>
+        <div class="pdp_lower_cms_section invisible" aria-hidden="true" js-accordion-content>{{ product.metafields.pdp.dimensions }}</div>
       </div>
       <div class="turnpup_right">
-        <h2 class="pdp_bottom_header">{{section.settings.tp_bottom_right_title}}</h2>
-        <p>{{ product.metafields.pdp.downloads }}</p>
+        <a class="pdp_bottom_header" js-accordion-header>
+          <span>{{ section.settings.bottom_right_section_title }}</span>
+        </a>
+        <div class="pdp_lower_cms_section invisible" aria-hidden="true" js-accordion-content>{{ product.metafields.pdp.downloads }}</div>
       </div>
     </div>
   </div>
@@ -299,7 +324,7 @@
     "gtin14": {{ current_variant.barcode | json }},
   {%- endif -%}
   "brand": {
-    "@type": "Thing",
+    "@type": "Brand",
     "name": {{ product.vendor | json }}
   },
   "offers": [
@@ -344,11 +369,40 @@
   ]
 }
 </script>
+<script>
+  console.log( "{{ product.metafields.pdp.where_to_buy }}" );
+</script>
 
 <style>
     .pdp_bottom_header {
+      font-family: 'p22-mackinac-pro', serif;
+      font-weight: 600;
+      line-height: 1.4;
+      text-transform: none;
       color: {{ section.settings.tp_bottom_header_color }};
       font-size: {{ section.settings.tp_bottom_header_font_size }};
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-between;
+      -ms-justify-content: space-between;
+      justify-content: space-between;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      -o-align-items: center;
+      align-items: center;
+      background-color: transparent;
+      text-align: left;
+      width: 100%;
+      border: 0;
+      padding: 24px 0;
+      margin: 0 0 0px 0 ;
+    }
+  
+    a.pdp_bottom_header:hover, a.pdp_bottom_header:focus {
+      color: {{ section.settings.tp_bottom_header_color }};
     }
   	.turnpup_specification {
       border-top: 1px solid {{ section.settings.tp_horizontal_divider_color }}; 
@@ -365,14 +419,99 @@
     }
   	.single-product .description {
       font-size: {{ section.settings.pdp_dscription_font_size }};
+      margin-top: 14px;
     }
-  	
-    @media only screen and (max-width: 749px) {
+  	.inventory-module .single-option-radio {
+      font-size: {{ section.settings.pdp_dscription_font_size }};
+    }
+    .pdp_bottom_cms_container {
+      margin-top: 18px;
+    }
+  
+    .pdp_buttons {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  
+    .pdp_buttons .hapny_button:first-of-type {
+      margin-right: 12px
+    }
+  
+  
+    @media only screen and (max-width: 700px) {
       {% if section.settings.mobile_thumbnails_placement == 'hide' %}
           .product-thumb--slider.flickity-enabled[data-slider-enabled="true"] {
             display: none;
           }
       {% endif %}
+      .pdp_lower_cms_section {
+          display: none;
+/*         visibility: visible; */
+/*         max-height: 2000px; */
+/*         height: auto; */
+/*         overflow: hidden; */
+/*         transition: all 1.25s linear; */
+/*         -webkit-animation: height-expand 1.4s ease-in; */
+      }
+      .pdp_lower_cms_section.invisible {
+/*         visibility: hidden; */
+/*         max-height: 0px; */
+/*         transition: all 1.25s; */
+/*         transition: max-height 0s, visibility 0s; */
+/*         -webkit-animation: height 1.4s ease-in; */
+      }
+      .pdp_lower_cms_section ul:first-child,.pdp_lower_cms_section li:first-child,.pdp_lower_cms_section p:first-child {
+        padding-top: 16px;
+      }
+      @-webkit-keyframes height-expand {
+          0% {
+            max-height: 0px;
+/*             visibility: hidden; */
+          }
+          100% {
+            max-height: 400px;
+/*             visibility: visible; */
+          }
+      } 
+      a.pdp_bottom_header {
+        border-bottom: 1px solid {{ section.settings.tp_bottom_header_color }};
+      }
+      a.pdp_bottom_header:hover, a.pdp_bottom_header:focus {
+        color:  {{ settings.primary_accent_color }};
+      }
+      .pdp_bottom_header::after {
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-justify-content: center;
+          -ms-justify-content: center;
+          justify-content: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          -moz-align-items: center;
+          -ms-align-items: center;
+          -o-align-items: center;
+          align-items: center;
+          content: "+";
+          font-size: 1rem;
+      }
+      .pdp_bottom_header.minus::after {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-justify-content: center;
+        -ms-justify-content: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        align-items: center;
+        content: "-";
+        font-size: 1rem;
+      }
     }
 </style>
 
@@ -393,24 +532,6 @@
     {
       "type": "header",
       "content": "Bottom Module (custom)"
-    },
-    {
-      "type": "text",
-      "id": "tp_bottom_left_title",
-      "label": "Bottom Left Section Title",
-      "default": "Details"
-    },
-    {
-      "type": "text",
-      "id": "tp_bottom_middle_title",
-      "label": "Bottom MIddle Section Title",
-      "default": "Dimensions"
-    },
-    {
-      "type": "text",
-      "id": "tp_bottom_right_title",
-      "label": "Bottom Right Section Title",
-      "default": "Product Care"
     },
     {
       "type": "color",
@@ -475,6 +596,18 @@
       "label": "Show dynamic checkout button",
       "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "buy_online_button_copy",
+      "label": "Buy Online Button Copy",
+      "default": "Buy at MyKnobs"
+    },
+    {
+      "type": "text",
+      "id": "find_a_showroom_button_copy",
+      "label": "Find a Showroom Button Copy",
+      "default": "Find a Showroom"
     },
     {
       "type": "checkbox",
@@ -718,6 +851,34 @@
       "id": "show_share_buttons",
       "label": "Show social sharing buttons",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_inventory_enable",
+      "label": "Show Product Inventory",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Name of Each Section"
+    },
+    {
+      "type": "text",
+      "id": "bottom_left_section_title",
+      "label": "Bottom Left Section Title",
+      "default": "Description"
+    },
+    {
+      "type": "text",
+      "id": "bottom_middle_section_title",
+      "label": "Bottom Middle Section Title",
+      "default": "Description"
+    },
+    {
+      "type": "text",
+      "id": "bottom_right_section_title",
+      "label": "Default tab title",
+      "default": "Lower Left Section Title"
     }
   ]
 }
