@@ -3308,6 +3308,10 @@
           'variantSKUChange' + this.settings.namespace,
           this._updateSKU.bind(this)
         );
+        this.$container.on(
+          'variantCustomInfoChange' + this.settings.namespace,
+          this._updateCustomInfo.bind(this)
+        );
         // turnpupGoHere turnpup variantInventoryQuantityChange
         this.$container.on(
           'variantInventoryQuantityChange' + this.settings.namespace,
@@ -3975,7 +3979,7 @@
         this._updateStoreAvailabilityContent(evt);
         this._updateAddToCart(evt);
         this._updatePrice(evt);
-        console.log("variant change --> updateAvailability then calls --> _turnpupUpdateInventoryQuantity");
+        // console.log("variant change --> updateAvailability then calls --> _turnpupUpdateInventoryQuantity");
 //         this._turnpupUpdateInventoryQuantity(evt); 
         //turnpupGoHere
       },
@@ -4077,6 +4081,20 @@
 
         // Update the sku
         $(this.selectors.SKU).html(variant.sku);
+      },
+
+      _updateCustomInfo: function(evt) {
+        var variant = evt.variant;
+
+        // Update the sku
+        // CUSTOM ALEX TURNEY
+        $("#weight").html(variant.weight);
+        $("#item_number").html(variant.sku);        
+        $("#finish").html(variant.option1);
+        $("#projection").html(meta_projection[variant.id]);
+        $("#center_to_center").html(meta_center_to_center[variant.id]);
+        $("#length").html(meta_length[variant.id]);
+        $("#width").html(meta_width[variant.id]);
       },
 
       onUnload: function() {
@@ -6433,8 +6451,9 @@
         this._updateImages(variant);
         this._updatePrice(variant);
         this._updateSKU(variant);
+        this._updateCustomInfo(variant);
         this._updateSwatches(variant);
-        console.log("call function _turnpupUpdateInventoryQuantit  before selecting current variant");
+        // console.log("call function _turnpupUpdateInventoryQuantit  before selecting current variant");
         this._turnpupUpdateInventoryQuantity(variant);
         // turnpup 1 line above
         // turnpupGoHere
@@ -6499,16 +6518,16 @@
       _turnpupUpdateInventoryQuantity: function(variant) {
         var inventory_qty = inv_qty[variant.id];
         var inventory_qty_current = inv_qty[this.currentVariant.id];
-        console.log("checking to create trigger");
-        console.log("new variant " + variant.id + " : " + inventory_qty);
-        console.log("old variant " + this.currentVariant.id + " : " + inventory_qty_current);
+        // console.log("checking to create trigger");
+        // console.log("new variant " + variant.id + " : " + inventory_qty);
+        // console.log("old variant " + this.currentVariant.id + " : " + inventory_qty_current);
         
         if (inventory_qty === inventory_qty_current) {
-          console.log("don't create trigger because same");
+          // console.log("don't create trigger because same");
           return;
         }
 
-        console.log("create trigger because different");
+        // console.log("create trigger because different");
         this.$container.trigger({
           type: 'variantInventoryQuantityChange',
           variant: variant,
@@ -6528,6 +6547,18 @@
 
         this.$container.trigger({
           type: 'variantSKUChange',
+          variant: variant,
+        });
+      },
+
+
+      _updateCustomInfo: function(variant) {
+        if (variant.sku === this.currentVariant.sku) {
+          return;
+        }
+
+        this.$container.trigger({
+          type: 'variantCustomInfoChange',
           variant: variant,
         });
       },

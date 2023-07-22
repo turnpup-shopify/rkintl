@@ -1,3 +1,38 @@
+{% comment %} GET ALL THE METADATA NEEDED FOR THEME.JS TO SWITCH DATA WHEN VARIANT CHANGED {% endcomment %}
+{% capture 'meta_projection' %}{% for variant in product.variants %}'{{ variant.id }}':'{{ variant.metafields.filter.projection | escape }}'{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% capture 'meta_center_to_center' %}{% for variant in product.variants %}'{{ variant.id }}':'{{ variant.metafields.filter.center_to_center | escape }}'{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% capture 'meta_width' %}{% for variant in product.variants %}'{{ variant.id }}':'{{ variant.metafields.filter.width | escape }}'{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% capture 'meta_length' %}{% for variant in product.variants %}'{{ variant.id }}':'{{ variant.metafields.filter.length | escape }}'{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+<script> 
+  var meta_projection = { {{ meta_projection }} };
+  var meta_length = { {{ meta_length }} };
+  var meta_width = { {{ meta_width }} };
+  var meta_center_to_center = { {{ meta_center_to_center }} };
+</script>
+
+
+{% comment %} <script>
+  var custom_variant = "";
+  var custom_projection = "";
+  i = 1;
+  window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll(".swatch-container").forEach((but) => {
+      but.addEventListener("click",() => {
+        console.log("CLICK BUTTON");
+        i = i + 1;
+        console.log({{ product.selected_or_first_available_variant | json }});
+        custom_variant = {{ product.selected_or_first_available_variant | json }};
+        {% assign liquid_variant = product.selected_or_first_available_variant %}
+        {% if liquid_variant.metafields.filter.projection != blank %}                  
+          custom_projection = '{{ liquid_variant.metafields.filter.projection }}'; 
+        {% else %}  
+          custom_projection = "ELSE";
+        {% endif %}
+      })
+    })  
+  });  
+</script> {% endcomment %}
+
 <div class="product-template" 
   id="ProductSection-{{ section.id }}" 
   data-section-id="{{ section.id }}" 
@@ -182,14 +217,51 @@
               {%- comment -%}
                 Display the normal description or first description part before the split
               {%- endcomment -%}
-              {{ description_first_part }}              
+              {{ description_first_part }}                 
+              {% assign variant = product.selected_or_first_available_variant %}       
               <table> 
-                <tr>
-                  {% if variant.metafields.filter.length != blank %}                  
+                {% if variant.sku != blank %}                  
+                <tr>                 
+                  <td>Item Number: </td>
+                  <td id="item_number">{{ variant.sku}}</td>
+                </tr>
+                {% endif %}
+                {% if variant.option1 != blank %}                  
+                <tr>                 
+                  <td>Finish: </td>
+                  <td id="finish">{{ variant.option1}}</td>
+                </tr>
+                {% endif %}
+                {% if variant.metafields.filter.length != blank %}                  
+                <tr>                 
                   <td>Length: </td>
-                  <td>{{ variant.metafields.filter.length}}</td>
-                  {% endif %}
+                  <td id="length">{{ variant.metafields.filter.length}}</td>
+                </tr>
+                {% endif %}
+                {% if variant.metafields.filter.width != blank %}                  
                 <tr>
+                  <td>Width: </td>
+                  <td id="width">{{ variant.metafields.filter.width}}</td>
+                </tr>
+                {% endif %}
+                {% if variant.metafields.filter.projection != blank %}                  
+                <tr>
+                  <td>Projection: </td>
+                  <td id="projection">{{ variant.metafields.filter.projection}}</td>
+                </tr>
+                {% endif %}
+                {% if variant.metafields.filter.center_to_center != blank %}                  
+                <tr>
+                  <td>Center to Center: </td>
+                  <td id="center_to_center">{{ variant.metafields.filter.center_to_center}}</td>
+                </tr>
+                {% endif %}
+                {% if variant.weight != blank %}                  
+                <tr>
+                  <td>Weight: </td>
+                  <td id="weight">{{ variant.weight | weight_with_unit }}</td>
+                </tr>
+                {% endif %}
               </table>
             {%- endif -%}
           </div>
@@ -376,9 +448,6 @@
     {%- endfor -%}
   ]
 }
-</script>
-<script>
-  console.log( "{{ product.metafields.pdp.where_to_buy }}" );
 </script>
 
 <style>

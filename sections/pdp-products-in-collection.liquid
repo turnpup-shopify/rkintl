@@ -1,15 +1,3 @@
-{% comment %} {% assign zero_products = true %}
-{%- for tag in collection.all_tags -%}
-  {%- assign cat_tag = tag -%}
-  {%- unless cat_tag contains '_' -%}
-    {%- assign cat_tag = cat_tag | prepend: default_cat_title -%}
-  {%- endunless -%}
-  {%- assign cat = cat_tag | split: '_' | first -%}
-  {%- if cat != cat_tag and cat_item == cat -%}
-<!--                   <script> console.log("cat: {{ cat }}"); </script>
-      <script> console.log("cat_item: {{ cat_item }}"); </script> -->
-<!--                   <script> console.log("cat: {{ cat }} and {{ default_cat_title }}"); </script> --> {% endcomment %}
-
 <div class="simple-collection similar-products-pdp module layout-{{ section.settings.product_count_range }}" data-section-id="{{ section.id }}" data-section-type="simple-collection-section">
   <div class="wrapper" style="margin: {{ section.settings.padding }};max-width: 90%;">
     <header{% if section.settings.center_heading %} class="centered"{% endif %} style="margin: 20px 0 30px;">
@@ -53,14 +41,6 @@
   }
 </style>
 {% endif %}
-<script>
- {% for collect in similar_collections %}
-    console.log( {{ collect | json }} );
-  {% endfor %}
-  console.log( " product ===> " + {{ product | json }} );
-  console.log("{{product.metafields.pdp.similarCollection.value}}");
-</script>
-
 
 
 <style>
