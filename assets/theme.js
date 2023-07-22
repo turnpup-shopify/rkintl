@@ -4088,7 +4088,7 @@
 
         // Update the sku
         // CUSTOM ALEX TURNEY
-        $("#weight").html(variant.weight);
+        $("#weight").html(weight_in_pounds[variant.id]);
         $("#item_number").html(variant.sku);        
         $("#finish").html(variant.option1);
         $("#projection").html(meta_projection[variant.id]);
