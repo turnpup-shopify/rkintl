@@ -182,13 +182,21 @@
               {%- comment -%}
                 Display the normal description or first description part before the split
               {%- endcomment -%}
-              hello --> {{ description_first_part }}
+              {{ description_first_part }}              
+              <table> 
+                <tr>
+                  {% if variant.metafields.filter.length != blank %}                  
+                  <td>Length: </td>
+                  <td>{{ variant.metafields.filter.length}}</td>
+                  {% endif %}
+                <tr>
+              </table>
             {%- endif -%}
           </div>
           
           {% if section.settings.show_share_buttons %}
             {% include 'social-share' %}
-          {% endif %}`
+          {% endif %}
         </aside>
       </div>
 
