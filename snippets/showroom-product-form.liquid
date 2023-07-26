@@ -1,12 +1,14 @@
 {% form 'product', product %}
   <div class="product-title">
+    <a style="float:right;margin:0;padding:4px 18px;" id="printFromPDP" class="hapny_button hideFromPrintout" onclick="generatePDF()">Print</a>
     <h1>
       {% unless section_onboarding %}
         {{ product.title }}
       {% else %}
         {{ 'homepage.onboarding.product_title' | t }}
       {% endunless %}
-    </h1>
+    </h1>    
+    <div style="margin:0;padding:0;clear:both;"></div>
     {% if section.settings.show_vendors %}
       <span class="vendor">
         {% unless section_onboarding %}
@@ -18,7 +20,7 @@
     {% endif %}
   </div>
 
-  <div class="selection-wrapper price product-single__price-{{ section.id }}
+  <div class="hideFromPrintout" class="selection-wrapper price product-single__price-{{ section.id }}
     {% if current_variant.available and current_variant.unit_price_measurement %} price--unit-available {% endif %}" data-price>
     {% unless section_onboarding %}
       <span class="money" id="ProductPrice-{{ section.id }}" data-ProductPrice>{{ current_variant.price | money }}</span>
