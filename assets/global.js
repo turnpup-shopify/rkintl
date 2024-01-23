@@ -368,6 +368,7 @@ class MenuDrawer extends HTMLElement {
       }
     } else {
       setTimeout(() => {
+        console.log('371');
         detailsElement.classList.add('menu-opening');
         summaryElement.setAttribute('aria-expanded', true);
         parentMenuElement && parentMenuElement.classList.add('submenu-open');
@@ -378,6 +379,7 @@ class MenuDrawer extends HTMLElement {
 
   openMenuDrawer(summaryElement) {
     setTimeout(() => {
+      console.log('382');
       this.mainDetailsToggle.classList.add('menu-opening');
     });
     summaryElement.setAttribute('aria-expanded', true);
@@ -459,6 +461,7 @@ class HeaderDrawer extends MenuDrawer {
     this.header.classList.add('menu-open');
 
     setTimeout(() => {
+      console.log('463');
       this.mainDetailsToggle.classList.add('menu-opening');
     });
 
