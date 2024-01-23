@@ -14,10 +14,10 @@
         "turnpup_title_color": "#000000",
         "turnpup_text_size": "18px",
         "turnpup_mobile_text_size": "16px",
-        "turnpup_text_color": "#373F41",
+        "turnpup_text_color": "#373f41",
         "turnpup_note_text_size": "18px",
         "turnpup_mobile_note_text_size": "16px",
-        "turnpup_note_text_color": "#373F41",
+        "turnpup_note_text_color": "#373f41",
         "turnpup_note_text_weight": "700",
         "turnpup_margin_left": "10%",
         "turnpup_margin_right": "10%",
@@ -35,10 +35,10 @@
         "turnpup_button_size": "18px",
         "button_link": "",
         "color_text": "#ffffff",
-        "color_accent": "#F4B237",
-        "turnpup_hover_txt_color": "#F4B237",
+        "color_accent": "#f4b237",
+        "turnpup_hover_txt_color": "#f4b237",
         "turnpup_hover_background_color": "#ffffff",
-        "turnpup_bottom_border_color": "#F4B237"
+        "turnpup_bottom_border_color": "#f4b237"
       }
     },
     "collection-template": {
@@ -60,7 +60,7 @@
         "products_per_page_range": 48,
         "image_placement": "hidden",
         "enable_filtering_2": true,
-        "enable_sorting_2": true,
+        "enable_sorting_2": false,
         "collapse_on_larger_devices_2": false,
         "sort_enable": false,
         "sort_featured_enable": false,
