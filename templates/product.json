@@ -73,7 +73,7 @@
         "margin": "0px auto 20px",
         "title": "Pairs Well With",
         "header_font_size": "1.8em",
-        "center_heading": false,
+        "center_heading": true,
         "button_label": "",
         "button_link": "",
         "collection": "",
