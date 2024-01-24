@@ -1,3 +1,5 @@
+{% assign max_products = section.settings.product_count_range %}
+{% assign products_in_carousel = 0 %}
 <div class="hideFromPrintout simple-collection similar-products-pdp module layout-{{ section.settings.product_count_range }}" data-section-id="{{ section.id }}" data-section-type="simple-collection-section">
   <div class="wrapper" style="margin: {{ section.settings.padding }};max-width: 90%;">
     <header{% if section.settings.center_heading %} class="centered"{% endif %} style="margin: 20px 0 30px;">
@@ -14,18 +16,24 @@
           {% if collect.title == product.metafields.pdp.similarCollection.value %}
             {% for p in collect.products %}
               {% unless p.id  == product.id %}
+              {% if products_in_carousel < max_products %}
                 {% include 'pdp-carousel-item' %}
                 {% assign zero_products = false %}
                 <option value="{{ p.url | within: collection }}">{{ p.title }}</option> 
+              {% endif %}
               {% endunless %}
+              {% assign products_in_carousel = products_in_carousel | plus: 1 %}
             {% endfor %} 
           {% elsif collect.title != "Appliance Pulls" and collect.title != "Cabinet Pulls" and collect.title != "Cabinet Knobs" and collect.title != "All Products" and collect.title != "Our Favorites"%}
             {% for p in collect.products %}
               {% unless p.id  == product.id %}
+              {% if products_in_carousel < max_products %}
                 {% include 'pdp-carousel-item' %}
                 {% assign zero_products = false %}
                  <option value="{{ p.url | within: collection }}">{{ p.title }}</option> 
+              {% endif %}
               {% endunless %}
+              {% assign products_in_carousel = products_in_carousel | plus: 1 %}
             {% endfor %} 
           {% endif %}
         {% endfor %}     
