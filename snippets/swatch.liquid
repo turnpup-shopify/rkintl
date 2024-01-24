@@ -10,7 +10,7 @@
       {%- comment -%}
           TURNPUP adjust this from just {{ option.name }}
       {%- endcomment -%}
-      {% if option.name == "Color" OR option.name == "Material" %}
+      {% if option.name == "Color" or option.name == "Material" %}
         <span style="color:#838383">Finish</span>
       {% else %}
         {{ option.name }}
