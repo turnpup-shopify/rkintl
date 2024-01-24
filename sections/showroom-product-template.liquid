@@ -15,7 +15,7 @@
 <script type = "text/javascript">
     function generatePDF() {
         var panel = document.querySelector("html").cloneNode(true);
-        panel.querySelectorAll(".hideFromPrintout, .nav-bar").forEach((el)=>{
+        panel.querySelectorAll(".hideFromPrintout").forEach((el)=>{
           el.remove();
         })
         panel.querySelectorAll(".hideFromPrintout, .flickity-page-dots, .flickity-button, #fixed_mobile_nav_bar").forEach((el)=>{
