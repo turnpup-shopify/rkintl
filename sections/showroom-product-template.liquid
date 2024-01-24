@@ -27,6 +27,9 @@
         panel.querySelectorAll(".purchase-box").forEach((el)=>{
           el.style.margin = "-100px 0 0";
         })
+        panel.querySelectorAll(".single-product .description").forEach((el)=>{
+          el.style.fontSize = "1em";
+        })         
         var printWindow = window.open('', '', 'height=1000,width=500');
         printWindow.document.write(panel.innerHTML);
         printWindow.document.close();
