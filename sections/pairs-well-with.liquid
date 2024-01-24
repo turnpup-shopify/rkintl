@@ -31,7 +31,7 @@
 {% if zero_products %}
 <style>
   .pdp-pairs {
-    border-top: {{ section.settings.top_border_color }};
+    display: none;
   }
 </style>
 {% endif %}
@@ -40,6 +40,9 @@
   .similar-products-pdp .product-container {
     display: flex;
     justify-content: center;
+  }
+  .pdp-pairs {
+    border-top: 1px solid {{ section.settings.top_border_color }};
   }
   .pdp_product_carousel_title {
     font-size: {{ section.settings.header_font_size }};
