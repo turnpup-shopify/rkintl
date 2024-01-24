@@ -21,6 +21,10 @@
         panel.querySelectorAll(".hideFromPrintout, .flickity-page-dots, .flickity-button, .mobile-menu").forEach((el)=>{
           el.style.display = "none";
         })
+        panel.querySelectorAll(".purchase-box, .single-product .grid .product-images").forEach((el)=>{
+          el.style.margin = 0;
+        })
+        
         var printWindow = window.open('', '', 'height=1000,width=500');
         printWindow.document.write(panel.innerHTML);
         printWindow.document.close();
