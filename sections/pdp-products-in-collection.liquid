@@ -1,8 +1,10 @@
-<div class="hideFromPrintout simple-collection similar-products-pdp module layout-{{ section.settings.product_count_range }}" data-section-id="{{ section.id }}" data-section-type="simple-collection-section">
+{% assign zero_products = true %}
+
+<div class="simple-collection similar-products-pdp module layout-{{ section.settings.product_count_range }}" data-section-id="{{ section.id }}" data-section-type="simple-collection-section">
   <div class="wrapper" style="margin: {{ section.settings.padding }};max-width: 90%;">
     <header{% if section.settings.center_heading %} class="centered"{% endif %} style="margin: 20px 0 30px;">
       {% if section.settings.title != blank %}
-        <h4 class="pdp_product_carousel_title">{{ section.settings.title | escape }}</h4>
+        <h2 class="pdp_product_carousel_title">{{ section.settings.title | escape }}</h2>
       {% endif %}
       {% if section.settings.button_link != blank and section.settings.button_label != blank %}
         <a href="{{ section.settings.button_link }}" class="button outline">{{ section.settings.button_label | escape }}</a>
@@ -19,14 +21,14 @@
                 <option value="{{ p.url | within: collection }}">{{ p.title }}</option> 
               {% endunless %}
             {% endfor %} 
-          {% elsif collect.title != "Appliance Pulls" and collect.title != "Cabinet Pulls" and collect.title != "Cabinet Knobs" and collect.title != "All Products" and collect.title != "Our Favorites"%}
+          {% comment %} {% elsif collect.title != "Appliance Pulls" and collect.title != "Cabinet Pulls" and collect.title != "Cabinet Knobs" and collect.title != "All Products" and collect.title != "Our Favorites"%}
             {% for p in collect.products %}
               {% unless p.id  == product.id %}
                 {% include 'pdp-carousel-item' %}
                 {% assign zero_products = false %}
                  <option value="{{ p.url | within: collection }}">{{ p.title }}</option> 
               {% endunless %}
-            {% endfor %} 
+            {% endfor %}  {% endcomment %}
           {% endif %}
         {% endfor %}     
     </div>
@@ -41,6 +43,7 @@
   }
 </style>
 {% endif %}
+
 
 
 <style>
@@ -75,7 +78,7 @@
 {% schema %}
 {
   "name": "PDP Other Products",
-  "class": "pdp-products-in-section hideFromPrintout",
+  "class": "pdp-products-in-section",
   "settings": [
     {
       "type": "color",
@@ -148,11 +151,9 @@
 {% endschema %}
 
 
-<script>
-  
-  console.log( "debug: " + "{{similar_collections}}" );
-
-  var turnpupProductVariable = {{ product | json }};
-  var turnpupCollectionVariable = {{ product.collections | json }};
-              
-</script>
+<script>  
+  console.log("METAFIELD: {{product.metafields.pdp.similarCollection.value}}");
+  {% for collect in similar_collections %}
+    console.log( {{ collect.title }} );
+  {% endfor %}
+</script>             
