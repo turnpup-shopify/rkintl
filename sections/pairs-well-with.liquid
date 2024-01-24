@@ -1,3 +1,5 @@
+{% assign pairs_well_with_list = product.metafields.custom.pairs_well_with.value %}
+{% unless pairs_well_with_list == blank %}
 {% assign max_products = section.settings.product_count_range %}
 {% assign products_in_carousel = 0 %}
 <div class="hideFromPrintout simple-collection similar-products-pdp module layout-{{ section.settings.product_count_range }}" data-section-id="{{ section.id }}" data-section-type="simple-collection-section">
@@ -11,8 +13,6 @@
       {% endif %}
     </header>
     <div class="product-container">
-        {% assign pairs_well_with_list = product.metafields.custom.pairs_well_with.value %}
-        <script>console.log( "debug-pairs-well: " + '{{ pairs_well_with_list }}');</script>
         {% for p in pairs_well_with_list %}   
             <script>console.log("something");</script>         
             <script>console.log( {{ p | json }} );</script>         
@@ -26,6 +26,7 @@
     </div>
   </div>
 </div>
+{% endunless %}
 
 {% if zero_products %}
 <style>
@@ -35,7 +36,6 @@
   }
 </style>
 {% endif %}
-
 
 <style>
   .similar-products-pdp .product-container {
@@ -66,6 +66,7 @@
     }
   }
 </style>
+
 {% schema %}
 {
   "name": "PDP Pairs well With",
