@@ -11,18 +11,17 @@
       {% endif %}
     </header>
     <div class="product-container">
-        {% assign pairs_well_with_list = product.metafields.custom.pairs_well_with %}
-        {% for productt in pairs_well_with_list %}            
-            {% for p in productt %}
-              {% unless p.id  == product.id %}
-              {% if products_in_carousel < max_products %}
+        {% assign pairs_well_with_list = product.metafields.custom.pairs_well_with.value %}
+        <script>console.log( "debug-pairs-well: " + '{{ pairs_well_with_list }}');</script>
+        {% for p in pairs_well_with_list %}   
+            <script>console.log("something");</script>         
+            <script>console.log( {{ p | json }} );</script>         
+            {% if products_in_carousel < max_products %}
                 {% include 'pdp-carousel-item' %}
                 {% assign products_in_carousel = products_in_carousel | plus: 1 %}
                 {% assign zero_products = false %}
                 <option value="{{ p.url }}">{{ p.title }}</option> 
-              {% endif %}
-              {% endunless %}
-            {% endfor %} 
+            {% endif %}
         {% endfor %}     
     </div>
   </div>
@@ -143,11 +142,4 @@
 {% endschema %}
 
 
-<script>
-  
-  console.log( "debug: " + "{{pairs_well_with_list}}" );
 
-  var turnpupProductVariable = {{ product | json }};
-  var turnpupCollectionVariable = {{ product.collections | json }};
-              
-</script>
