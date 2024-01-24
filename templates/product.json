@@ -65,11 +65,26 @@
         "collection": "",
         "product_count_range": 4
       }
+    },
+    "pairs_well_with_qGpTcV": {
+      "type": "pairs-well-with",
+      "settings": {
+        "top_border_color": "#f4b237",
+        "margin": "0px auto 20px",
+        "title": "Pairs Well With",
+        "header_font_size": "1.8em",
+        "center_heading": false,
+        "button_label": "",
+        "button_link": "",
+        "collection": "",
+        "product_count_range": 4
+      }
     }
   },
   "order": [
     "main",
     "recommendations",
-    "pdp-products-in-collection"
+    "pdp-products-in-collection",
+    "pairs_well_with_qGpTcV"
   ]
 }
