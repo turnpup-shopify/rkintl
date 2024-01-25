@@ -20,6 +20,9 @@
       assign terms = results.terms | escape
       assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
     endif
+    
+    assign hide_product_count = true
+
   -%}
   
   <div class="facets-container">
@@ -172,8 +175,8 @@
                   <facet-remove>
                     <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
                       <span class="active-facets__button-inner button button--tertiary">
-                        {{ value.label | escape }}
                         {% render 'icon-close-small' %}
+                        {{ value.label | escape }}                        
                         <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
                       </span>
                     </a>
@@ -228,7 +231,8 @@
             </div>
           {%- endif -%}
   
-          <div class="product-count light" role="status">
+          {% if hide_product_count != true %}
+            <div class="product-count light" role="status">
             <h2 class="product-count__text text-body">
               <span id="ProductCountDesktop">
                 {%- if results.results_count -%}
@@ -245,7 +249,8 @@
                 <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
               </svg>
             </div>
-          </div>          
+            </div>  
+          {% endif %}        
         </form>
       </facet-filters-form>
     {%- endunless -%}
@@ -320,11 +325,11 @@
   
                                 <span class="mobile-facets__highlight"></span>
   
-                                <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                                  <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                                <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false">
+                                  <rect width="14" height="14" stroke="currentColor" fill="none" stroke-width="1"></rect>
                                 </svg>
   
-                                <svg class="icon icon-checkmark" width="1.1rem" height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="icon icon-checkmark" width="14" height="10" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
   
@@ -459,8 +464,8 @@
           <facet-remove>
             <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
               <span class="active-facets__button-inner button button--tertiary">
-                {{ value.label | escape }}
                 {% render 'icon-close-small' %}
+                {{ value.label | escape }}                
                 <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
               </span>
             </a>
