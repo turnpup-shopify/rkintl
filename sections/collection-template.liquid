@@ -1,3 +1,5 @@
+{{ 'component-facets.css' | asset_url | stylesheet_tag }}
+
 {% if section.blocks.size > 0 %}
   {%- assign enable_sidebar = true -%}
 {% else %}
@@ -36,11 +38,12 @@
       <a class="quickhit" href="/collections/cabinet-pulls">Pulls</a>
       <a class="quickhit" href="/collections/appliance-pulls">Appliance Pulls</a>
     </div> -->
-    {% if section.settings.enable_sorting_2 %}
+
+
+    {% if section.settings.enable_filtering_2 %}
       <div class="aside-container">
         <aside>
           <script>console.log("2.0 sorting enabled");</script>
-          {{ 'component-facets.css' | asset_url | stylesheet_tag }}
           <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>        
           <div class="page-width" id="main-collection-filters" data-id="{{ section.id }}">
             {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering_2, enable_sorting: section.settings.enable_sorting_2, collapse_on_larger_devices: section.settings.collapse_on_larger_devices_2 %}
@@ -65,9 +68,8 @@
             {% include 'breadcrumb' %}
             {% include 'social-icons' %}
             </header>
-          {% endcomment %}
-            
-            {% include 'collection-sorting' %}
+          {% endcomment %}            
+            {% comment %} {% include 'collection-sorting' %} {% endcomment %}
           </div>
           {% if section.settings.image_placement == 'default' and collection.image %}
             {%- assign image = collection.image -%}
@@ -89,30 +91,33 @@
               </div>
             </div>
           {% endif %}
-          {% if collection.description != blank %}
-          
+          {% if collection.description != blank %}          
           {% comment %}
-            TURNPUP remove the section below
-          
+            TURNPUP remove the section below         
             <div class="description rte">
               {{ collection.description }}
             </div>
-
-          {% endcomment %}
-          
+          {% endcomment %}          
           {% endif %}
         </header>
         
-        {% if enable_sidebar %}
+        {% comment %} {% if enable_sidebar and enable_filtering_2 %}
           <div class="mobile-aside-container">
             <a href="#" class="button simple">{{ 'layout.navigation.collection_menu' | t}}</a>
             <aside>
               {% include 'collection-sidebar' %}
             </aside>
           </div>
-        {% endif %}
+        {% else %}
+          <div class="mobile-aside-container">
+            <a href="#" class="button simple">{{ 'layout.navigation.collection_menu' | t}}</a>
+            <aside>
+              {% include 'collection-sidebar' %}
+            </aside>
+          </div>
+        {% endif %} {% endcomment %}
 
-        <div id="product-grid"  data-id="{{ section.id }}" class="collection products products-grid {% unless enable_sidebar %}full-width{% endunless %} ">
+        <div id="product-grid"  data-id="{{ section.id }}" class="collection products products-grid {% unless enable_sidebar %}full-width{% endunless %}">
           {% comment %}
             Loop through our products in the current collection.
             See the snippet 'product-grid-item' for the layout.
@@ -139,12 +144,23 @@
         {% endif %}
       </div>
 
-      {% if enable_sidebar and section.settings.enable_sorting_2 != true %}
+      {% if enable_sidebar and section.settings.enable_filtering_2 != true %}
         <div class="aside-container">
           <aside>
             {% include 'collection-sidebar' %}
           </aside>
         </div>
+      {% elsif enable_sidebar and section.settings.enable_filtering_2 %}
+        {% comment %} <div class="aside-container">
+          <aside>
+            <script>console.log("2.0 sorting enabled");</script>
+            {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+            <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>        
+            <div class="page-width" id="main-collection-filters" data-id="{{ section.id }}">
+              {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering_2, enable_sorting: section.settings.enable_sorting_2, collapse_on_larger_devices: section.settings.collapse_on_larger_devices_2 %}
+            </div>
+          </aside>
+        </div> {% endcomment %}
       {% endif %}
 
     </div>
@@ -332,7 +348,8 @@
           "label": "Show tags as",
           "options": [
             { "value": "buttons", "label": "Buttons" },
-            { "value": "menu", "label": "Menu" }
+            { "value": "menu", "label": "Menu" },
+            { "value": "two", "label": "two" }
           ],
           "default": "buttons"
         },
