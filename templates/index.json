@@ -3,7 +3,7 @@
     "8e0d19a5-f8bc-40a9-b831-9fff1ef5c00b": {
       "type": "turnpup_image_only",
       "custom_css": [
-        "h1 {line-height: 1;}"
+        "h2 {line-height: 1;}"
       ],
       "settings": {
         "turnpup_margin_topbottom_container": "50%",
